@@ -1,0 +1,104 @@
+{
+  "RU": {
+    "first": [
+      {
+        "name": "Спартак (М)",
+        "base": 1,
+        "difficulty": "top1",
+        "start_stress": 70
+      },
+      {
+        "name": "Динамо (М)",
+        "base": 2,
+        "difficulty": "top1",
+        "start_stress": 65
+      },
+      {
+        "name": "ЦСКА",
+        "base": 3,
+        "difficulty": "top1",
+        "start_stress": 75
+      },
+      {
+        "name": "Спартак (Вл)",
+        "base": 4,
+        "difficulty": "top1",
+        "start_stress": 50
+      },
+      {
+        "name": "Локомотив (М)",
+        "base": 5,
+        "difficulty": "low1",
+        "start_stress": 25
+      },
+      {
+        "name": "Торпедо",
+        "base": 6,
+        "difficulty": "low1",
+        "start_stress": 20
+      },
+      {
+        "name": "Ротор",
+        "base": 7,
+        "difficulty": "low1",
+        "start_stress": 10
+      },
+      {
+        "name": "Зенит",
+        "base": 8,
+        "difficulty": "low1",
+        "start_stress": 15
+      }
+    ],
+    "second": [
+      {
+        "name": "Асмарал",
+        "base": 1,
+        "difficulty": "top2",
+        "start_stress": 45
+      },
+      {
+        "name": "Локомотив (НН)",
+        "base": 2,
+        "difficulty": "top2",
+        "start_stress": 40
+      },
+      {
+        "name": "Ростсельмаш",
+        "base": 3,
+        "difficulty": "top2",
+        "start_stress": 35
+      },
+      {
+        "name": "Крылья Советов",
+        "base": 4,
+        "difficulty": "top2",
+        "start_stress": 30
+      },
+      {
+        "name": "Уралмаш",
+        "base": 5,
+        "difficulty": "low2",
+        "start_stress": 20
+      },
+      {
+        "name": "Текстильщик",
+        "base": 6,
+        "difficulty": "low2",
+        "start_stress": 15
+      },
+      {
+        "name": "Океан",
+        "base": 7,
+        "difficulty": "low2",
+        "start_stress": 10
+      },
+      {
+        "name": "Факел",
+        "base": 8,
+        "difficulty": "low2",
+        "start_stress": 5
+      }
+    ]
+  }
+}
