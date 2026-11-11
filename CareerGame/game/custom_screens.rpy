@@ -1,5 +1,4 @@
 screen hud():
-    zorder 100
     frame:
         xalign 0.98
         yalign 0.02
@@ -25,29 +24,6 @@ screen hud():
                 text "ПТСР: важные проверки труднее" size 12 color "#fca5a5"
             if gs.trait:
                 text "Черта: [TRAIT_LABELS.get(gs.trait, gs.trait)]" size 12 color "#fcd34d"
-
-    zorder 100
-    frame:
-        xalign 0.98
-        yalign 0.02
-        xpadding 15
-        ypadding 10
-        background Solid("#0f0f1acc")
-        vbox:
-            spacing 4
-            text "Возраст: [gs.age]" size 16 color "#fff"
-            text "Сезон: [gs.season]" size 16 color "#fff"
-            text "Клуб: [gs.club]" size 16 color "#fff"
-            $ lg = "Первая лига" if gs.league == "first" else "Вторая лига"
-            text "Лига: [lg]" size 16 color "#fff"
-            text "Место: [gs.current_place] / 8" size 16 color "#4ade80" bold True
-            null height 6
-            text "Стресс: [gs.stress]/100" size 14 color "#ff6666"
-            text "Срывы: [gs.breakdowns]/3" size 14 color "#ff6666"
-            null height 6
-            text "Хладнокровие: [gs.attrs['composure']]" size 12 color "#aaa"
-            text "Репутация: [gs.attrs['rep_coach']]" size 12 color "#aaa"
-            text "Медиа: [gs.attrs['media']]" size 12 color "#aaa"
 
 
 screen vn_dialog(speaker, text, current, total):
