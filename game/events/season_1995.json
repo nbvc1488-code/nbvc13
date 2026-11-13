@@ -1,0 +1,7583 @@
+[
+  {
+    "id": "S5_ALANIA_BRAWL",
+    "title": "Стычка во Владикавказе",
+    "type": "🏛",
+    "bg": "field",
+    "art": "y95_separate",
+    "text": [
+      "Владикавказ. После свистка у штрафной игроки сходятся грудь в грудь. Левников раздвигает их руками. Ты уже в двух шагах от толпы.",
+      "Протокол: 1:1. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Вступить в драку",
+        "conclusion": {
+          "success": "Ты бьёшь кого-то из соперников. Тебя уводят. В прессе пишут: „ВАРВАРЫ“.",
+          "fail": "Ты успеваешь сделать шаг вперёд. Партнёры подхватывают тебя под руки и уводят в сторону, пока арбитр не заметил толчок."
+        },
+        "sketch": {
+          "success": "y95_card",
+          "fail": "y95_separate"
+        },
+        "check": {
+          "attr": "temperament",
+          "threshold": 50
+        },
+        "success": {
+          "suspension_matches": 3,
+          "counters": {
+            "red_cards": 1
+          },
+          "attrs": {
+            "temperament": 10,
+            "rep_press": -15
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Защитить судью",
+        "conclusion": {
+          "success": "Ты встаёшь между Тетрадзе и судьёй. Тебя бьют. Но ты защитил арбитра. Газеты пишут: „БЛАГОРОДНЫЙ ПОСТУПОК“.",
+          "fail": "Ты встаёшь между игроками. Партнёры по обе стороны отводят их от судьи."
+        },
+        "sketch": {
+          "success": "y95_separate",
+          "fail": "y95_separate"
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 10,
+            "rep_press": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Спрятаться в стороне",
+        "conclusion": {
+          "flat": "Ты отходишь в сторону. Партнёры смотрят на тебя с презрением. Ты чувствуешь себя трусом."
+        },
+        "sketch": {
+          "flat": [
+            "y95_clearance",
+            "y95_clearance2"
+          ]
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "rep_teammates": -10
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_autumn",
+    "requires": {
+      "club": [
+        "Спартак (Вл)",
+        "Спартак (М)"
+      ],
+      "league": "first"
+    },
+    "home": "Спартак (Вл)",
+    "away": "Спартак (М)",
+    "month": 9,
+    "historical_score": "1:1",
+    "game_score": "1:1",
+    "source": "https://fc-alania.ru/history/chempionskij_god",
+    "season_95_fixture": true,
+    "subtitle": "21 сентября · Спартак (Вл) — Спартак (М)"
+  },
+  {
+    "id": "S5_ROTOR_MU_FWD",
+    "title": "«Манчестер Юнайтед» — «Ротор»",
+    "type": "🏛",
+    "bg": "field",
+    "art": "y95_oldtrafford",
+    "text": [
+      "26 сентября. На «Олд Траффорд» Шмейхель сравнял счёт после углового. На табло 2:2. Пока английские игроки возвращаются на позиции, у вас остаётся время на ещё одну атаку.",
+      "Протокол: 2:2. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Попытаться забить ещё",
+        "conclusion": {
+          "success": "Ты бьёшь в касание. Мяч натягивает сетку, и партнёр первым подбегает к тебе.",
+          "fail": "Мяч проходит снаружи стойки. Вратарь провожает его взглядом."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "media": 15,
+            "rep_fans": 10
+          },
+          "goals": 1,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "stress": 20
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Помочь защите",
+        "conclusion": {
+          "success": "Ты успеваешь к мячу первым и выбиваешь его подальше от штрафной.",
+          "fail": "После твоего выноса мяч подбирает соперник. Следующий удар проходит под рукой вашего вратаря."
+        },
+        "sketch": {
+          "success": [
+            "y95_clearance",
+            "y95_clearance2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 10,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5,
+          "score_change": {
+            "against": 1
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сбить темп и потянуть время",
+        "conclusion": {
+          "success": "У бровки ты ставишь корпус. Тренер показывает, что можно спокойно разыграть аут.",
+          "fail": "Соперник отбирает мяч у бровки. Тренер успевает показать рукой: все назад."
+        },
+        "sketch": {
+          "success": "y95_sideline",
+          "fail": "y95_sideline"
+        },
+        "check": {
+          "attr": "media",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 10
+          }
+        },
+        "fail": {
+          "stress": 15
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_autumn",
+    "requires": {
+      "club": "Ротор",
+      "position": "FWD"
+    },
+    "home": "Манчестер Юнайтед",
+    "away": "Ротор",
+    "month": 9,
+    "historical_score": "2:2",
+    "game_score": "2:2",
+    "source": "https://www.uefa.com/uefaeuropaleague/match/52173--man-utd-vs-rotor/",
+    "season_95_fixture": true,
+    "subtitle": "26 сентября · Манчестер Юнайтед — Ротор",
+    "european": true
+  },
+  {
+    "id": "S5_ROTOR_MU_MID",
+    "title": "«Манчестер Юнайтед» — «Ротор»",
+    "type": "🏛",
+    "bg": "field",
+    "art": "y95_oldtrafford",
+    "text": [
+      "26 сентября. На «Олд Траффорд» Шмейхель сравнял счёт после углового. На табло 2:2. Пока английские игроки возвращаются на позиции, у вас остаётся время на ещё одну атаку.",
+      "Протокол: 2:2. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Попытаться забить ещё",
+        "conclusion": {
+          "success": "Ты бьёшь в касание. Мяч натягивает сетку, и партнёр первым подбегает к тебе.",
+          "fail": "Мяч проходит снаружи стойки. Вратарь провожает его взглядом."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "media": 15,
+            "rep_fans": 10
+          },
+          "goals": 1,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "stress": 20
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Помочь защите",
+        "conclusion": {
+          "success": "Ты успеваешь к мячу первым и выбиваешь его подальше от штрафной.",
+          "fail": "После твоего выноса мяч подбирает соперник. Следующий удар проходит под рукой вашего вратаря."
+        },
+        "sketch": {
+          "success": [
+            "y95_clearance",
+            "y95_clearance2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 10,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5,
+          "score_change": {
+            "against": 1
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сбить темп и потянуть время",
+        "conclusion": {
+          "success": "У бровки ты ставишь корпус. Тренер показывает, что можно спокойно разыграть аут.",
+          "fail": "Соперник отбирает мяч у бровки. Тренер успевает показать рукой: все назад."
+        },
+        "sketch": {
+          "success": "y95_sideline",
+          "fail": "y95_sideline"
+        },
+        "check": {
+          "attr": "media",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 10
+          }
+        },
+        "fail": {
+          "stress": 15
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_autumn",
+    "requires": {
+      "club": "Ротор",
+      "position": "MID"
+    },
+    "home": "Манчестер Юнайтед",
+    "away": "Ротор",
+    "month": 9,
+    "historical_score": "2:2",
+    "game_score": "2:2",
+    "source": "https://www.uefa.com/uefaeuropaleague/match/52173--man-utd-vs-rotor/",
+    "season_95_fixture": true,
+    "subtitle": "26 сентября · Манчестер Юнайтед — Ротор",
+    "european": true
+  },
+  {
+    "id": "S5_ROTOR_MU_DEF",
+    "title": "«Манчестер Юнайтед» — «Ротор»",
+    "type": "🏛",
+    "bg": "field",
+    "art": "y95_oldtrafford",
+    "text": [
+      "26 сентября. На «Олд Траффорд» «Ротор» ведёт 2:1. На 88-й минуте к угловому приходит сам Петер Шмейхель. Он ищет место в толпе у ближней штанги.",
+      "Протокол: 2:2. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Выбить мяч",
+        "conclusion": {
+          "success": "Ты успеваешь к мячу первым и выбиваешь его подальше от штрафной.",
+          "fail": "Ты тянешься к мячу, но он уже за линией ворот."
+        },
+        "sketch": {
+          "success": [
+            "y95_clearance",
+            "y95_clearance2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "check": {
+          "attr": "phy",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 10
+          }
+        },
+        "fail": {
+          "stress": 15,
+          "score_change": {
+            "against": 1
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Подстраховать вратаря",
+        "conclusion": {
+          "success": "Ты выбираешь момент и чисто отбираешь мяч, пока соперник разворачивается.",
+          "fail": "Ты тянешься к мячу, но он уже за линией ворот."
+        },
+        "sketch": {
+          "success": [
+            "tackle",
+            "y95_tackle2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_teammates": 10,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 15,
+          "attrs": {
+            "rep_teammates": -10
+          },
+          "score_change": {
+            "against": 1
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сфолить",
+        "conclusion": {
+          "success": "Свисток прерывает эпизод. Судья ставит мяч на газон и отводит вас на несколько шагов.",
+          "fail": "Ты остаёшься в игре до свистка. После эпизода тренер жестом просит держать свою зону."
+        },
+        "sketch": {
+          "success": "foul",
+          "fail": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "check": {
+          "attr": "temperament",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 5,
+            "rep_press": -5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_autumn",
+    "requires": {
+      "club": "Ротор",
+      "position": "DEF"
+    },
+    "home": "Манчестер Юнайтед",
+    "away": "Ротор",
+    "month": 9,
+    "historical_score": "2:2",
+    "game_score": "1:2",
+    "source": "https://www.uefa.com/uefaeuropaleague/match/52173--man-utd-vs-rotor/",
+    "season_95_fixture": true,
+    "subtitle": "26 сентября · Манчестер Юнайтед — Ротор",
+    "european": true
+  },
+  {
+    "id": "S5_ROTOR_MU_GK",
+    "title": "«Манчестер Юнайтед» — «Ротор»",
+    "type": "🏛",
+    "bg": "field",
+    "art": "y95_oldtrafford",
+    "text": [
+      "26 сентября. На «Олд Траффорд» «Ротор» ведёт 2:1. На 88-й минуте к угловому приходит сам Петер Шмейхель. Он ищет место в толпе у ближней штанги.",
+      "Протокол: 2:2. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Выйти на перехват",
+        "conclusion": {
+          "success": "Ты успеваешь сместиться и ловишь мяч у стойки. Отскока нет.",
+          "fail": "На выходе ты сбиваешь соперника. Судья показывает красную, а «Юнайтед» сравнивает счёт со стандарта."
+        },
+        "sketch": {
+          "success": [
+            "y95_catch",
+            "y95_catch2"
+          ],
+          "fail": "y95_card"
+        },
+        "check": {
+          "attr": "phy",
+          "threshold": 65
+        },
+        "success": {
+          "attrs": {
+            "media": 15,
+            "rep_fans": 10
+          }
+        },
+        "fail": {
+          "stress": 25,
+          "suspension_matches": 3,
+          "counters": {
+            "red_cards": 1
+          },
+          "attrs": {
+            "rep_coach": -15
+          },
+          "score_change": {
+            "against": 1
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Остаться на линии",
+        "conclusion": {
+          "success": "Ты успеваешь сместиться и ловишь мяч у стойки. Отскока нет.",
+          "fail": "Ты тянешься к мячу, но он уже за линией ворот."
+        },
+        "sketch": {
+          "success": [
+            "y95_catch",
+            "y95_catch2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 5
+          }
+        },
+        "fail": {
+          "stress": 15,
+          "score_change": {
+            "against": 1
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сделать шаг и дождаться удара",
+        "conclusion": {
+          "success": "Ты успеваешь сместиться и ловишь мяч у стойки. Отскока нет.",
+          "fail": "Ты тянешься к мячу, но он уже за линией ворот."
+        },
+        "sketch": {
+          "success": [
+            "y95_catch",
+            "y95_catch2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5
+          }
+        },
+        "fail": {
+          "stress": 10,
+          "score_change": {
+            "against": 1
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_autumn",
+    "requires": {
+      "club": "Ротор",
+      "position": "GK"
+    },
+    "home": "Манчестер Юнайтед",
+    "away": "Ротор",
+    "month": 9,
+    "historical_score": "2:2",
+    "game_score": "1:2",
+    "source": "https://www.uefa.com/uefaeuropaleague/match/52173--man-utd-vs-rotor/",
+    "season_95_fixture": true,
+    "subtitle": "26 сентября · Манчестер Юнайтед — Ротор",
+    "european": true
+  },
+  {
+    "id": "S5_REFEREE_SCANDAL",
+    "title": "Вопрос о судействе",
+    "type": "🎭",
+    "bg": "press",
+    "art": [
+      "y95_press",
+      "y95_press2"
+    ],
+    "text": [
+      "После тура газеты спорят о назначениях судей. Журналист находит тебя у выхода с пресс-конференции.",
+      {
+        "speaker": "Журналист",
+        "text": "Вы готовы назвать момент, который видели сами?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Поддержать Романцева",
+        "conclusion": {
+          "flat": "Ты говоришь, что судьи предвзяты. Тебя поддерживают. Но арбитры запомнят это."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "rumor": 5,
+          "attrs": {
+            "media": 10,
+            "rep_coach": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Промолчать",
+        "conclusion": {
+          "flat": "Ты уходишь от ответа. Пресса считает тебя трусом."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сказать, что судьи тоже люди",
+        "conclusion": {
+          "success": "Ты проявляешь мудрость. Журналисты уважают твою позицию.",
+          "fail": "Ты просишь дать арбитру слово. В зале уже перебивают друг друга, и последнюю фразу никто не слышит."
+        },
+        "sketch": {
+          "success": [
+            "y95_press",
+            "y95_press2"
+          ],
+          "fail": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_press": 5,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_autumn",
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "S5_ALANIA_TEXTIL",
+    "title": "Слух после матча",
+    "type": "🎭",
+    "bg": "field",
+    "art": [
+      "y95_press",
+      "y95_press2"
+    ],
+    "text": [
+      "После игры с «Текстильщиком» по коридору разносят слух о договорённости. У журналиста записан результат, а графа об источнике пока пустая.",
+      {
+        "speaker": "Журналист",
+        "text": "Мне нужно услышать, что вы видели на поле."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Отрицать всё",
+        "conclusion": {
+          "flat": "Ты говоришь, что видел матч с поля и не слышал о сделке. Журналист перечитывает запись вслух."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "stress": 10,
+          "rumor": -10,
+          "attrs": {
+            "rep_press": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Признаться в своём участии",
+        "conclusion": {
+          "flat": "Ты рассказываешь, что незнакомец подходил к тебе до игры. Журналист убирает блокнот и спрашивает, согласишься ли повторить это при свидетелях."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "requires": {
+          "flag": "fixing_debt"
+        },
+        "effects": {
+          "stress": 20,
+          "rumor": -25
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Промолчать",
+        "conclusion": {
+          "flat": "Ты не отвечаешь. В раздевалке уже все ушли, и ты остаёшься на скамье один."
+        },
+        "sketch": {
+          "flat": "y95_isolation"
+        },
+        "effects": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_autumn",
+    "requires": {
+      "club": "Спартак (Вл)"
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "S5_ROSTOV_ALANIA",
+    "title": "Конверт в Ростове",
+    "type": "🎭",
+    "bg": "field",
+    "art": "y95_office",
+    "text": [
+      "На выезде в Ростове незнакомец просит остаться после командного собрания. На столе между вами лежит конверт."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Играть честно",
+        "conclusion": {
+          "flat": "Ты возвращаешь предложение. Собеседник убирает бумаги со стола."
+        },
+        "sketch": {
+          "flat": "y95_refuse"
+        },
+        "effects": {
+          "attrs": {
+            "professionalism": 10,
+            "rep_coach": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Взять деньги",
+        "conclusion": {
+          "flat": "Ты кладёшь конверт в сумку. Незнакомец кивает на выход и оставляет тебя одного."
+        },
+        "sketch": {
+          "flat": "y95_envelope"
+        },
+        "effects": {
+          "stress": 15,
+          "flags": {
+            "fixing_debt": true
+          },
+          "debt": 5000,
+          "attrs": {
+            "money": 5000
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сообщить в федерацию",
+        "conclusion": {
+          "flat": "Ты передаёшь сведения о конверте федерации и коротко объясняешь журналистам, где состоялся разговор."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "rep_press": 10,
+            "rep_teammates": -15
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_autumn",
+    "requires": {
+      "club": "Спартак (Вл)"
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "S5_KAMAZ_ALANIA",
+    "title": "Спор у штрафной «КАМАЗа»",
+    "type": "🎭",
+    "bg": "field",
+    "art": "y95_sideline",
+    "text": [
+      "После стыка у штрафной тренеры обеих команд спорят, был ли контакт. Судья уже велит продолжать."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Поддержать тренера",
+        "conclusion": {
+          "flat": "Ты повторяешь довод тренера у бровки. Он просит вернуться на свою позицию."
+        },
+        "sketch": {
+          "flat": "y95_sideline"
+        },
+        "effects": {
+          "attrs": {
+            "rep_coach": 10,
+            "rep_press": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Промолчать",
+        "conclusion": {
+          "flat": "Ты уходишь на скамейку и даёшь спору стихнуть. В раздевалке слышны только шаги за дверью."
+        },
+        "sketch": {
+          "flat": "y95_isolation"
+        },
+        "effects": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сказать, что судья ошибся",
+        "conclusion": {
+          "success": "Ты показываешь журналистам, откуда видел столкновение. Один из них просит нарисовать положение игроков.",
+          "fail": "Журналист просит уточнить, где стоял судья. Ты вспоминаешь игроков перед собой и признаёшь, что не видел его позиции."
+        },
+        "sketch": {
+          "success": [
+            "y95_press",
+            "y95_press2"
+          ],
+          "fail": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_press": 5,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_autumn",
+    "requires": {
+      "club": [
+        "Спартак (Вл)",
+        "КАМАЗ"
+      ]
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "S5_URALMASH_BONUS",
+    "title": "Конверт за победу",
+    "type": "🎭",
+    "bg": "locker",
+    "art": "y95_office",
+    "text": [
+      "Перед одним из последних туров в коридоре базы появляется незнакомец. Под газетой он держит плотный конверт.",
+      {
+        "speaker": "Незнакомец",
+        "text": "Четыре тысячи за победу в следующем матче. Кто платит, вам знать не обязательно."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Взять деньги и выиграть",
+        "conclusion": {
+          "flat": "Ты забираешь аванс. Теперь незнакомец знает, с кого спросить после свистка."
+        },
+        "sketch": {
+          "flat": "y95_envelope"
+        },
+        "effects": {
+          "stress": 15,
+          "flags": {
+            "fixing_debt": true
+          },
+          "debt": 4000,
+          "attrs": {
+            "money": 4000
+          },
+          "team_modifier": 2
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отказаться",
+        "conclusion": {
+          "flat": "Ты возвращаешь конверт. Партнёр, уже успевший примерить на себя эти деньги, отворачивается."
+        },
+        "sketch": {
+          "flat": "y95_refuse"
+        },
+        "effects": {
+          "attrs": {
+            "professionalism": 10,
+            "rep_teammates": -10
+          },
+          "flags": {
+            "ural_refused_95": true
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сообщить в федерацию",
+        "conclusion": {
+          "success": "Ты передаёшь сведения в федерацию и объясняешь журналистам, о чём просил незнакомец.",
+          "fail": "Журналист просит назвать свидетеля. Ты повторяешь, что пришёл сообщить о конверте, и прячешь записку с именем обратно в карман."
+        },
+        "sketch": {
+          "success": [
+            "y95_press",
+            "y95_press2"
+          ],
+          "fail": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 60
+        },
+        "success": {
+          "flags": {
+            "whistleblower": true
+          },
+          "attrs": {
+            "rep_press": 10,
+            "rep_teammates": -15
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_finish",
+    "requires": {
+      "club": "Уралмаш",
+      "league": "first"
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "S5_URALMASH_BOYCOTT",
+    "title": "Бойкот в раздевалке",
+    "type": "🎭",
+    "bg": "locker",
+    "art": [
+      "y95_locker",
+      "y95_locker2"
+    ],
+    "text": [
+      "Партнёры перестали тебе пасовать. В раздевалке — тишина. Ты чувствуешь себя изгоем. Кто-то шепчет: „Из-за него мы не получили деньги“."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Собрать команду и поговорить по душам",
+        "conclusion": {
+          "success": "Ты собираешь всех в круг. „Парни, я не хотел вас подставить. Но я не могу играть в грязи“. Кто-то кивает. Кто-то отворачивается. Но лёд тронулся.",
+          "fail": "Ты пытаешься говорить, но тебя перебивают: „Хватит, мы всё слышали“. Ты остаёшься один. Раздевалка отворачивается."
+        },
+        "sketch": {
+          "success": [
+            "y95_locker",
+            "y95_locker2"
+          ],
+          "fail": "y95_isolation"
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "success": {
+          "stress": -10,
+          "attrs": {
+            "rep_teammates": 10,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 15,
+          "attrs": {
+            "rep_teammates": -10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Пожаловаться тренеру",
+        "conclusion": {
+          "flat": "В опустевшей раздевалке ты ждёшь тренера. Он обещал разобраться, почему партнёры перестали с тобой разговаривать."
+        },
+        "sketch": {
+          "flat": "y95_isolation"
+        },
+        "effects": {
+          "attrs": {
+            "rep_teammates": -5,
+            "rep_coach": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Терпеть",
+        "conclusion": {
+          "flat": "Ты молчишь. Играешь в одиночку. Партнёры не замечают. Ты сгораешь изнутри."
+        },
+        "sketch": {
+          "flat": "y95_isolation"
+        },
+        "effects": {
+          "stress": 10
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_finish",
+    "requires": {
+      "flag": "ural_refused_95",
+      "club": "Уралмаш"
+    }
+  },
+  {
+    "id": "95_PRESS_CONF",
+    "title": "Пресс-конференция после скандала",
+    "type": "🎭",
+    "bg": "press",
+    "art": [
+      "y95_press",
+      "y95_press2"
+    ],
+    "text": [
+      "Скандал в прессе. Журналисты ждут. Ты выходишь к ним."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Извиниться",
+        "conclusion": {
+          "flat": "Ты извиняешься. Пресса смягчается."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "stress": 5,
+          "attrs": {
+            "rep_fans": 10,
+            "rep_press": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Нахамить",
+        "conclusion": {
+          "flat": "Ты бросаешь микрофон. Газеты пишут: «ХАМ»."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "stress": 15,
+          "attrs": {
+            "rep_press": -15,
+            "media": 10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Свалить на других",
+        "conclusion": {
+          "success": "Ты говоришь, что виноваты другие. Пресса сомневается.",
+          "fail": "Журналист просит доказать, что решение принимали другие. Ты открываешь рот, но назвать свидетеля не можешь."
+        },
+        "sketch": {
+          "success": [
+            "y95_press",
+            "y95_press2"
+          ],
+          "fail": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "check": {
+          "attr": "media",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_press": 5,
+            "rep_coach": -5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_finish",
+    "requires": {
+      "flag": "scandal_95"
+    }
+  },
+  {
+    "id": "S5_SPARTAK_LCH",
+    "title": "Групповой этап Лиги чемпионов",
+    "type": "🏛",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Осень 1995 года. В группе Лиги чемпионов москвичам достались «Легия», «Русенборг» и «Блэкберн». Перед одним из матчей тренер раскладывает на скамье три листа с расстановками.",
+      {
+        "speaker": "Тренер",
+        "text": "Если устанем держать мяч, нас прижмут к своим воротам."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Играть на максимум",
+        "conclusion": {
+          "flat": "Ты остаёшься в группе на дополнительное упражнение. На газоне уже сумерки, а из-за ограды всё ещё смотрят несколько болельщиков."
+        },
+        "sketch": {
+          "flat": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "professionalism": 10,
+            "rep_coach": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Беречь силы для чемпионата",
+        "conclusion": {
+          "success": "Ты играешь осторожно. Тренер недоволен, но ты сохраняешь форму.",
+          "fail": "Ты остаёшься в игре до свистка. После эпизода тренер жестом просит держать свою зону."
+        },
+        "sketch": {
+          "success": [
+            "y95_pitch",
+            "y95_pitch2"
+          ],
+          "fail": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "success": {
+          "stress": -5,
+          "attrs": {
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Показать себя в Европе",
+        "conclusion": {
+          "success": "Ты успеваешь пробить до того, как защитник закрывает линию удара.",
+          "fail": "Вратарь отбивает удар. Мяч уходит в сторону от ворот."
+        },
+        "sketch": {
+          "success": "shot",
+          "fail": "blocked"
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "media": 10
+          }
+        },
+        "fail": {
+          "stress": 10
+        },
+        "scene_art": true,
+        "requires": {
+          "position": [
+            "MID",
+            "FWD"
+          ]
+        }
+      }
+    ],
+    "slot": "95_finish",
+    "requires": {
+      "club": "Спартак (М)",
+      "league": "first"
+    },
+    "source": "https://www.uefa.com/uefachampionsleague/news/01b8-0e6d96b722c1-39d852f13b7b-1000--power-to-the-people-s-club/",
+    "european": true,
+    "subtitle": "Архив группы · шесть побед, 15:4"
+  },
+  {
+    "id": "95_FANS",
+    "title": "Болельщики после чемпионства",
+    "type": "🎭",
+    "bg": "street",
+    "art": [
+      "y95_fans",
+      "y95_fans2"
+    ],
+    "text": [
+      "После чемпионского тура у выхода тебя встречают болельщики. Один протягивает выцветший шарф, другой ищет ручку."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Пообещать победу",
+        "conclusion": {
+          "flat": "Ты обещаешь. Фанаты верят. Теперь ты должен."
+        },
+        "sketch": {
+          "flat": [
+            "y95_fans",
+            "y95_fans2"
+          ]
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "rep_fans": 10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Сказать, что сделаете всё возможное",
+        "conclusion": {
+          "success": "Ты осторожен. Фанаты уважают твою честность.",
+          "fail": "Ты останавливаешься у ограждения. В первых рядах слушают твой ответ."
+        },
+        "sketch": {
+          "success": [
+            "y95_fans",
+            "y95_fans2"
+          ],
+          "fail": [
+            "y95_fans",
+            "y95_fans2"
+          ]
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Убежать",
+        "conclusion": {
+          "flat": "Ты убегаешь. Фанаты смеются. Ты чувствуешь себя трусом."
+        },
+        "sketch": {
+          "flat": [
+            "y95_tunnel",
+            "y95_tunnel2"
+          ]
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "rep_fans": -5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_finish",
+    "requires": {
+      "flag": "title_95"
+    }
+  },
+  {
+    "id": "95_ALANIA_BRIBE",
+    "title": "Пять тысяч за поражение",
+    "type": "🎭",
+    "bg": "office",
+    "art": "y95_envelope",
+    "text": [
+      "На выезде во Владикавказе незнакомец предлагает деньги за проигрыш. Он называет двести тысяч за всю сделку и обещает тебе пять тысяч авансом."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Взять деньги",
+        "conclusion": {
+          "flat": "Ты прячешь аванс в сумку. В следующем матче от тебя будут ждать ошибки."
+        },
+        "sketch": {
+          "flat": "y95_envelope"
+        },
+        "effects": {
+          "stress": 30,
+          "flags": {
+            "fixing_debt": true,
+            "thrown_match_95": true
+          },
+          "debt": 5000,
+          "attrs": {
+            "money": 5000
+          },
+          "team_modifier": -4
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отказаться",
+        "conclusion": {
+          "flat": "Ты возвращаешь конверт. Когда выходишь к партнёрам, часы над дверью показывают, что пора разминаться."
+        },
+        "sketch": {
+          "flat": "y95_refuse"
+        },
+        "effects": {
+          "attrs": {
+            "professionalism": 10,
+            "rep_teammates": -10,
+            "rep_fans": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сообщить в РФС",
+        "conclusion": {
+          "success": "Федерация принимает заявление. Ты рассказываешь журналистам о конверте и просишь не выдавать свидетеля.",
+          "fail": "Журналист просит назвать свидетеля. Ты повторяешь, что пришёл сообщить о конверте, и прячешь записку с именем обратно в карман."
+        },
+        "sketch": {
+          "success": [
+            "y95_press",
+            "y95_press2"
+          ],
+          "fail": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 60
+        },
+        "success": {
+          "flags": {
+            "whistleblower": true
+          },
+          "attrs": {
+            "rep_press": 10,
+            "rep_teammates": -15
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_fixture_side",
+    "requires": {
+      "not_club": [
+        "Спартак (М)",
+        "Спартак (Вл)"
+      ],
+      "opponent": "Спартак (Вл)"
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "95_INJURY",
+    "title": "Травма перед финалом",
+    "type": "🎭",
+    "bg": "locker",
+    "art": "y95_clinic",
+    "text": [
+      "Финал на носу. Ты чувствуешь боль в колене. Врач говорит: «Нужна операция»."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Играть через боль",
+        "conclusion": {
+          "flat": "Врач снова проверяет колено. Ты просишь оставить тебя в заявке, даже если играть придётся через боль."
+        },
+        "sketch": {
+          "flat": "y95_clinic"
+        },
+        "effects": {
+          "stress": 15,
+          "attrs": {
+            "phy": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Оперироваться",
+        "conclusion": {
+          "flat": "Ты остаёшься в клинике. Клубный врач вычёркивает тебя из заявки на финал."
+        },
+        "sketch": {
+          "flat": "y95_clinic"
+        },
+        "requires": {
+          "money": 1000
+        },
+        "effects": {
+          "injury_months": 1,
+          "attrs": {
+            "money": -1000,
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Уколы и тейпы",
+        "conclusion": {
+          "flat": "Врач накладывает тейп. Ты пробуешь согнуть колено и понимаешь, что на первый рывок сил хватит, а дальше придётся терпеть."
+        },
+        "sketch": {
+          "flat": "y95_clinic"
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "phy": -10
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_june",
+    "requires": {
+      "club": [
+        "Динамо (М)",
+        "Ротор"
+      ],
+      "flag": "cup_final_95"
+    }
+  },
+  {
+    "id": "S5_PARAPSYCHOLOGIST",
+    "title": "Ритуал перед финалом",
+    "type": "🎭",
+    "bg": "field",
+    "art": "y95_mystic",
+    "text": [
+      "До финала Кубка два часа. У входа на поле появилась женщина в узорчатой шали. Она говорит, что знает ритуал для спокойного выхода на поле.",
+      {
+        "speaker": "Партнёр",
+        "text": "Здесь и без неё все ходят кругами. Может, от разговора хотя бы перестанем считать минуты."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Смеяться",
+        "conclusion": {
+          "success": "Ты дослушиваешь до конца. Её голос помогает выровнять дыхание.",
+          "fail": "Ты пытаешься сосредоточиться, но мысли снова возвращаются к предстоящему финалу."
+        },
+        "sketch": {
+          "success": "y95_mystic",
+          "fail": "y95_mystic"
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 5,
+            "rep_fans": 5
+          }
+        },
+        "fail": {
+          "stress": 20,
+          "attrs": {
+            "rep_fans": -10,
+            "rep_coach": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Попросить её помочь",
+        "conclusion": {
+          "success": "Ты дослушиваешь до конца. Её голос помогает выровнять дыхание.",
+          "fail": "Ты пытаешься сосредоточиться, но мысли снова возвращаются к предстоящему финалу."
+        },
+        "sketch": {
+          "success": "y95_mystic",
+          "fail": "y95_mystic"
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "stress": 5,
+          "attrs": {
+            "rep_fans": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Игнорировать",
+        "conclusion": {
+          "flat": "Ты уходишь на поле и проверяешь, как мяч отскакивает от сырого газона."
+        },
+        "sketch": {
+          "flat": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_june",
+    "requires": {
+      "club": [
+        "Динамо (М)",
+        "Ротор"
+      ]
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "S5_JEALOUS_CAR",
+    "title": "Машины в награду",
+    "type": "🎭",
+    "bg": "locker",
+    "art": "y95_car",
+    "text": [
+      "На стоянке у базы блестит тёмный внедорожник. Кто-то из партнёров пересказывает слух: победителям финала будто бы обещали по машине.",
+      {
+        "speaker": "Партнёр",
+        "text": "Я бы сначала сыграл. А то мы уже ключи делим."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Поверить и выложиться",
+        "conclusion": {
+          "flat": "Ты ещё раз оглядываешь машину. В салоне пусто, и про ключи пока никто всерьёз не говорит."
+        },
+        "sketch": {
+          "flat": "y95_car"
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Не думать о машине",
+        "conclusion": {
+          "success": "Ты оставляешь разговор о машинах на стоянке и возвращаешься к разминке.",
+          "fail": "Ты оставляешь разговор о машинах на стоянке и возвращаешься к разминке."
+        },
+        "sketch": {
+          "success": [
+            "y95_pitch",
+            "y95_pitch2"
+          ],
+          "fail": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "success": {
+          "stress": -5,
+          "attrs": {
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Спросить, что будет, если проиграем",
+        "conclusion": {
+          "success": "На стоянке ты спрашиваешь о слухе напрямую. В ответ пожимают плечами: обещания на бумаге нет.",
+          "fail": "На стоянке ты спрашиваешь о слухе напрямую. В ответ пожимают плечами: обещания на бумаге нет."
+        },
+        "sketch": {
+          "success": "y95_car",
+          "fail": "y95_car"
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 50
+        },
+        "success": {
+          "stress": 5
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_june",
+    "requires": {
+      "club": "Ротор"
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "S5_DYNAMO_ROTOR_CUP",
+    "title": "Финал Кубка. Динамо — Ротор",
+    "type": "🏛",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "14 июня. В «Лужниках» стихает гул. За сто двадцать минут ворота так и не открыли. Теперь всё решится с одиннадцати метров.",
+      {
+        "speaker": "Тренер",
+        "text": "Можно ударить с разбега или дождаться движения вратаря. Возьми пару секунд, прежде чем поставить мяч."
+      },
+      {
+        "speaker": "Тренер",
+        "text": "Если готов, бери мяч. Дыши до разбега."
+      },
+      "Протокол: 0:0, по пенальти 8:7 в пользу «Динамо». Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Пробить на силу",
+        "conclusion": {
+          "success": "Ты пробиваешь с точки. Мяч бьётся о сетку. Следующий удар в этой серии остаётся за вашей командой, и она удерживает преимущество.",
+          "fail": "Ты пробиваешь сильно. Мяч проходит снаружи стойки. Партнёр уже идёт тебе навстречу."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 10
+          },
+          "shootout_result": "win"
+        },
+        "fail": {
+          "stress": 20,
+          "shootout_result": "loss"
+        },
+        "scene_art": true,
+        "extra_checks": [
+          {
+            "attr": "com",
+            "threshold": 47
+          }
+        ]
+      },
+      {
+        "id": "B",
+        "text": "Дождаться движения вратаря и пробить",
+        "conclusion": {
+          "success": "Ты выдерживаешь паузу. Вратарь переносит вес на одну ногу, и ты отправляешь мяч в свободный угол. Команда удерживает преимущество в серии.",
+          "fail": "Вратарь читает твой разбег и отбивает мяч. Трибуны оживают раньше, чем ты успеваешь выпрямиться."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": "blocked"
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 54
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5
+          },
+          "shootout_result": "win"
+        },
+        "fail": {
+          "stress": 15,
+          "shootout_result": "loss"
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Уступить удар партнёру",
+        "conclusion": {
+          "flat": "Ты отходишь к центральному кругу. Партнёр берёт мяч и направляется к точке."
+        },
+        "sketch": {
+          "flat": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "rep_coach": -5,
+            "rep_teammates": 5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_june",
+    "requires": {
+      "club": [
+        "Динамо (М)",
+        "Ротор"
+      ]
+    },
+    "home": "Динамо (М)",
+    "away": "Ротор",
+    "month": 6,
+    "historical_score": "0:0",
+    "game_score": "0:0",
+    "source": "https://en.fcdynamo.ru/news/geroi-finala-kubka-rossii-1995-30-let-spustia/",
+    "season_95_fixture": true,
+    "subtitle": "14 июня · Динамо (М) — Ротор",
+    "cup": true,
+    "shootout_95": true,
+    "important": true
+  },
+  {
+    "id": "S5_SPARTAK_CSKA_FWD",
+    "title": "«Спартак» — ЦСКА",
+    "type": "🏛",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "После отскока у линии штрафной мяч оказывается перед тобой. За спиной уже слышны шаги защитника.",
+      "Протокол: 3:1. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Пробить",
+        "conclusion": {
+          "success": "Ты бьёшь в касание. Мяч натягивает сетку, и партнёр первым подбегает к тебе.",
+          "fail": "Мяч проходит снаружи стойки. Вратарь провожает его взглядом."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 10
+          },
+          "goals": 1,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "stress": 15
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отдать пас",
+        "conclusion": {
+          "success": "Передача проходит между защитниками. Партнёр успевает первым и забивает.",
+          "fail": "Соперник читает передачу и подставляет ногу. Атаку приходится начинать заново."
+        },
+        "sketch": {
+          "success": [
+            "team_goal",
+            "y95_team_goal2"
+          ],
+          "fail": [
+            "y95_lost",
+            "y95_lost2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 50
+        },
+        "success": {
+          "attrs": {
+            "rep_teammates": 10
+          },
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "attrs": {
+            "rep_coach": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Упасть в штрафной",
+        "conclusion": {
+          "success": "Свисток прерывает эпизод. Судья ставит мяч на газон и отводит вас на несколько шагов.",
+          "fail": "Ты остаёшься в игре до свистка. После эпизода тренер жестом просит держать свою зону."
+        },
+        "sketch": {
+          "success": "foul",
+          "fail": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "media": 10,
+            "rep_fans": 5
+          }
+        },
+        "fail": {
+          "stress": 15,
+          "attrs": {
+            "rep_press": -5,
+            "rep_fans": -10
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_june",
+    "requires": {
+      "club": [
+        "Спартак (М)",
+        "ЦСКА"
+      ],
+      "position": "FWD",
+      "league": "first"
+    },
+    "home": "Спартак (М)",
+    "away": "ЦСКА",
+    "month": 6,
+    "historical_score": "3:1",
+    "game_score": "3:1",
+    "source": "https://pfc-cska.com/ru/matchi/kalendar-matchej/12904/",
+    "season_95_fixture": true,
+    "subtitle": "28 июня · Спартак (М) — ЦСКА"
+  },
+  {
+    "id": "S5_SPARTAK_CSKA_MID",
+    "title": "«Спартак» — ЦСКА",
+    "type": "🏛",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Мяч приходит тебе под правую. Между двумя защитниками открывается коридор, и партнёр просит пас.",
+      "Протокол: 3:1. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Пробить",
+        "conclusion": {
+          "success": "Ты бьёшь в касание. Мяч натягивает сетку, и партнёр первым подбегает к тебе.",
+          "fail": "Мяч проходит снаружи стойки. Вратарь провожает его взглядом."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 10
+          },
+          "goals": 1,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "stress": 15
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отдать пас",
+        "conclusion": {
+          "success": "Передача проходит между защитниками. Партнёр успевает первым и забивает.",
+          "fail": "Соперник читает передачу и подставляет ногу. Атаку приходится начинать заново."
+        },
+        "sketch": {
+          "success": [
+            "team_goal",
+            "y95_team_goal2"
+          ],
+          "fail": [
+            "y95_lost",
+            "y95_lost2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 50
+        },
+        "success": {
+          "attrs": {
+            "rep_teammates": 10
+          },
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "attrs": {
+            "rep_coach": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Упасть в штрафной",
+        "conclusion": {
+          "success": "Свисток прерывает эпизод. Судья ставит мяч на газон и отводит вас на несколько шагов.",
+          "fail": "Ты остаёшься в игре до свистка. После эпизода тренер жестом просит держать свою зону."
+        },
+        "sketch": {
+          "success": "foul",
+          "fail": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "media": 10,
+            "rep_fans": 5
+          }
+        },
+        "fail": {
+          "stress": 15,
+          "attrs": {
+            "rep_press": -5,
+            "rep_fans": -10
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_june",
+    "requires": {
+      "club": [
+        "Спартак (М)",
+        "ЦСКА"
+      ],
+      "position": "MID",
+      "league": "first"
+    },
+    "home": "Спартак (М)",
+    "away": "ЦСКА",
+    "month": 6,
+    "historical_score": "3:1",
+    "game_score": "3:1",
+    "source": "https://pfc-cska.com/ru/matchi/kalendar-matchej/12904/",
+    "season_95_fixture": true,
+    "subtitle": "28 июня · Спартак (М) — ЦСКА"
+  },
+  {
+    "id": "S5_SPARTAK_CSKA_DEF",
+    "title": "«Спартак» — ЦСКА",
+    "type": "🏛",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Подача перелетает первого защитника. Форвард за твоей спиной уже ставит корпус.",
+      "Протокол: 3:1. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Жёсткий стык",
+        "conclusion": {
+          "success": "Ты выбираешь момент и чисто отбираешь мяч, пока соперник разворачивается.",
+          "fail": "Арбитр показывает красную. У кромки уже ждут, пока ты уйдёшь с поля."
+        },
+        "sketch": {
+          "success": [
+            "tackle",
+            "y95_tackle2"
+          ],
+          "fail": "y95_card"
+        },
+        "check": {
+          "attr": "phy",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 10
+          }
+        },
+        "fail": {
+          "stress": 15,
+          "suspension_matches": 3,
+          "counters": {
+            "red_cards": 1
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Оттереть",
+        "conclusion": {
+          "success": "Ты выбираешь момент и чисто отбираешь мяч, пока соперник разворачивается.",
+          "fail": "Ты тянешься к мячу, но он уже за линией ворот."
+        },
+        "sketch": {
+          "success": [
+            "tackle",
+            "y95_tackle2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 50
+        },
+        "success": {
+          "attrs": {
+            "rep_teammates": 5
+          }
+        },
+        "fail": {
+          "stress": 10,
+          "score_change": {
+            "against": 1
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сфолить",
+        "conclusion": {
+          "success": "Свисток прерывает эпизод. Судья ставит мяч на газон и отводит вас на несколько шагов.",
+          "fail": "Ты остаёшься в игре до свистка. После эпизода тренер жестом просит держать свою зону."
+        },
+        "sketch": {
+          "success": "foul",
+          "fail": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "check": {
+          "attr": "temperament",
+          "threshold": 50
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 5,
+            "rep_fans": -5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_june",
+    "requires": {
+      "club": [
+        "Спартак (М)",
+        "ЦСКА"
+      ],
+      "position": "DEF",
+      "league": "first"
+    },
+    "home": "Спартак (М)",
+    "away": "ЦСКА",
+    "month": 6,
+    "historical_score": "3:1",
+    "game_score": "3:1",
+    "source": "https://pfc-cska.com/ru/matchi/kalendar-matchej/12904/",
+    "season_95_fixture": true,
+    "subtitle": "28 июня · Спартак (М) — ЦСКА"
+  },
+  {
+    "id": "S5_SPARTAK_CSKA_GK",
+    "title": "«Спартак» — ЦСКА",
+    "type": "🏛",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "На газоне перед точкой темнеет свежий след от шипов. Соперник ставит мяч. У тебя один шаг, чтобы выбрать позицию.",
+      "Протокол: 3:1. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Угадать угол",
+        "conclusion": {
+          "success": "Ты успеваешь сместиться и ловишь мяч у стойки. Отскока нет.",
+          "fail": "Ты тянешься к мячу, но он уже за линией ворот."
+        },
+        "sketch": {
+          "success": [
+            "y95_catch",
+            "y95_catch2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 10
+          }
+        },
+        "fail": {
+          "stress": 20,
+          "score_change": {
+            "against": 1
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Остаться в центре",
+        "conclusion": {
+          "success": "Ты остаёшься по центру и ловишь мяч обеими перчатками.",
+          "fail": "Ты тянешься к мячу, но он уже за линией ворот."
+        },
+        "sketch": {
+          "success": [
+            "y95_catch",
+            "y95_catch2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "media": 10
+          }
+        },
+        "fail": {
+          "stress": 25,
+          "score_change": {
+            "against": 1
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Психология",
+        "conclusion": {
+          "success": "Ты ждёшь до последнего. Бьющий меняет решение на разбеге и посылает мяч над перекладиной.",
+          "fail": "Ты тянешься к мячу, но он уже за линией ворот."
+        },
+        "sketch": {
+          "success": "miss_high",
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "check": {
+          "attr": "media",
+          "threshold": 50
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5
+          }
+        },
+        "fail": {
+          "stress": 15,
+          "score_change": {
+            "against": 1
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_june",
+    "requires": {
+      "club": [
+        "Спартак (М)",
+        "ЦСКА"
+      ],
+      "position": "GK",
+      "league": "first"
+    },
+    "home": "Спартак (М)",
+    "away": "ЦСКА",
+    "month": 6,
+    "historical_score": "3:1",
+    "game_score": "3:1",
+    "source": "https://pfc-cska.com/ru/matchi/kalendar-matchej/12904/",
+    "season_95_fixture": true,
+    "subtitle": "28 июня · Спартак (М) — ЦСКА"
+  },
+  {
+    "id": "95_IKRA",
+    "title": "Взятки икрой",
+    "type": "🎭",
+    "bg": "office",
+    "art": "y95_caviar",
+    "text": [
+      "Судье предлагают взятку икрой и рыбой. Ты — свидетель. Тебя просят «подтвердить», что ничего не было."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Подтвердить",
+        "conclusion": {
+          "flat": "Ты молчишь. Судья доволен. Но ты чувствуешь себя соучастником."
+        },
+        "sketch": {
+          "flat": "y95_caviar"
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "rep_press": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отказаться",
+        "conclusion": {
+          "flat": "Ты отказываешься подтверждать чужие слова. Незнакомец закрывает коробку с банками и убирает её со стола."
+        },
+        "sketch": {
+          "flat": "y95_caviar"
+        },
+        "effects": {
+          "attrs": {
+            "professionalism": 5,
+            "rep_press": -10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сообщить в прессу",
+        "conclusion": {
+          "flat": "Ты сливаешь информацию. Разрастается скандал. Тебя вызывают в РФС."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "rumor": -10,
+          "attrs": {
+            "media": 10,
+            "rep_press": -15
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_june"
+  },
+  {
+    "id": "S5_VETERAN_VODKA",
+    "title": "Ветеран с бутылкой водки",
+    "type": "🎭",
+    "bg": "locker",
+    "art": "y95_bottle",
+    "text": [
+      "День Победы. На скамейке у ветерана стоит бутылка. Он пришёл поздравить команду и вспомнить тех, кто так и не вернулся.",
+      {
+        "speaker": "Ветеран",
+        "text": "Побудьте со мной минуту, парни. Не каждый год такое девятое мая."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Выпить с ветераном",
+        "conclusion": {
+          "flat": "Ты выпиваешь с ним. Он рассказывает истории о войне. Ты чувствуешь себя частью чего-то большего. Но на следующий день..."
+        },
+        "sketch": {
+          "flat": "y95_bottle"
+        },
+        "effects": {
+          "stress": -10,
+          "attrs": {
+            "professionalism": -5,
+            "rep_fans": 5
+          },
+          "flags": {
+            "hangover_95": true
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отказаться",
+        "conclusion": {
+          "success": "Ты отказываешься. Ветеран обижен: „Значит, не уважаешь“. Партнёры крутят пальцем у виска.",
+          "fail": "Ты возвращаешь предложение. Собеседник убирает бумаги со стола."
+        },
+        "sketch": {
+          "success": "y95_bottle",
+          "fail": "y95_bottle"
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 50
+        },
+        "success": {
+          "attrs": {
+            "professionalism": 5,
+            "rep_teammates": -5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Поднять тост, но не пить",
+        "conclusion": {
+          "success": "Ты поднимаешь стакан: „За победу!“ — но не пьёшь. Ветеран понимает. Партнёры уважают твой выбор. Ты сохраняешь голову.",
+          "fail": "Ты поднимаешь стакан и возвращаешь его на скамейку. Ветеран замолкает на полуслове."
+        },
+        "sketch": {
+          "success": "y95_bottle",
+          "fail": "y95_bottle"
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_teammates": 5,
+            "rep_fans": 5,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_may",
+    "requires": {
+      "club": "Динамо (М)"
+    }
+  },
+  {
+    "id": "ZEN_VETERAN",
+    "title": "Ветеран и бутылка",
+    "type": "🎭",
+    "bg": "locker",
+    "art": "y95_bottle",
+    "text": [
+      "День Победы. На скамейке у ветерана стоит бутылка. Он пришёл поздравить команду и вспомнить тех, кто так и не вернулся.",
+      {
+        "speaker": "Ветеран",
+        "text": "Побудьте со мной минуту, парни. Не каждый год такое девятое мая."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Выпить",
+        "conclusion": {
+          "flat": "Ты выпиваешь. Ветеран доволен. Но на тренировке ты зеваешь. Тренер недоволен."
+        },
+        "sketch": {
+          "flat": "y95_bottle"
+        },
+        "effects": {
+          "stress": -10,
+          "next_match_phy": -5,
+          "attrs": {
+            "professionalism": -5
+          },
+          "flags": {
+            "hangover_95": true
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отказаться",
+        "conclusion": {
+          "success": "Ты отказываешься. Ветеран обижен. Партнёры крутят пальцем у виска.",
+          "fail": "Ты возвращаешь предложение. Собеседник убирает бумаги со стола."
+        },
+        "sketch": {
+          "success": "y95_bottle",
+          "fail": "y95_bottle"
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 50
+        },
+        "success": {
+          "attrs": {
+            "professionalism": 5,
+            "rep_teammates": -5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Поднять тост, но не пить",
+        "conclusion": {
+          "success": "Ты поднимаешь стакан, но не пьёшь. Ветеран понимает. Ты сохраняешь голову.",
+          "fail": "Ты поднимаешь стакан и возвращаешь его на скамейку. Ветеран замолкает на полуслове."
+        },
+        "sketch": {
+          "success": "y95_bottle",
+          "fail": "y95_bottle"
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_teammates": 5,
+            "rep_fans": 5,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_may",
+    "requires": {
+      "club": "Зенит"
+    }
+  },
+  {
+    "id": "S5_VETERAN_HANGOVER",
+    "title": "Похмелье",
+    "type": "🎭",
+    "bg": "locker",
+    "art": "y95_hangover",
+    "text": [
+      "Голова раскалывается. Тренер смотрит на тебя с презрением.",
+      {
+        "speaker": "Тренер",
+        "text": "Ты пил перед матчем?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Признаться",
+        "conclusion": {
+          "flat": "Ты признаёшься. Тренер велит остаться после разминки и выписывает штраф. Голова всё ещё тяжёлая."
+        },
+        "sketch": {
+          "flat": "y95_hangover"
+        },
+        "effects": {
+          "stress": 5,
+          "next_match_phy": -10,
+          "attrs": {
+            "rep_coach": -10,
+            "money": -100
+          },
+          "flags": {
+            "hangover_95": false
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Соврать",
+        "conclusion": {
+          "success": "Тренер отходит. Ты снова опускаешь голову в ладони: шум раздевалки никак не стихает.",
+          "fail": "Тренер не верит. Он оставляет тебя вне заявки на ближайший матч."
+        },
+        "sketch": {
+          "success": "y95_hangover",
+          "fail": "y95_isolation"
+        },
+        "check": {
+          "attr": "media",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": -5
+          },
+          "flags": {
+            "hangover_95": false
+          },
+          "next_match_phy": -10
+        },
+        "fail": {
+          "stress": 10,
+          "attrs": {
+            "rep_coach": -15
+          },
+          "flags": {
+            "hangover_95": false
+          },
+          "next_match_phy": 0,
+          "suspension_matches": 1
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сказать, что это традиция",
+        "conclusion": {
+          "success": "Ты говоришь, что это дань памяти. Тренер мрачнеет, но отпускает.",
+          "fail": "На разминке голова всё ещё гудит. Ты стараешься держаться в темпе группы."
+        },
+        "sketch": {
+          "success": "y95_hangover",
+          "fail": "y95_hangover"
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "rep_coach": -10
+          },
+          "flags": {
+            "hangover_95": false
+          },
+          "next_match_phy": -10
+        },
+        "fail": {
+          "stress": 5,
+          "flags": {
+            "hangover_95": false
+          },
+          "next_match_phy": -10
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_may",
+    "requires": {
+      "flag": "hangover_95"
+    }
+  },
+  {
+    "id": "95_REF_MAFIA",
+    "title": "У двери судейской",
+    "type": "🎭",
+    "bg": "press",
+    "art": [
+      "y95_tunnel",
+      "y95_tunnel2"
+    ],
+    "text": [
+      "Незнакомый человек ждёт у двери судейской. Он показывает на конверт и просит тебя передать его арбитру."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Согласиться",
+        "conclusion": {
+          "flat": "Ты передаёшь конверт. Незнакомец забирает его и исчезает за дверью. Теперь он знает, что ты согласился помочь."
+        },
+        "sketch": {
+          "flat": "y95_envelope"
+        },
+        "effects": {
+          "stress": 15,
+          "flags": {
+            "fixing_debt": true
+          },
+          "debt": 2000,
+          "attrs": {
+            "money": 2000
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отказаться",
+        "conclusion": {
+          "flat": "Ты отказываешься. Тренер недоволен. Но ты чист."
+        },
+        "sketch": {
+          "flat": "y95_refuse"
+        },
+        "effects": {
+          "attrs": {
+            "professionalism": 10,
+            "rep_coach": -10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сообщить в РФС",
+        "conclusion": {
+          "flat": "Ты доносишь. Судью отстраняют. Но партнёры считают тебя стукачом."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "rep_press": 10,
+            "rep_teammates": -15
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_may",
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "95_YARYGIN",
+    "title": "Спорный офсайд",
+    "type": "🎭",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "В матче армейцев с тюменцами флажок поднимается в разгар атаки. На поле ещё спорят, где находился нападающий при передаче."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Устроить скандал",
+        "conclusion": {
+          "success": "Ты громко зовёшь судью. Тренер перехватывает тебя у бровки и просит отойти, пока спор не закончился карточкой.",
+          "fail": "Ты продолжаешь спорить уже у бровки. Тренер указывает на скамейку: разговор закончен."
+        },
+        "sketch": {
+          "success": "y95_sideline",
+          "fail": "y95_sideline"
+        },
+        "check": {
+          "attr": "temperament",
+          "threshold": 55
+        },
+        "success": {
+          "rumor": -10,
+          "attrs": {
+            "media": 10,
+            "rep_coach": -10
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Продолжать играть",
+        "conclusion": {
+          "flat": "После свистка ты возвращаешься на свою половину. Следующую передачу команда разыгрывает уже по флангу."
+        },
+        "sketch": {
+          "flat": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "effects": {
+          "stress": 5,
+          "attrs": {
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Поддержать судью",
+        "conclusion": {
+          "success": "Ты объясняешь тренеру у бровки, почему с позиции арбитра эпизод мог выглядеть иначе.",
+          "fail": "Ты объясняешь тренеру у бровки, почему с позиции арбитра эпизод мог выглядеть иначе."
+        },
+        "sketch": {
+          "success": "y95_sideline",
+          "fail": "y95_sideline"
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": -5,
+            "rep_coach": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_may",
+    "requires": {
+      "club": [
+        "Динамо-Газовик",
+        "ЦСКА"
+      ]
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "S5_CSKA_TORPEDO",
+    "title": "«Торпедо» — ЦСКА",
+    "type": "🏛",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "В московском дерби спорят о контакте в штрафной. Арбитр указывает на мяч. С дальней скамейки уже вскакивают запасные.",
+      "Протокол: 1:2. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Устроить скандал",
+        "conclusion": {
+          "success": "Ты громко зовёшь судью. Тренер перехватывает тебя у бровки и просит отойти, пока спор не закончился карточкой.",
+          "fail": "Ты продолжаешь спорить уже у бровки. Тренер указывает на скамейку: разговор закончен."
+        },
+        "sketch": {
+          "success": "y95_sideline",
+          "fail": "y95_sideline"
+        },
+        "check": {
+          "attr": "temperament",
+          "threshold": 55
+        },
+        "success": {
+          "rumor": -10,
+          "attrs": {
+            "media": 10,
+            "rep_coach": -10
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Продолжать играть",
+        "conclusion": {
+          "flat": "Ты остаёшься в игре до свистка. После эпизода тренер жестом просит держать свою зону."
+        },
+        "sketch": {
+          "flat": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "effects": {
+          "stress": 5,
+          "attrs": {
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Поддержать судью",
+        "conclusion": {
+          "flat": "Ты объясняешь тренеру у бровки, почему с позиции арбитра эпизод мог выглядеть иначе."
+        },
+        "sketch": {
+          "flat": "y95_sideline"
+        },
+        "effects": {
+          "attrs": {
+            "rep_fans": -5,
+            "rep_coach": 5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_october",
+    "requires": {
+      "club": [
+        "Торпедо",
+        "ЦСКА"
+      ],
+      "league": "first"
+    },
+    "home": "Торпедо",
+    "away": "ЦСКА",
+    "month": 10,
+    "historical_score": "1:2",
+    "game_score": "1:2",
+    "source": "https://www.rsssf.org/tablesr/rus95.html",
+    "season_95_fixture": true,
+    "subtitle": "26 октября · Торпедо — ЦСКА"
+  },
+  {
+    "id": "S5_ZENIT_RETURN",
+    "title": "Возвращение Зенита в вышку",
+    "type": "🎭",
+    "bg": "office",
+    "art": "y95_office",
+    "text": [
+      "Павел Садырин вернулся в «Зенит» накануне сезона. В тренерской рядом с расписанием сборов лежит таблица Первой лиги.",
+      {
+        "speaker": "Садырин",
+        "text": "Поднимутся три клуба. В конце года спросишь меня, сколько очков мы оставили весной."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Поверить тренеру",
+        "conclusion": {
+          "flat": "Ты остаёшься после разговора, чтобы спросить о плане сборов. На листе напротив каждой недели стоит выезд."
+        },
+        "sketch": {
+          "flat": "y95_office"
+        },
+        "effects": {
+          "attrs": {
+            "rep_coach": 5,
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Спросить про деньги",
+        "conclusion": {
+          "success": "Садырин мрачнеет: „Деньги — не твоя забота. Играй“. Ты понимаешь, что ситуация хуже, чем кажется.",
+          "fail": "Садырин закрывает смету. Пока он может сказать лишь одно: расписание сборов утверждено."
+        },
+        "sketch": {
+          "success": "y95_office",
+          "fail": "y95_office"
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "stress": 5
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Обсудить переход с агентом",
+        "conclusion": {
+          "flat": "Ты договариваешься с агентом посмотреть другие варианты. Пока ты по-прежнему игрок «Зенита»."
+        },
+        "sketch": {
+          "flat": "y95_transfer"
+        },
+        "effects": {
+          "attrs": {
+            "rep_coach": -10,
+            "media": 10
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_spring",
+    "requires": {
+      "league": "second",
+      "club": "Зенит"
+    }
+  },
+  {
+    "id": "S5_ZENIT_SPARTAK",
+    "title": "«Зенит» — «Звезда»",
+    "type": "🏛",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "В первом туре петербуржцы принимают иркутскую «Звезду». С дальней трибуны слышен свист: мяч снова вышел из вашей штрафной слишком медленно.",
+      "Протокол: 5:1. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Выложиться на 100%",
+        "conclusion": {
+          "flat": "Ты остаёшься в игре до свистка. После эпизода тренер жестом просит держать свою зону."
+        },
+        "sketch": {
+          "flat": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "rep_fans": 10,
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Играть на контратаках",
+        "conclusion": {
+          "success": "Ты возвращаешь мяч свободному партнёру, и команда сохраняет владение.",
+          "fail": "Соперник читает передачу и подставляет ногу. Атаку приходится начинать заново."
+        },
+        "sketch": {
+          "success": [
+            "y95_build",
+            "y95_build2"
+          ],
+          "fail": [
+            "y95_lost",
+            "y95_lost2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 10,
+            "rep_coach": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сдаться",
+        "conclusion": {
+          "flat": "После замены ты садишься в раздевалке. Шум трибун за дверью слышен даже здесь."
+        },
+        "sketch": {
+          "flat": "y95_isolation"
+        },
+        "effects": {
+          "stress": 15,
+          "attrs": {
+            "rep_fans": -10
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_spring",
+    "requires": {
+      "club": [
+        "Зенит",
+        "Звезда-Юнис-Сиб"
+      ],
+      "league": "second"
+    },
+    "home": "Зенит",
+    "away": "Звезда-Юнис-Сиб",
+    "month": 4,
+    "historical_score": "5:1",
+    "game_score": "5:1",
+    "source": "https://www.rsssf.org/tablesr/rus95.html",
+    "season_95_fixture": true,
+    "subtitle": "1 апреля · Зенит — Звезда-Юнис-Сиб"
+  },
+  {
+    "id": "S5_DYNAMO_LOKO",
+    "title": "Московское дерби",
+    "type": "🏛",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "После жёсткого стыка команды ждут решения у центрального круга. Игроки показывают на разные точки газона. У тебя лучший обзор на этот момент.",
+      "Протокол: 2:1. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Воспользоваться ошибкой",
+        "conclusion": {
+          "flat": "Ты остаёшься в игре до свистка. После эпизода тренер жестом просит держать свою зону."
+        },
+        "sketch": {
+          "flat": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "rep_coach": 5,
+            "rep_press": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Признать, что повезло",
+        "conclusion": {
+          "success": "На пресс-конференции ты говоришь, что в этом эпизоде вам повезло. Журналист записывает фразу целиком.",
+          "fail": "На пресс-конференции у тебя просят повторить, что именно ты назвал везением. Ты с трудом подбираешь слова."
+        },
+        "sketch": {
+          "success": [
+            "y95_press",
+            "y95_press2"
+          ],
+          "fail": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "rep_press": 5,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Промолчать",
+        "conclusion": {
+          "flat": "Когда вопрос повторяют, ты пододвигаешь микрофон к соседу и оставляешь его без ответа."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_spring",
+    "requires": {
+      "club": [
+        "Динамо (М)",
+        "Локомотив (М)"
+      ],
+      "league": "first"
+    },
+    "home": "Динамо (М)",
+    "away": "Локомотив (М)",
+    "month": 4,
+    "historical_score": "2:1",
+    "game_score": "2:1",
+    "source": "https://www.rsssf.org/tablesr/rus95.html",
+    "season_95_fixture": true,
+    "subtitle": "8 апреля · Динамо (М) — Локомотив (М)"
+  },
+  {
+    "id": "LOKO_CUP",
+    "title": "Кубок. «Локомотив» — «Динамо»",
+    "type": "🏛",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "На кубковый матч с «Динамо» у тебя одна задача: не дать сопернику запереть вас на своей половине. Равновесие хрупкое, а времени всё меньше.",
+      "Протокол: 2:2, по пенальти 4:5. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Выложиться",
+        "conclusion": {
+          "flat": "Ты снова открываешься под передачу, хотя ноги сводит. До конца остаётся всё меньше времени."
+        },
+        "sketch": {
+          "flat": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "rep_coach": 10,
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Играть на команду",
+        "conclusion": {
+          "success": "Твоя передача проходит мимо последнего защитника. Партнёр встречает её в касание и забивает.",
+          "fail": "Соперник читает передачу и подставляет ногу. Атаку приходится начинать заново."
+        },
+        "sketch": {
+          "success": [
+            "team_goal",
+            "y95_team_goal2"
+          ],
+          "fail": [
+            "y95_lost",
+            "y95_lost2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_teammates": 5,
+            "rep_coach": 5
+          },
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true,
+        "requires": {
+          "position": [
+            "DEF",
+            "MID",
+            "FWD"
+          ]
+        }
+      },
+      {
+        "id": "C",
+        "text": "Спрятаться",
+        "conclusion": {
+          "flat": "Тренер отзывает тебя к скамейке. Остаток матча ты проводишь рядом с запасными."
+        },
+        "sketch": {
+          "flat": "y95_sideline"
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "rep_coach": -5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_spring",
+    "requires": {
+      "club": "Локомотив (М)"
+    },
+    "home": "Локомотив (М)",
+    "away": "Динамо (М)",
+    "month": 4,
+    "historical_score": "2:2",
+    "game_score": "2:2",
+    "source": "https://www.rsssf.org/tablesr/rus95.html",
+    "season_95_fixture": true,
+    "subtitle": "19 апреля · Локомотив (М) — Динамо (М)",
+    "cup": true
+  },
+  {
+    "id": "TORP_CUP",
+    "title": "Кубок. «Ротор» — «Торпедо»",
+    "type": "🏛",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Четвертьфинал с «Ротором». К концу основного времени ни одна команда не забила. Твой партнёр медленно поднимается после стыка и кивает на свободный фланг.",
+      "Протокол: 0:0, по пенальти 4:3. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Взять игру на себя",
+        "conclusion": {
+          "success": "Ты пробиваешь из штрафной. Мяч натягивает сетку, и команда получает преимущество.",
+          "fail": "Мяч проходит снаружи стойки. Вратарь провожает его взглядом."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 10,
+            "rep_fans": 5
+          },
+          "goals": 1,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "stress": 15
+        },
+        "scene_art": true,
+        "requires": {
+          "position": [
+            "MID",
+            "FWD"
+          ]
+        }
+      },
+      {
+        "id": "B",
+        "text": "Играть на команду",
+        "conclusion": {
+          "flat": "Ты отдаёшь мяч под удар. Партнёр пробивает мимо вратаря в сетку."
+        },
+        "sketch": {
+          "flat": [
+            "team_goal",
+            "y95_team_goal2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "rep_teammates": 5,
+            "professionalism": 5
+          },
+          "score_change": {
+            "for": 1
+          }
+        },
+        "scene_art": true,
+        "requires": {
+          "position": [
+            "MID",
+            "FWD"
+          ]
+        }
+      },
+      {
+        "id": "C",
+        "text": "Остаться на своей позиции",
+        "conclusion": {
+          "flat": "Ты остаёшься на своей позиции. С трибун снова требуют удара, но обе команды уже осторожничают."
+        },
+        "sketch": {
+          "flat": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "rep_coach": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "D",
+        "text": "Сдержать соперника у штрафной",
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "requires": {
+          "position": [
+            "DEF",
+            "GK"
+          ]
+        },
+        "scene_art": true,
+        "conclusion": {
+          "success": "Подача уходит за лицевую. До свистка соперник так и не получает чистого удара.",
+          "fail": "Соперник всё же выходит на удар. Мяч пролетает над газоном и оказывается в сетке."
+        },
+        "sketch": {
+          "success": [
+            "y95_pitch",
+            "y95_pitch2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 5
+          }
+        },
+        "fail": {
+          "stress": 8,
+          "score_change": {
+            "against": 1
+          }
+        }
+      }
+    ],
+    "slot": "95_spring",
+    "requires": {
+      "club": "Торпедо"
+    },
+    "home": "Ротор",
+    "away": "Торпедо",
+    "month": 4,
+    "historical_score": "0:0",
+    "game_score": "0:0",
+    "source": "https://www.rsssf.org/tablesr/rus95.html",
+    "season_95_fixture": true,
+    "subtitle": "19 апреля · Ротор — Торпедо",
+    "cup": true
+  },
+  {
+    "id": "S5_VODKA_BUDGET",
+    "title": "Деньги на сборы",
+    "type": "🎭",
+    "bg": "office",
+    "art": "y95_office",
+    "text": [
+      "Директор кладёт на стол две сметы. Из коридора тянет холодом: радиаторы давно не греют.",
+      {
+        "speaker": "Директор",
+        "text": "Местный поставщик алкоголя готов покрыть расходы на сборы. Взамен хочет, чтобы игроки снялись в рекламе."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Взять конверт",
+        "conclusion": {
+          "flat": "Директор передаёт тебе конверт с авансом. Теперь твою фамилию впишут в лист участников съёмки."
+        },
+        "sketch": {
+          "flat": "y95_envelope"
+        },
+        "effects": {
+          "stress": 10,
+          "flags": {
+            "fixing_debt": true
+          },
+          "debt": 3000,
+          "attrs": {
+            "money": 3000
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отказаться",
+        "conclusion": {
+          "flat": "Ты отодвигаешь конверт. Директор закрывает смету и спрашивает, возьмёшь ли ты на себя разговор с командой."
+        },
+        "sketch": {
+          "flat": "y95_refuse"
+        },
+        "effects": {
+          "attrs": {
+            "professionalism": 10,
+            "rep_coach": -10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Спросить, что будет, если откажешься",
+        "conclusion": {
+          "success": "Директор разворачивает смету к тебе. Расходы на сборы уже расписаны, но премии в эту сумму не входят.",
+          "fail": "Директор не обещает сохранить премии. Он убирает смету и предлагает обсудить это после сборов."
+        },
+        "sketch": {
+          "success": "y95_office",
+          "fail": "y95_office"
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 60
+        },
+        "success": {
+          "stress": 5,
+          "attrs": {
+            "rep_coach": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_spring",
+    "requires": {
+      "club": "Спартак (Вл)"
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "S5_BRAZILIANS",
+    "title": "Новички из Бразилии",
+    "type": "🎭",
+    "bg": "locker",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "На просмотр приехали двое игроков из Бразилии. Они ловят каждое движение тренера и переговариваются между собой, пока команда собирается на поле.",
+      {
+        "speaker": "Тренер",
+        "text": "Покажите им упражнение. Доску я в раздевалке оставил."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Подружиться с бразильцами",
+        "conclusion": {
+          "flat": "Вы становитесь друзьями. Они учат тебя финтам. Ты учишь их русским словам."
+        },
+        "sketch": {
+          "flat": [
+            "y95_locker",
+            "y95_locker2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "media": 5,
+            "rep_teammates": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Смотреть и учиться",
+        "conclusion": {
+          "success": "Ты наблюдаешь за их техникой. Перенимаешь пару трюков. Твой дриблинг растёт.",
+          "fail": "Ты остаёшься в игре до свистка. После эпизода тренер жестом просит держать свою зону."
+        },
+        "sketch": {
+          "success": [
+            "y95_pitch",
+            "y95_pitch2"
+          ],
+          "fail": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 50
+        },
+        "success": {
+          "attrs": {
+            "tec": 5,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Игнорировать",
+        "conclusion": {
+          "flat": "Ты держишься в стороне. Они не понимают, почему ты холоден. Ты теряешь шанс чему-то научиться."
+        },
+        "sketch": {
+          "flat": "y95_isolation"
+        },
+        "effects": {
+          "attrs": {
+            "rep_teammates": -5,
+            "media": -5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_spring",
+    "requires": {
+      "club": "Локомотив (НН)"
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "S5_TITOV_DEBUT",
+    "title": "Первые матчи Егора Титова",
+    "type": "🎭",
+    "bg": "field",
+    "art": "y95_sideline",
+    "text": [
+      "В 1995 году Егор Титов получает шанс закрепиться в основном составе «Спартака». На бровке он несколько раз перешнуровывает левую бутсу.",
+      {
+        "speaker": "Егор Титов",
+        "text": "Кажется, меня скоро позовут. Скажи, куда ты открываешься, когда мы выходим из-под прессинга."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Поддержать молодого партнёра",
+        "conclusion": {
+          "flat": "Перед выходом ты подбадриваешь Титова. Он перестаёт тянуть шнурки и встаёт со скамейки."
+        },
+        "sketch": {
+          "flat": "y95_sideline"
+        },
+        "effects": {
+          "attrs": {
+            "rep_teammates": 5,
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Дать ему шанс проявить себя",
+        "conclusion": {
+          "success": "Титов принимает твою передачу и оставляет мяч себе. Ты уже открываешься, чтобы он мог сыграть в ответ.",
+          "fail": "Соперник читает передачу и подставляет ногу. Атаку приходится начинать заново."
+        },
+        "sketch": {
+          "success": [
+            "y95_build",
+            "y95_build2"
+          ],
+          "fail": [
+            "y95_lost",
+            "y95_lost2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 5,
+            "rep_teammates": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Играть самому",
+        "conclusion": {
+          "flat": "Ты не ждёшь рывка Титова и сам бьёшь из-за штрафной. Защитник успевает развернуться на звук удара."
+        },
+        "sketch": {
+          "flat": "shot"
+        },
+        "effects": {
+          "attrs": {
+            "tec": 5,
+            "rep_teammates": -5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_spring",
+    "requires": {
+      "club": "Спартак (М)",
+      "position": [
+        "MID",
+        "FWD"
+      ]
+    },
+    "source": "https://spartak.com/media/news/6d84880c-51e5-4c84-b843-966699903d0a"
+  },
+  {
+    "id": "LOKO_BRAZIL",
+    "title": "Новички из Бразилии",
+    "type": "🎭",
+    "bg": "locker",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "На просмотр приехали двое игроков из Бразилии. Они ловят каждое движение тренера и переговариваются между собой, пока команда собирается на поле.",
+      {
+        "speaker": "Тренер",
+        "text": "Покажите им упражнение. Доску я в раздевалке оставил."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Подружиться",
+        "conclusion": {
+          "flat": "Вы становитесь друзьями. Они учат тебя финтам. Ты учишь их русским словам."
+        },
+        "sketch": {
+          "flat": [
+            "y95_locker",
+            "y95_locker2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "media": 5,
+            "rep_teammates": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Учиться у них",
+        "conclusion": {
+          "success": "Ты перенимаешь пару трюков. Твой дриблинг растёт.",
+          "fail": "Ты остаёшься в игре до свистка. После эпизода тренер жестом просит держать свою зону."
+        },
+        "sketch": {
+          "success": [
+            "y95_pitch",
+            "y95_pitch2"
+          ],
+          "fail": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 50
+        },
+        "success": {
+          "attrs": {
+            "tec": 5,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Игнорировать",
+        "conclusion": {
+          "flat": "Ты держишься в стороне. Ты теряешь шанс чему-то научиться."
+        },
+        "sketch": {
+          "flat": "y95_isolation"
+        },
+        "effects": {
+          "attrs": {
+            "rep_teammates": -5,
+            "media": -5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_spring",
+    "requires": {
+      "club": "Локомотив (М)"
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "S5_SEMIN_FIGHT",
+    "title": "Ссора у скамейки",
+    "type": "🎭",
+    "bg": "field",
+    "art": "y95_sideline",
+    "text": [
+      "После замены форвард не садится на скамейку. Он шагает прямо к тренеру. Запасные переглядываются.",
+      {
+        "speaker": "Форвард",
+        "text": "У нас был ещё один шанс. Зачем ты меня снял?"
+      },
+      {
+        "speaker": "Тренер",
+        "text": "Сядь, поговорим после свистка."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Вмешаться и защитить Семина",
+        "conclusion": {
+          "flat": "Ты говоришь Писареву: „Он прав“. Писарев смотрит на тебя с ненавистью. Семин кивает."
+        },
+        "sketch": {
+          "flat": "y95_sideline"
+        },
+        "effects": {
+          "attrs": {
+            "rep_coach": 10,
+            "rep_teammates": -10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Поддержать Писарева",
+        "conclusion": {
+          "flat": "Ты встаёшь на сторону игрока. Семин запомнит это."
+        },
+        "sketch": {
+          "flat": "y95_sideline"
+        },
+        "effects": {
+          "attrs": {
+            "rep_teammates": 10,
+            "rep_coach": -10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Оттащить Писарева",
+        "conclusion": {
+          "success": "Ты хватаешь Писарева за руку: „Не надо“. Он успокаивается. Семин благодарен.",
+          "fail": "Ты встаёшь между игроками. Партнёры по обе стороны отводят их от судьи."
+        },
+        "sketch": {
+          "success": "y95_separate",
+          "fail": "y95_separate"
+        },
+        "check": {
+          "attr": "phy",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 5,
+            "rep_teammates": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_summer",
+    "requires": {
+      "club": [
+        "Спартак (М)",
+        "Локомотив (М)"
+      ]
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "S5_LOKO_ALANIA",
+    "title": "Стычка после свистка",
+    "type": "🎭",
+    "bg": "field",
+    "art": "y95_separate",
+    "text": [
+      "У штрафной северокавказского клуба идёт борьба за каждый отскок. После карточки двое игроков продолжают спор уже за спиной арбитра."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Броситься в драку",
+        "conclusion": {
+          "success": "Ты толкаешь соперника. Арбитр подходит к вам и поднимает красную.",
+          "fail": "Ты успеваешь сделать шаг вперёд. Партнёры подхватывают тебя под руки и уводят в сторону, пока арбитр не заметил толчок."
+        },
+        "sketch": {
+          "success": "y95_card",
+          "fail": "y95_separate"
+        },
+        "check": {
+          "attr": "temperament",
+          "threshold": 55
+        },
+        "success": {
+          "suspension_matches": 3,
+          "counters": {
+            "red_cards": 1
+          },
+          "attrs": {
+            "temperament": 10,
+            "rep_press": -10
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Успокоить партнёров",
+        "conclusion": {
+          "success": "Ты отводишь двоих партнёров от арбитра. Игроки расходятся к своим позициям.",
+          "fail": "Ты встаёшь между игроками. Партнёры по обе стороны отводят их от судьи."
+        },
+        "sketch": {
+          "success": "y95_separate",
+          "fail": "y95_separate"
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 10,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Позвать врача",
+        "conclusion": {
+          "flat": "После стычки врач осматривает ушиб у тебя на колене. Ты рассказываешь, где сильнее всего болит."
+        },
+        "sketch": {
+          "flat": "y95_clinic"
+        },
+        "effects": {
+          "attrs": {
+            "rep_teammates": 10,
+            "rep_press": 5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_summer",
+    "requires": {
+      "club": [
+        "Локомотив (НН)",
+        "Спартак (Вл)"
+      ]
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "MID_INJURY",
+    "title": "Травма",
+    "type": "🎭",
+    "bg": "locker",
+    "art": "y95_clinic",
+    "text": [
+      "Ты чувствуешь боль в колене. Врач говорит: «Нужна операция»."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Оперироваться",
+        "conclusion": {
+          "flat": "Врач снова проверяет колено. Ты просишь оставить тебя в заявке, даже если играть придётся через боль."
+        },
+        "sketch": {
+          "flat": "y95_clinic"
+        },
+        "requires": {
+          "money": 1000
+        },
+        "effects": {
+          "injury_months": 1,
+          "attrs": {
+            "money": -1000,
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Играть через боль",
+        "conclusion": {
+          "flat": "Ты выходишь на уколах. Через месяц колено сдаётся."
+        },
+        "sketch": {
+          "flat": "training"
+        },
+        "effects": {
+          "stress": 15,
+          "attrs": {
+            "phy": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Лечиться в России",
+        "conclusion": {
+          "flat": "Врач подтягивает повязку и записывает дату повторного осмотра."
+        },
+        "sketch": {
+          "flat": "y95_clinic"
+        },
+        "effects": {
+          "stress": 10,
+          "flags": {
+            "injury_severe": true
+          },
+          "injury_months": 3
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_summer",
+    "requires": {
+      "position": "MID"
+    }
+  },
+  {
+    "id": "FWD_CAPTAIN",
+    "title": "Капитан-нападающий",
+    "type": "🎭",
+    "bg": "locker",
+    "art": "y95_coach",
+    "text": [
+      "Тренер даёт тебе повязку: «Ты — капитан». Ты — нападающий. Это редкость."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Принять",
+        "conclusion": {
+          "flat": "Ты выходишь с повязкой. Ты — лидер атаки."
+        },
+        "sketch": {
+          "flat": "y95_coach"
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "leadership": 10
+          },
+          "captain": true
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отказаться",
+        "conclusion": {
+          "flat": "Ты возвращаешь повязку тренеру. Он молча кладёт её обратно на скамейку."
+        },
+        "sketch": {
+          "flat": "y95_coach"
+        },
+        "effects": {
+          "attrs": {
+            "rep_coach": -5,
+            "rep_teammates": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Спросить, почему я",
+        "conclusion": {
+          "success": "Тренер говорит: «Ты ведёшь за собой». Ты соглашаешься.",
+          "fail": "Тренер подвигает повязку к краю стола. Ты так и не слышишь ответа, почему он вызвал именно тебя."
+        },
+        "sketch": {
+          "success": "y95_office",
+          "fail": "y95_office"
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "stress": 5,
+          "attrs": {
+            "rep_coach": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_summer",
+    "requires": {
+      "rep_coach_min": 60,
+      "position": "FWD"
+    }
+  },
+  {
+    "id": "95_MASKED_MEN",
+    "title": "Люди в масках",
+    "type": "🎭",
+    "bg": "locker",
+    "art": [
+      "y95_tunnel",
+      "y95_tunnel2"
+    ],
+    "text": [
+      "В служебном коридоре появляются незнакомцы. Один перекрывает выход и требует сказать, кто виноват в поражении."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Молчать",
+        "conclusion": {
+          "flat": "Ты молчишь. Они уходят. Ты не знаешь, кто это был."
+        },
+        "sketch": {
+          "flat": [
+            "y95_tunnel",
+            "y95_tunnel2"
+          ]
+        },
+        "effects": {
+          "stress": 15,
+          "attrs": {
+            "rep_teammates": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Назвать имя",
+        "conclusion": {
+          "flat": "Ты произносишь фамилию. Мужчины переглядываются и уходят к выходу со стадиона. Ты остаёшься в коридоре."
+        },
+        "sketch": {
+          "flat": [
+            "y95_tunnel",
+            "y95_tunnel2"
+          ]
+        },
+        "effects": {
+          "flags": {
+            "snitch": true
+          },
+          "attrs": {
+            "rep_coach": 5,
+            "rep_teammates": -15
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Драться",
+        "conclusion": {
+          "success": "Ты бьёшь одного. Тебя бьют. Ты в больнице. Но ты не сдал никого.",
+          "fail": "Врач подтягивает повязку и записывает дату повторного осмотра."
+        },
+        "sketch": {
+          "success": "y95_clinic",
+          "fail": "y95_clinic"
+        },
+        "check": {
+          "attr": "phy",
+          "threshold": 55
+        },
+        "success": {
+          "stress": 15,
+          "injury_months": 1,
+          "attrs": {
+            "rep_fans": 10
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_summer"
+  },
+  {
+    "id": "95_TOTO",
+    "title": "Тото и договорняки",
+    "type": "🎭",
+    "bg": "office",
+    "art": "y95_bet",
+    "text": [
+      "Тебе предлагают сыграть «на тото». Сумма огромная. Ты знаешь, что это незаконно."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Согласиться",
+        "conclusion": {
+          "flat": "Ты играешь на тото. Деньги приходят. Но ты знаешь, что это грязь."
+        },
+        "sketch": {
+          "flat": "y95_envelope"
+        },
+        "effects": {
+          "stress": 15,
+          "flags": {
+            "fixing_debt": true
+          },
+          "debt": 3000,
+          "attrs": {
+            "money": 3000
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отказаться",
+        "conclusion": {
+          "flat": "Ты отказываешься. Тебя считают дураком. Но ты чист."
+        },
+        "sketch": {
+          "flat": "y95_refuse"
+        },
+        "effects": {
+          "attrs": {
+            "professionalism": 10,
+            "rep_coach": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сообщить в РФС",
+        "conclusion": {
+          "flat": "Ты доносишь. Начинается разбирательство."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "rep_press": 10,
+            "rep_teammates": -10
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_summer"
+  },
+  {
+    "id": "95_BOYCOTT",
+    "title": "Бойкот тренировки",
+    "type": "🎭",
+    "bg": "locker",
+    "art": [
+      "y95_locker",
+      "y95_locker2"
+    ],
+    "text": [
+      "Партнёры недовольны тренером. Они предлагают бойкотировать тренировку."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Поддержать бойкот",
+        "conclusion": {
+          "flat": "Вы не выходите на тренировку. Тренер в ярости. Но партнёры уважают тебя."
+        },
+        "sketch": {
+          "flat": [
+            "y95_locker",
+            "y95_locker2"
+          ]
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "rep_teammates": 10,
+            "rep_coach": -15
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Пойти на тренировку",
+        "conclusion": {
+          "flat": "Ты идёшь один. Тренер благодарен. Партнёры считают тебя предателем."
+        },
+        "sketch": {
+          "flat": "training"
+        },
+        "effects": {
+          "attrs": {
+            "rep_coach": 10,
+            "rep_teammates": -10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Попытаться помирить",
+        "conclusion": {
+          "success": "Ты собираешь всех. Находите компромисс. Ты — дипломат.",
+          "fail": "Разговор с партнёрами обрывается. Они уходят переодеваться, а ты остаёшься на скамье один."
+        },
+        "sketch": {
+          "success": [
+            "y95_locker",
+            "y95_locker2"
+          ],
+          "fail": "y95_isolation"
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 5,
+            "rep_teammates": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_summer",
+    "requires": {
+      "rep_coach_max": 40
+    }
+  },
+  {
+    "id": "MID_TRANSFER",
+    "title": "Контракт с «Бенфикой»",
+    "type": "🎭",
+    "bg": "office",
+    "art": "y95_transfer",
+    "text": [
+      "В конце сезона агент приносит предложение от «Бенфики». Он переворачивает лист и пальцем показывает, где начинается пункт о зарплате.",
+      {
+        "speaker": "Агент",
+        "text": "Решай сейчас. Если подпишешь, зимой уже будешь собирать вещи."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Уйти",
+        "conclusion": {
+          "flat": "Ты подписываешь бумаги. Агент оставляет тебе второй экземпляр. Зимой начнутся сборы с «Бенфикой»."
+        },
+        "sketch": {
+          "flat": "y95_transfer"
+        },
+        "effects": {
+          "attrs": {
+            "ambition": 10,
+            "loyalty": -15
+          },
+          "foreign_transfer": "Бенфика"
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Остаться",
+        "conclusion": {
+          "flat": "Ты отодвигаешь контракт. Агент закрывает папку и спрашивает, когда можно вернуться к разговору."
+        },
+        "sketch": {
+          "flat": "y95_transfer"
+        },
+        "effects": {
+          "attrs": {
+            "loyalty": 10,
+            "rep_fans": 10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Поторговаться",
+        "conclusion": {
+          "success": "Ты выбиваешь лучший контракт. Но в клубе шепчутся.",
+          "fail": "Агент закрывает папку. Переговоры застопорились: новых условий клуб пока не прислал."
+        },
+        "sketch": {
+          "success": "y95_transfer",
+          "fail": "y95_transfer"
+        },
+        "check": {
+          "attr": "media",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "media": 5,
+            "ambition": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_transfer",
+    "requires": {
+      "media_min": 60,
+      "rep_coach_min": 35,
+      "flags": {
+        "european_ban": false,
+        "agent_changed": false,
+        "contract_terminated": false
+      },
+      "position": "MID"
+    }
+  },
+  {
+    "id": "FWD_TRANSFER",
+    "title": "Контракт с «Бенфикой»",
+    "type": "🎭",
+    "bg": "office",
+    "art": "y95_transfer",
+    "text": [
+      "В конце сезона агент приносит предложение от «Бенфики». Он переворачивает лист и пальцем показывает, где начинается пункт о зарплате.",
+      {
+        "speaker": "Агент",
+        "text": "Решай сейчас. Если подпишешь, зимой уже будешь собирать вещи."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Уйти",
+        "conclusion": {
+          "flat": "Ты подписываешь бумаги. Агент оставляет тебе второй экземпляр. Зимой начнутся сборы с «Бенфикой»."
+        },
+        "sketch": {
+          "flat": "y95_transfer"
+        },
+        "effects": {
+          "attrs": {
+            "ambition": 10,
+            "loyalty": -15
+          },
+          "foreign_transfer": "Бенфика"
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Остаться",
+        "conclusion": {
+          "flat": "Ты отодвигаешь контракт. Агент закрывает папку и спрашивает, когда можно вернуться к разговору."
+        },
+        "sketch": {
+          "flat": "y95_transfer"
+        },
+        "effects": {
+          "attrs": {
+            "loyalty": 10,
+            "rep_fans": 10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Поторговаться",
+        "conclusion": {
+          "success": "Ты выбиваешь лучший контракт. Но в клубе шепчутся.",
+          "fail": "Агент закрывает папку. Переговоры застопорились: новых условий клуб пока не прислал."
+        },
+        "sketch": {
+          "success": "y95_transfer",
+          "fail": "y95_transfer"
+        },
+        "check": {
+          "attr": "media",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "media": 5,
+            "ambition": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_transfer",
+    "requires": {
+      "media_min": 60,
+      "rep_coach_min": 35,
+      "flags": {
+        "european_ban": false,
+        "agent_changed": false,
+        "contract_terminated": false
+      },
+      "position": "FWD"
+    }
+  },
+  {
+    "id": "95_TROPHY",
+    "title": "Вручение трофея",
+    "type": "🎭",
+    "bg": "field",
+    "art": "y95_trophy",
+    "text": [
+      "Вручение Кубка. Ты поднимаешь трофей. Трибуны ревут."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Наслаждаться моментом",
+        "conclusion": {
+          "flat": "Ты поднимаешь Кубок выше головы. Из-за его ручки виден сектор, где всё ещё стоят ваши болельщики."
+        },
+        "sketch": {
+          "flat": "y95_trophy"
+        },
+        "effects": {
+          "stress": -10,
+          "attrs": {
+            "rep_fans": 10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Поблагодарить партнёров",
+        "conclusion": {
+          "flat": "Ты говоришь: «Это ваша победа». Партнёры обнимают тебя."
+        },
+        "sketch": {
+          "flat": "y95_trophy"
+        },
+        "effects": {
+          "attrs": {
+            "rep_teammates": 10,
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Подойти с Кубком к болельщикам",
+        "conclusion": {
+          "flat": "Ты идёшь к трибуне с Кубком в руках. За оградой поднимают шарфы."
+        },
+        "sketch": {
+          "flat": "y95_trophy"
+        },
+        "effects": {
+          "attrs": {
+            "media": 10,
+            "rep_fans": 5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_trophy",
+    "requires": {
+      "flag": "trophy_95"
+    }
+  },
+  {
+    "id": "TORP_FANS",
+    "title": "Фанаты в аэропорту",
+    "type": "🎭",
+    "bg": "street",
+    "art": [
+      "y95_fans",
+      "y95_fans2"
+    ],
+    "text": [
+      "Вы возвращаетесь с выезда. В аэропорту фанаты: «Вы продали игру!» Ты чувствуешь напряжение."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Поговорить",
+        "conclusion": {
+          "success": "Ты объясняешь. Они успокаиваются. Ты — лидер.",
+          "fail": "Ты останавливаешься у ограждения. В первых рядах слушают твой ответ."
+        },
+        "sketch": {
+          "success": [
+            "y95_fans",
+            "y95_fans2"
+          ],
+          "fail": [
+            "y95_fans",
+            "y95_fans2"
+          ]
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "success": {
+          "stress": 5,
+          "attrs": {
+            "rep_fans": 10
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Пройти мимо",
+        "conclusion": {
+          "flat": "Ты идёшь к автобусу. Фанаты кричат вслед."
+        },
+        "sketch": {
+          "flat": [
+            "y95_tunnel",
+            "y95_tunnel2"
+          ]
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "rep_fans": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Огрызнуться",
+        "conclusion": {
+          "success": "Ты кричишь. Видео разлетается. Ты — враг народа.",
+          "fail": "Ты останавливаешься у ограждения. В первых рядах слушают твой ответ."
+        },
+        "sketch": {
+          "success": [
+            "y95_fans",
+            "y95_fans2"
+          ],
+          "fail": [
+            "y95_fans",
+            "y95_fans2"
+          ]
+        },
+        "check": {
+          "attr": "temperament",
+          "threshold": 60
+        },
+        "success": {
+          "rumor": -10,
+          "attrs": {
+            "rep_fans": -15,
+            "media": 15
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "airport94",
+    "requires": {
+      "club": "Торпедо",
+      "flag": "away_loss"
+    }
+  },
+  {
+    "id": "ZEN_PISTOL",
+    "title": "Угроза на выезде",
+    "type": "🎭",
+    "bg": "field",
+    "art": [
+      "y95_tunnel",
+      "y95_tunnel2"
+    ],
+    "text": [
+      "После выездного товарищеского матча мужчина в кожанке перехватывает тебя в служебном коридоре. Он отводит полу куртки. В тусклом свете виден металл."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Отойти и позвать охрану",
+        "conclusion": {
+          "flat": "Ты пятясь добираешься до двери. Через секунду между вами оказывается охранник."
+        },
+        "sketch": {
+          "flat": [
+            "y95_tunnel",
+            "y95_tunnel2"
+          ]
+        },
+        "effects": {
+          "stress": 20,
+          "attrs": {
+            "money": 1000,
+            "rep_coach": -10
+          },
+          "goals": 0,
+          "score_change": {}
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Дождаться партнёров у двери",
+        "conclusion": {
+          "success": "В коридоре раздаются шаги команды. Незнакомец убирает руку под куртку и отходит.",
+          "fail": "Он замечает, что ты тянешь время, и придвигается ближе. Тебя спасает щелчок двери в конце коридора."
+        },
+        "sketch": {
+          "success": [
+            "y95_tunnel",
+            "y95_tunnel2"
+          ],
+          "fail": [
+            "y95_tunnel",
+            "y95_tunnel2"
+          ]
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 60
+        },
+        "success": {
+          "stress": 15,
+          "attrs": {
+            "rep_fans": 10,
+            "professionalism": 5
+          },
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 5,
+          "score_change": {}
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Вернуться к тренеру",
+        "conclusion": {
+          "flat": "У входа в подтрибунный коридор ты рассказываешь тренеру, что произошло. Он просит никого не выпускать по одному."
+        },
+        "sketch": {
+          "flat": "y95_sideline"
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "rep_fans": -10,
+            "rep_coach": 5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early92",
+    "requires": {
+      "position": "GK",
+      "club": "Зенит"
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "ZEN_BOOTS",
+    "title": "Зарплата ботинками",
+    "type": "🎭",
+    "bg": "locker",
+    "art": "y95_bootpay",
+    "text": [
+      "Тренер раздаёт зарплату. Вместо денег — кроссовки. «Продадите — прокормитесь». Партнёры смеются: «Опять ботинки»."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Продать на рынке",
+        "conclusion": {
+          "flat": "После тренировки ты продаёшь кроссовки и пересчитываешь выручку. На проезд и несколько обедов хватит."
+        },
+        "sketch": {
+          "flat": "money"
+        },
+        "effects": {
+          "attrs": {
+            "money": 50,
+            "professionalism": -5,
+            "media": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Носить с гордостью",
+        "conclusion": {
+          "flat": "Ты примеряешь пару в раздевалке. По плитке можно пройти без боли, а это уже что-то."
+        },
+        "sketch": {
+          "flat": "y95_bootpay"
+        },
+        "effects": {
+          "attrs": {
+            "rep_fans": 10,
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Отдать партнёру",
+        "conclusion": {
+          "flat": "Ты отдаёшь кроссовки молодому. Он благодарит. Тренер кивает."
+        },
+        "sketch": {
+          "flat": "y95_bootpay"
+        },
+        "effects": {
+          "stress": 5,
+          "attrs": {
+            "rep_teammates": 5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early92",
+    "requires": {
+      "club": "Зенит"
+    }
+  },
+  {
+    "id": "ZEN_SPARTAK",
+    "title": "Сенсация 1992",
+    "type": "🎭",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Стадион имени Кирова. 7 000 зрителей. «Спартак» — фаворит. Никто не верит в «Зенит». Но Кулик забивает на 24-й минуте. 1:0."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Удержать счёт",
+        "conclusion": {
+          "success": "Ты выносишь мяч в сторону бровки. Сопернику приходится начинать атаку с аута.",
+          "fail": "Ты остаёшься в игре до свистка. После эпизода тренер жестом просит держать свою зону."
+        },
+        "sketch": {
+          "success": [
+            "y95_clearance",
+            "y95_clearance2"
+          ],
+          "fail": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "check": {
+          "attr": "phy",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 10,
+            "rep_coach": 5,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Помочь атаке",
+        "conclusion": {
+          "success": "Твоя передача находит партнёра. Он бьёт низом, и мяч натягивает сетку.",
+          "fail": "Соперник читает передачу и подставляет ногу. Атаку приходится начинать заново."
+        },
+        "sketch": {
+          "success": [
+            "team_goal",
+            "y95_team_goal2"
+          ],
+          "fail": [
+            "y95_lost",
+            "y95_lost2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 50
+        },
+        "success": {
+          "attrs": {
+            "media": 10,
+            "rep_teammates": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Спрятаться",
+        "conclusion": {
+          "flat": "Ты играешь серо. Победа проходит мимо тебя. Ты чувствуешь себя лишним."
+        },
+        "sketch": {
+          "flat": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "rep_fans": -5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early92",
+    "requires": {
+      "club": "Зенит"
+    },
+    "match": true
+  },
+  {
+    "id": "92_EURO_CIS",
+    "title": "После Евро-1992",
+    "type": "🎭",
+    "bg": "press",
+    "art": "y95_office",
+    "text": [
+      "После Евро-1992 разговоры о сборной СНГ всё ещё слышны на базе. На столе осталась газета с результатами. Старшие игроки спорят о том, сколько обещали заплатить за отбор.",
+      {
+        "speaker": "Ветеран",
+        "text": "Сегодня пообещали, завтра новый начальник. Запоминай, кто и при ком сказал."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Устроить бунт",
+        "conclusion": {
+          "flat": "Ты поднимаешь вопрос перед федерацией. Тебя вызывают на ковёр. Но партнёры уважают тебя."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "stress": 15,
+          "attrs": {
+            "media": 10,
+            "rep_coach": -10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Промолчать",
+        "conclusion": {
+          "flat": "Ты молчишь. Деньги не приходят. Осадок остаётся."
+        },
+        "sketch": {
+          "flat": "y95_isolation"
+        },
+        "effects": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Поговорить с тренером лично",
+        "conclusion": {
+          "success": "Тренер обещает разобраться. Но ты знаешь, что это ложь.",
+          "fail": "Тренер слушает до конца, потом переворачивает лист с расписанием. Разговор о выплатах он обещает продолжить после сбора."
+        },
+        "sketch": {
+          "success": "y95_office",
+          "fail": "y95_office"
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "success": {
+          "stress": -5,
+          "attrs": {
+            "rep_coach": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "summer92",
+    "subtitle": "Художественная сцена",
+    "month": 7
+  },
+  {
+    "id": "92_VHS_TRANSFER",
+    "title": "Видеомагнитофон в контракте",
+    "type": "🎭",
+    "bg": "office",
+    "art": "y95_vhs",
+    "text": [
+      "В переговорной щёлкает импортный видеомагнитофон. Агент прикидывает, что предложить тебе вдобавок к небольшим подъёмным.",
+      {
+        "speaker": "Агент",
+        "text": "На кассетах можно пересматривать свои матчи. Хочешь взять его вместо части премии?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Согласиться",
+        "conclusion": {
+          "flat": "Ты соглашаешься. Агент придвигает видеомагнитофон к краю стола и показывает, куда вставлять кассету."
+        },
+        "sketch": {
+          "flat": "y95_vhs"
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "media": 5,
+            "professionalism": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отказаться",
+        "conclusion": {
+          "flat": "Ты отодвигаешь бумаги. Агент выключает видеомагнитофон и снова открывает страницу о премии."
+        },
+        "sketch": {
+          "flat": "y95_vhs"
+        },
+        "effects": {
+          "attrs": {
+            "professionalism": 10,
+            "rep_coach": -5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early92",
+    "requires": {
+      "club": "Зенит"
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "LOKO_TUZ",
+    "title": "Пропавший автобус",
+    "type": "🎭",
+    "bg": "street",
+    "art": "y95_bus",
+    "text": [
+      "Молодой запасной взял ключи от автобуса и отогнал его за ворота базы. Водитель ищет ключи, а администратор вызывает тебя первым.",
+      {
+        "speaker": "Администратор",
+        "text": "Кто последним выходил со стоянки?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Признаться",
+        "conclusion": {
+          "flat": "Ты берёшь вину на себя. Тумилович благодарит. Но тренер штрафует тебя."
+        },
+        "sketch": {
+          "flat": "y95_office"
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "rep_coach": -10,
+            "rep_teammates": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Сдать Тумиловича",
+        "conclusion": {
+          "flat": "Ты называешь имя. Тумилович отстранён. Партнёры отворачиваются."
+        },
+        "sketch": {
+          "flat": "y95_office"
+        },
+        "effects": {
+          "flags": {
+            "snitch": true
+          },
+          "attrs": {
+            "rep_coach": 5,
+            "rep_teammates": -15
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Промолчать",
+        "conclusion": {
+          "flat": "Ты молчишь. Президент недоволен. Но ты не стукач."
+        },
+        "sketch": {
+          "flat": "y95_isolation"
+        },
+        "effects": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early93",
+    "requires": {
+      "club": "Локомотив (М)"
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "TORP_REF",
+    "title": "Судейский скандал",
+    "type": "🎭",
+    "bg": "field",
+    "art": "y95_separate",
+    "text": [
+      "Судья ошибается в пользу соперника. Трибуны ревут. Твой партнёр бросается на арбитра. Ты — рядом."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Поддержать партнёра",
+        "conclusion": {
+          "success": "Ты ввязываешься в драку. Тебя удаляют. Газеты пишут: «ВАРВАРЫ».",
+          "fail": "Ты успеваешь сделать шаг вперёд. Партнёры подхватывают тебя под руки и уводят в сторону, пока арбитр не заметил толчок."
+        },
+        "sketch": {
+          "success": "y95_card",
+          "fail": "y95_separate"
+        },
+        "check": {
+          "attr": "temperament",
+          "threshold": 55
+        },
+        "success": {
+          "suspension_matches": 3,
+          "counters": {
+            "red_cards": 1
+          },
+          "attrs": {
+            "rep_teammates": 10,
+            "rep_press": -10
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Успокоить",
+        "conclusion": {
+          "success": "Ты оттаскиваешь партнёра. Судья благодарен. Ты сохраняешь голову.",
+          "fail": "Ты встаёшь между игроками. Партнёры по обе стороны отводят их от судьи."
+        },
+        "sketch": {
+          "success": "y95_separate",
+          "fail": "y95_separate"
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 5,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Промолчать",
+        "conclusion": {
+          "flat": "Ты молчишь. Партнёры считают тебя трусом."
+        },
+        "sketch": {
+          "flat": "y95_isolation"
+        },
+        "effects": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early93",
+    "requires": {
+      "club": "Торпедо"
+    }
+  },
+  {
+    "id": "MID_PRESS",
+    "title": "Прессинг",
+    "type": "🎭",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Соперник контролирует мяч. Ты идёшь в отбор. Тренер кричит: «Не пускай!»"
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Жёсткий отбор",
+        "conclusion": {
+          "success": "Ты выбираешь момент и чисто отбираешь мяч, пока соперник разворачивается.",
+          "fail": "Свисток прерывает эпизод. Судья ставит мяч на газон и отводит вас на несколько шагов."
+        },
+        "sketch": {
+          "success": [
+            "tackle",
+            "y95_tackle2"
+          ],
+          "fail": "foul"
+        },
+        "check": {
+          "attr": "phy",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 5,
+            "rep_fans": 5
+          }
+        },
+        "fail": {
+          "stress": 10,
+          "counters": {
+            "yellow_cards": 1
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Сфолить",
+        "conclusion": {
+          "success": "Ты бьёшь по ногам. Жёлтая. Но атака сорвана.",
+          "fail": "Свисток прерывает эпизод. Судья ставит мяч на газон и отводит вас на несколько шагов."
+        },
+        "sketch": {
+          "success": "foul",
+          "fail": "foul"
+        },
+        "check": {
+          "attr": "temperament",
+          "threshold": 50
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 5,
+            "rep_fans": -5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Отпустить",
+        "conclusion": {
+          "flat": "Ты задерживаешься в центре. Соперник выходит на удар и отправляет мяч в сетку."
+        },
+        "sketch": {
+          "flat": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "effects": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early93",
+    "requires": {
+      "position": "MID"
+    },
+    "match": true
+  },
+  {
+    "id": "FWD_AIR",
+    "title": "Игра головой",
+    "type": "🎭",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Подача с фланга. Ты прыгаешь. Защитник рядом. Мяч летит в твою сторону."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Пробить головой",
+        "conclusion": {
+          "success": "Ты встречаешь подачу лбом. Мяч уходит в дальний угол, и сетка вздрагивает.",
+          "fail": "Ты достаёшь мяч в прыжке, но он проходит снаружи дальней стойки."
+        },
+        "sketch": {
+          "success": "y95_header",
+          "fail": "y95_headerwide"
+        },
+        "check": {
+          "attr": "phy",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 10,
+            "rep_fans": 5
+          },
+          "goals": 1
+        },
+        "fail": {
+          "stress": 10
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Скинуть партнёру",
+        "conclusion": {
+          "success": "Ты сбрасываешь мяч головой. Партнёр подхватывает его и пробивает в сетку.",
+          "fail": "После твоей скидки защитник первым подбирает мяч и уводит его из штрафной."
+        },
+        "sketch": {
+          "success": [
+            "team_goal",
+            "y95_team_goal2"
+          ],
+          "fail": "y95_lost"
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_teammates": 10
+          }
+        },
+        "fail": {
+          "stress": 10
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Симулировать",
+        "conclusion": {
+          "success": "Свисток прерывает эпизод. Судья ставит мяч на газон и отводит вас на несколько шагов.",
+          "fail": "Ты падаешь в штрафной. Арбитр подходит, просит подняться и показывает, что защитник сыграл в мяч."
+        },
+        "sketch": {
+          "success": "foul",
+          "fail": "foul"
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "rep_coach": -5
+          }
+        },
+        "fail": {
+          "attrs": {
+            "rep_press": -10
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early93",
+    "requires": {
+      "position": "FWD"
+    },
+    "match": true
+  },
+  {
+    "id": "93_TOURNIR_SNG",
+    "title": "Идея общего турнира",
+    "type": "🎭",
+    "bg": "office",
+    "art": "review_soviet_plan",
+    "text": [
+      "На сборах представители клубов бывшего СССР раскладывают на столе карту железных дорог. Проект обсуждают как отдельный турнир.",
+      {
+        "speaker": "Организатор",
+        "text": "Пять городов, два пересечения границы. Кто оплатит дорогу, если матчи наложатся на чемпионат?"
+      },
+      {
+        "speaker": "Тренер",
+        "text": "В сборную и в чемпионат у нас уже разъезжаются полкоманды. Если поддержишь, проси смету."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Поддержать пробный тур и запросить смету",
+        "conclusion": {
+          "flat": "Ты отмечаешь на карте два ближайших города. Организатор записывает предложение о пробном выезде."
+        },
+        "sketch": {
+          "flat": "review_soviet_plan"
+        },
+        "effects": {
+          "stress": 5,
+          "attrs": {
+            "media": 5
+          },
+          "flags": {
+            "cis_project_backed": true
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Попросить сохранить календарь чемпионата",
+        "conclusion": {
+          "flat": "Ты показываешь на даты двух клубных туров. Организатор записывает возражение и обещает вернуться к разговору осенью."
+        },
+        "sketch": {
+          "flat": "review_soviet_plan"
+        },
+        "effects": {
+          "attrs": {
+            "professionalism": 5,
+            "rep_coach": -5
+          },
+          "flags": {
+            "cis_project_concern": true
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early93",
+    "subtitle": "Художественная сцена · проект клубного турнира"
+  },
+  {
+    "id": "TORP_DYNAMO",
+    "title": "Дерби с Динамо",
+    "type": "🎭",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Дерби. «Торпедо» против «Динамо». Стадион полон. Ты получаешь мяч. Время уходит."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Пробить",
+        "conclusion": {
+          "success": "Ты бьёшь в касание. Мяч натягивает сетку, и партнёр первым подбегает к тебе.",
+          "fail": "Мяч проходит снаружи стойки. Вратарь провожает его взглядом."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 10
+          },
+          "goals": 1
+        },
+        "fail": {
+          "stress": 15
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отдать пас",
+        "conclusion": {
+          "success": "Передача проходит между защитниками. Партнёр успевает первым и забивает.",
+          "fail": "Соперник читает передачу и подставляет ногу. Атаку приходится начинать заново."
+        },
+        "sketch": {
+          "success": [
+            "team_goal",
+            "y95_team_goal2"
+          ],
+          "fail": [
+            "y95_lost",
+            "y95_lost2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 50
+        },
+        "success": {
+          "attrs": {
+            "rep_teammates": 10
+          }
+        },
+        "fail": {
+          "attrs": {
+            "rep_coach": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сыграть назад",
+        "conclusion": {
+          "flat": "Ты возвращаешь мяч свободному партнёру, и команда сохраняет владение."
+        },
+        "sketch": {
+          "flat": [
+            "y95_build",
+            "y95_build2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "rep_coach": 5,
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early94",
+    "requires": {
+      "club": [
+        "Торпедо",
+        "Динамо (М)"
+      ],
+      "position": [
+        "MID",
+        "FWD"
+      ]
+    },
+    "match": true
+  },
+  {
+    "id": "MID_CAPTAIN",
+    "title": "Капитанская повязка",
+    "type": "🎭",
+    "bg": "locker",
+    "art": "y95_coach",
+    "text": [
+      "Тренер вызывает тебя: «Ты будешь капитаном». Ты чувствуешь тяжесть."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Принять",
+        "conclusion": {
+          "flat": "Ты выходишь с повязкой. Ты — лидер. Но ответственность давит."
+        },
+        "sketch": {
+          "flat": "y95_coach"
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "leadership": 10
+          },
+          "captain": true
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отказаться",
+        "conclusion": {
+          "flat": "Ты возвращаешь повязку тренеру. Он молча кладёт её обратно на скамейку."
+        },
+        "sketch": {
+          "flat": "y95_coach"
+        },
+        "effects": {
+          "attrs": {
+            "rep_coach": -10,
+            "rep_teammates": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Спросить, почему я",
+        "conclusion": {
+          "success": "Тренер говорит: «Ты видишь игру». Ты соглашаешься.",
+          "fail": "Тренер подвигает повязку к краю стола. Ты так и не слышишь ответа, почему он вызвал именно тебя."
+        },
+        "sketch": {
+          "success": "y95_office",
+          "fail": "y95_office"
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "stress": 5,
+          "attrs": {
+            "rep_coach": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early94",
+    "requires": {
+      "rep_coach_min": 60,
+      "position": "MID"
+    }
+  },
+  {
+    "id": "FWD_RIVAL",
+    "title": "Личный враг",
+    "type": "🎭",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Защитник соперника бьёт тебя по ногам. Шепчет гадости. Судья не слышит."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Ответить жёстко",
+        "conclusion": {
+          "success": "Ты бьёшь его. Тебя удаляют. Трибуны ревут.",
+          "fail": "Ты успеваешь сделать шаг вперёд. Партнёры подхватывают тебя под руки и уводят в сторону, пока арбитр не заметил толчок."
+        },
+        "sketch": {
+          "success": "y95_card",
+          "fail": "y95_separate"
+        },
+        "check": {
+          "attr": "temperament",
+          "threshold": 55
+        },
+        "success": {
+          "suspension_matches": 3,
+          "counters": {
+            "red_cards": 1
+          },
+          "attrs": {
+            "rep_fans": 5,
+            "rep_press": -10
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Стерпеть и забить",
+        "conclusion": {
+          "success": "Ты молчишь. Через минуту забиваешь. Ты — герой.",
+          "fail": "Мяч проходит снаружи стойки. Вратарь провожает его взглядом."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 10,
+            "rep_fans": 5
+          },
+          "goals": 1
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Пожаловаться судье",
+        "conclusion": {
+          "flat": "Ты показываешь тренеру у бровки, как соперник наступил тебе на ногу. Он просит дождаться следующей паузы и обратиться к судье."
+        },
+        "sketch": {
+          "flat": "y95_sideline"
+        },
+        "effects": {
+          "attrs": {
+            "rep_fans": -5,
+            "rep_coach": 5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early94",
+    "requires": {
+      "position": "FWD"
+    },
+    "match": true
+  },
+  {
+    "id": "94_SPARTAK_BRIBE_CSKA",
+    "title": "Конверт перед дерби",
+    "type": "🎭",
+    "bg": "office",
+    "art": "y95_envelope",
+    "text": [
+      "Перед дерби в коридоре базы тебе передают конверт. Человек не называет себя и не хочет, чтобы разговор слышали другие.",
+      {
+        "speaker": "Незнакомец",
+        "text": "Вам достаточно сыграть вничью. Остальное обсудим после."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Взять деньги",
+        "conclusion": {
+          "flat": "Ты берёшь. Матч — ничья. Деньги на счету. Но ты чувствуешь себя предателем."
+        },
+        "sketch": {
+          "flat": "y95_envelope"
+        },
+        "effects": {
+          "stress": 20,
+          "flags": {
+            "fixing_debt": true
+          },
+          "debt": 10000,
+          "attrs": {
+            "money": 10000
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отказаться",
+        "conclusion": {
+          "flat": "Ты отказываешься. Посредник уходит. Ты остаёшься чистым."
+        },
+        "sketch": {
+          "flat": "y95_refuse"
+        },
+        "effects": {
+          "attrs": {
+            "professionalism": 10,
+            "rep_coach": -10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сообщить в РФС",
+        "conclusion": {
+          "success": "Ты доносишь. Скандал. Но партнёры считают тебя стукачом.",
+          "fail": "Журналист просит назвать свидетеля. Ты повторяешь, что пришёл сообщить о конверте, и прячешь записку с именем обратно в карман."
+        },
+        "sketch": {
+          "success": [
+            "y95_press",
+            "y95_press2"
+          ],
+          "fail": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 60
+        },
+        "success": {
+          "flags": {
+            "whistleblower": true
+          },
+          "attrs": {
+            "rep_press": 10,
+            "rep_teammates": -15
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early94",
+    "requires": {
+      "club": "ЦСКА"
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "94_BEREZOVSKY",
+    "title": "Два пропущенных мяча",
+    "type": "🎭",
+    "bg": "field",
+    "art": [
+      "y95_press",
+      "y95_press2"
+    ],
+    "text": [
+      "После двух пропущенных мячей газета раздувает слух о вратаре вашей команды. Ты видел второй гол со скамейки: мяч изменил направление после рикошета.",
+      {
+        "speaker": "Журналист",
+        "text": "Вы считаете, он мог успеть?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Защитить Березовского",
+        "conclusion": {
+          "flat": "Ты говоришь, что он невиновен. Партнёры благодарны. Но пресса не верит."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "rep_teammates": 10,
+            "rep_press": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Промолчать",
+        "conclusion": {
+          "flat": "Ты молчишь. нашего вратаря отстраняют. Ты получаешь место в основе. Но ты чувствуешь себя виноватым."
+        },
+        "sketch": {
+          "flat": "y95_isolation"
+        },
+        "effects": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Согласиться с обвинениями",
+        "conclusion": {
+          "flat": "Ты подтверждаешь слухи. нашего вратаря изгоняют. Ты — стукач."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "stress": 15,
+          "attrs": {
+            "rep_teammates": -10,
+            "media": 5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early94",
+    "requires": {
+      "position": "GK",
+      "club": "Зенит"
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "94_LOKO_VODKA",
+    "title": "Приз — бутылка водки",
+    "type": "🎭",
+    "bg": "locker",
+    "art": "y95_bottle",
+    "text": [
+      "1994. Нападающий «Локомотива» Олег Гарин забивает лучший гол месяца. Приз — трёхлитровая бутылка водки от спонсора «Смирновъ». Тебе вручают такую же.",
+      {
+        "speaker": "Перетурин",
+        "text": "Лучший гол! Держи приз."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Взять и выпить с партнёрами",
+        "conclusion": {
+          "flat": "Вы выпиваете. Весело. Но на тренировке — тяжело."
+        },
+        "sketch": {
+          "flat": "y95_bottle"
+        },
+        "effects": {
+          "stress": -10,
+          "next_match_phy": -5,
+          "attrs": {
+            "professionalism": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Отдать бутылку ветерану",
+        "conclusion": {
+          "flat": "Ветеран доволен. Партнёры уважают твой жест."
+        },
+        "sketch": {
+          "flat": "y95_bottle"
+        },
+        "effects": {
+          "attrs": {
+            "rep_teammates": 5,
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Продать",
+        "conclusion": {
+          "flat": "Ты продаёшь водку. Деньги смешные. Фанаты смеются."
+        },
+        "sketch": {
+          "flat": "money"
+        },
+        "effects": {
+          "attrs": {
+            "money": 20,
+            "rep_fans": -5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "early94",
+    "requires": {
+      "position": "FWD",
+      "club": "Локомотив (М)"
+    }
+  },
+  {
+    "id": "93_LOKO_OKEAN",
+    "title": "Ничья по расчёту",
+    "type": "🎭",
+    "bg": "field",
+    "art": "y95_envelope",
+    "text": [
+      "Перед концовкой сезона незнакомец на выезде предлагает сохранить ничью. Он говорит тихо, но всё время поглядывает на дверь.",
+      {
+        "speaker": "Незнакомец",
+        "text": "0:0 устроит обоих. Пусть матч таким и останется."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Согласиться",
+        "conclusion": {
+          "flat": "Ты берёшь деньги. Незнакомец повторяет, что ждёт ничьей, и уходит, оставив дверь приоткрытой."
+        },
+        "sketch": {
+          "flat": "y95_envelope"
+        },
+        "effects": {
+          "stress": 5,
+          "flags": {
+            "fixing_debt": true
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Попытаться выиграть",
+        "conclusion": {
+          "success": "Ты играешь на победу. После твоего паса партнёр первым добирается до мяча и забивает.",
+          "fail": "Ты остаёшься в игре до свистка. После эпизода тренер жестом просит держать свою зону."
+        },
+        "sketch": {
+          "success": [
+            "team_goal",
+            "y95_team_goal2"
+          ],
+          "fail": [
+            "y95_pitch",
+            "y95_pitch2"
+          ]
+        },
+        "check": {
+          "attr": "temperament",
+          "threshold": 55
+        },
+        "success": {
+          "stress": 10,
+          "attrs": {
+            "rep_fans": 10,
+            "rep_teammates": -15
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сообщить в РФС",
+        "conclusion": {
+          "flat": "Ты доносишь. Начинается разбирательство. Тебя ненавидят все."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "flags": {
+            "whistleblower": true
+          },
+          "attrs": {
+            "rep_press": 10,
+            "rep_teammates": -20
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "late93",
+    "requires": {
+      "club": [
+        "Локомотив (НН)",
+        "Океан"
+      ]
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "MID_FANS",
+    "title": "Фанаты и критика",
+    "type": "🎭",
+    "bg": "press",
+    "art": [
+      "y95_press",
+      "y95_press2"
+    ],
+    "text": [
+      "Газеты пишут: «Полузащитник не отдаёт пасы». Фанаты свистят. Ты чувствуешь давление."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Ответить на поле",
+        "conclusion": {
+          "success": "Ты бьёшь в касание. Мяч натягивает сетку, и партнёр первым подбегает к тебе.",
+          "fail": "Мяч проходит снаружи стойки. Вратарь провожает его взглядом."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 10,
+            "rep_fans": 5
+          },
+          "goals": 1
+        },
+        "fail": {
+          "stress": 15
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Нахамить прессе",
+        "conclusion": {
+          "flat": "Ты отвечаешь резко. Журналист опускает взгляд в блокнот, чтобы дословно записать последнюю фразу."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "stress": 10,
+          "attrs": {
+            "rep_press": -10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Промолчать",
+        "conclusion": {
+          "flat": "Ты пропускаешь разговор с прессой. В раздевалке остаются мокрая форма и недопитая вода."
+        },
+        "sketch": {
+          "flat": "y95_isolation"
+        },
+        "effects": {
+          "stress": 5,
+          "attrs": {
+            "professionalism": 5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "late94",
+    "requires": {
+      "rep_fans_max": 45,
+      "position": "MID"
+    },
+    "match": true
+  },
+  {
+    "id": "FWD_DROUGHT",
+    "title": "Безголевая серия",
+    "type": "🎭",
+    "bg": "press",
+    "art": "training",
+    "text": [
+      "Ты не забиваешь пять матчей. Пресса пишет: «Кризис». Тренер хмурится."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Работать больше",
+        "conclusion": {
+          "success": "Ты остаёшься после тренировки. К концу занятия мяч наконец идёт туда, куда ты целишься. Следующий матч ещё впереди.",
+          "fail": "Ты остаёшься на тренировочном поле и отрабатываешь движение до конца занятия."
+        },
+        "sketch": {
+          "success": "training",
+          "fail": "training"
+        },
+        "check": {
+          "attr": "professionalism",
+          "threshold": 55
+        },
+        "success": {
+          "stress": 5,
+          "attrs": {
+            "tec": 5,
+            "professionalism": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Поговорить с тренером",
+        "conclusion": {
+          "success": "Тренер поддерживает. Ты чувствуешь уверенность.",
+          "fail": "Тренер выслушивает тебя и складывает лист с составом. Сегодня он не готов обещать место в старте."
+        },
+        "sketch": {
+          "success": "y95_office",
+          "fail": "y95_office"
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 55
+        },
+        "success": {
+          "stress": -5,
+          "attrs": {
+            "rep_coach": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сорваться",
+        "conclusion": {
+          "flat": "Ты идёшь в бар. На тренировке — мешки под глазами."
+        },
+        "sketch": {
+          "flat": "y95_isolation"
+        },
+        "effects": {
+          "stress": 15,
+          "attrs": {
+            "professionalism": -5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "late94",
+    "requires": {
+      "goalless_min": 5,
+      "position": "FWD"
+    }
+  },
+  {
+    "id": "94_CHUDIN_KIEV",
+    "title": "Слабость на выезде",
+    "type": "🎭",
+    "bg": "field",
+    "art": "y95_clinic",
+    "text": [
+      "На еврокубковом выезде в Киеве ты едва заканчиваешь разминку. Ноги ватные, и на лестнице приходится хвататься за перила. Врач просит сесть и описать симптомы."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Пожаловаться в УЕФА",
+        "conclusion": {
+          "flat": "Ты пишешь жалобу. Начинается разбирательство. Но доказательств нет."
+        },
+        "sketch": {
+          "flat": [
+            "y95_press",
+            "y95_press2"
+          ]
+        },
+        "effects": {
+          "stress": 15,
+          "attrs": {
+            "media": 10,
+            "rep_coach": -10
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Промолчать",
+        "conclusion": {
+          "flat": "Ты молчишь. Матч проигран. Ты чувствуешь, что тебя обманули."
+        },
+        "sketch": {
+          "flat": "y95_isolation"
+        },
+        "effects": {
+          "stress": 5
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сыграть через силу",
+        "conclusion": {
+          "success": "Ты выходишь на поле. Играешь. Но силы не те.",
+          "fail": "Ты остаёшься на тренировочном поле и отрабатываешь движение до конца занятия."
+        },
+        "sketch": {
+          "success": "training",
+          "fail": "training"
+        },
+        "check": {
+          "attr": "com",
+          "threshold": 60
+        },
+        "success": {
+          "stress": 10,
+          "attrs": {
+            "rep_coach": 5
+          }
+        },
+        "fail": {
+          "stress": 5
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "late94",
+    "requires": {
+      "club": "Спартак (М)"
+    },
+    "subtitle": "Художественная сцена"
+  },
+  {
+    "id": "MID_VISION",
+    "title": "Голевой пас",
+    "type": "🎭",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Ты получаешь мяч в центре. Впереди — два защитника. Ты видишь, как нападающий делает рывок. Время замедляется."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Отдать пас",
+        "conclusion": {
+          "success": "Передача проходит между защитниками. Партнёр успевает первым и забивает.",
+          "fail": "Соперник читает передачу и подставляет ногу. Атаку приходится начинать заново."
+        },
+        "sketch": {
+          "success": [
+            "team_goal",
+            "y95_team_goal2"
+          ],
+          "fail": [
+            "y95_lost",
+            "y95_lost2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 10,
+            "rep_teammates": 5
+          },
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "stress": 10,
+          "attrs": {
+            "rep_coach": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Пробить",
+        "conclusion": {
+          "success": "Ты бьёшь в касание. Мяч натягивает сетку, и партнёр первым подбегает к тебе.",
+          "fail": "Мяч проходит снаружи стойки. Вратарь провожает его взглядом."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5
+          },
+          "goals": 1,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "stress": 15
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сыграть назад",
+        "conclusion": {
+          "flat": "Ты возвращаешь мяч свободному партнёру, и команда сохраняет владение."
+        },
+        "sketch": {
+          "flat": [
+            "y95_build",
+            "y95_build2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "professionalism": 5,
+            "rep_coach": 5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "repeat",
+    "requires": {
+      "position": "MID"
+    },
+    "match": true
+  },
+  {
+    "id": "FWD_FINISH",
+    "title": "Реализация момента",
+    "type": "🎭",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Ты выходишь один на один. Вратарь смотрит на тебя. Время замедляется."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Пробить",
+        "conclusion": {
+          "success": "Ты бьёшь в касание. Мяч натягивает сетку, и партнёр первым подбегает к тебе.",
+          "fail": "Мяч проходит снаружи стойки. Вратарь провожает его взглядом."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "media": 10,
+            "rep_fans": 5
+          },
+          "goals": 1,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "stress": 15
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Обыграть вратаря",
+        "conclusion": {
+          "success": "Ты бьёшь в касание. Мяч натягивает сетку, и партнёр первым подбегает к тебе.",
+          "fail": "Мяч проходит снаружи стойки. Вратарь провожает его взглядом."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 65
+        },
+        "success": {
+          "attrs": {
+            "media": 15
+          },
+          "goals": 1,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "stress": 20
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Отдать пас",
+        "conclusion": {
+          "success": "Передача проходит между защитниками. Партнёр успевает первым и забивает.",
+          "fail": "Соперник читает передачу и подставляет ногу. Атаку приходится начинать заново."
+        },
+        "sketch": {
+          "success": [
+            "team_goal",
+            "y95_team_goal2"
+          ],
+          "fail": [
+            "y95_lost",
+            "y95_lost2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_teammates": 10
+          },
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "attrs": {
+            "rep_coach": -5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "repeat",
+    "requires": {
+      "position": "FWD"
+    },
+    "match": true
+  },
+  {
+    "id": "S95_ROUND_GK",
+    "title": "Момент у ворот",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Перед твоими воротами отскакивает мяч. Соперник успевает развернуться и готовится пробить."
+    ],
+    "choices": [
+      {
+        "text": "Дождаться удара на линии",
+        "check": {
+          "attr": "com",
+          "threshold": 56
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 6
+          }
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          }
+        },
+        "conclusion": {
+          "success": "Ты остаёшься на линии и ловишь мяч у стойки.",
+          "fail": "Удар проходит мимо твоих перчаток. Мяч в сетке."
+        },
+        "sketch": {
+          "success": [
+            "y95_catch",
+            "y95_catch2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "id": "1",
+        "scene_art": true
+      },
+      {
+        "text": "Выйти навстречу мячу",
+        "check": {
+          "attr": "phy",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 6
+          }
+        },
+        "fail": {
+          "stress": 8,
+          "score_change": {
+            "against": 1
+          }
+        },
+        "conclusion": {
+          "success": "Ты делаешь два шага вперёд и накрываешь мяч обеими перчатками.",
+          "fail": "Ты выдвигаешься слишком рано. Мяч проходит под рукой и пересекает линию."
+        },
+        "sketch": {
+          "success": [
+            "y95_catch",
+            "y95_catch2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "id": "2",
+        "scene_art": true
+      }
+    ],
+    "match": true,
+    "requires": {
+      "position": "GK"
+    }
+  },
+  {
+    "id": "S95_ROUND_DEF",
+    "title": "Момент у ворот",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Подача доходит до дальней зоны. Ты слышишь за спиной шаги нападающего и видишь, что вратарь остался на линии."
+    ],
+    "choices": [
+      {
+        "text": "Выбить мяч из штрафной",
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 5
+          }
+        },
+        "fail": {
+          "score_change": {
+            "against": 1
+          },
+          "stress": 8
+        },
+        "conclusion": {
+          "success": "Ты встречаешь мяч первым и выносишь его подальше от ворот.",
+          "fail": "Ты промахиваешься по мячу. Соперник успевает ударить, и мяч оказывается в сетке."
+        },
+        "sketch": {
+          "success": [
+            "y95_clearance",
+            "y95_clearance2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "id": "1",
+        "scene_art": true
+      },
+      {
+        "text": "Перехватить мяч в подкате",
+        "check": {
+          "attr": "phy",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 6
+          }
+        },
+        "fail": {
+          "suspension_matches": 1,
+          "counters": {
+            "red_cards": 1
+          },
+          "stress": 12
+        },
+        "conclusion": {
+          "success": "Ты касаешься мяча раньше соперника и отправляешь его к бровке.",
+          "fail": "Соперник падает после контакта. Судья останавливает игру и показывает красную."
+        },
+        "sketch": {
+          "success": [
+            "tackle",
+            "y95_tackle2"
+          ],
+          "fail": "y95_card"
+        },
+        "id": "2",
+        "scene_art": true
+      }
+    ],
+    "match": true,
+    "requires": {
+      "position": "DEF"
+    }
+  },
+  {
+    "id": "S95_ROTOR_HOME_GK",
+    "title": "«Ротор» — «Манчестер Юнайтед»",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Перед твоими воротами отскакивает мяч. Соперник успевает развернуться и готовится пробить.",
+      "Протокол: 0:0. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "text": "Дождаться удара на линии",
+        "check": {
+          "attr": "com",
+          "threshold": 56
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 6
+          }
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          }
+        },
+        "conclusion": {
+          "success": "Ты остаёшься на линии и ловишь мяч у стойки.",
+          "fail": "Удар проходит мимо твоих перчаток. Мяч в сетке."
+        },
+        "sketch": {
+          "success": [
+            "y95_catch",
+            "y95_catch2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "id": "1",
+        "scene_art": true
+      },
+      {
+        "text": "Выйти навстречу мячу",
+        "check": {
+          "attr": "phy",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 6
+          }
+        },
+        "fail": {
+          "stress": 8,
+          "score_change": {
+            "against": 1
+          }
+        },
+        "conclusion": {
+          "success": "Ты делаешь два шага вперёд и накрываешь мяч обеими перчатками.",
+          "fail": "Ты выдвигаешься слишком рано. Мяч проходит под рукой и пересекает линию."
+        },
+        "sketch": {
+          "success": [
+            "y95_catch",
+            "y95_catch2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "id": "2",
+        "scene_art": true
+      }
+    ],
+    "slot": "95_september",
+    "requires": {
+      "club": "Ротор",
+      "position": "GK"
+    },
+    "home": "Ротор",
+    "away": "Манчестер Юнайтед",
+    "month": 9,
+    "historical_score": "0:0",
+    "game_score": "0:0",
+    "source": "https://www.uefa.com/news-media/news/01a6-0f84675e25cd-552a1fbf147a-1000--rotor-in-a-tailspin/",
+    "season_95_fixture": true,
+    "type": "🏛",
+    "subtitle": "12 сентября · Ротор — Манчестер Юнайтед",
+    "european": true
+  },
+  {
+    "id": "S95_ROTOR_HOME_DEF",
+    "title": "«Ротор» — «Манчестер Юнайтед»",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Подача доходит до дальней зоны. Ты слышишь за спиной шаги нападающего и видишь, что вратарь остался на линии.",
+      "Протокол: 0:0. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "text": "Выбить мяч из штрафной",
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_coach": 5
+          }
+        },
+        "fail": {
+          "score_change": {
+            "against": 1
+          },
+          "stress": 8
+        },
+        "conclusion": {
+          "success": "Ты встречаешь мяч первым и выносишь его подальше от ворот.",
+          "fail": "Ты промахиваешься по мячу. Соперник успевает ударить, и мяч оказывается в сетке."
+        },
+        "sketch": {
+          "success": [
+            "y95_clearance",
+            "y95_clearance2"
+          ],
+          "fail": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "id": "1",
+        "scene_art": true
+      },
+      {
+        "text": "Перехватить мяч в подкате",
+        "check": {
+          "attr": "phy",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 6
+          }
+        },
+        "fail": {
+          "suspension_matches": 1,
+          "counters": {
+            "red_cards": 1
+          },
+          "stress": 12
+        },
+        "conclusion": {
+          "success": "Ты касаешься мяча раньше соперника и отправляешь его к бровке.",
+          "fail": "Соперник падает после контакта. Судья останавливает игру и показывает красную."
+        },
+        "sketch": {
+          "success": [
+            "tackle",
+            "y95_tackle2"
+          ],
+          "fail": "y95_card"
+        },
+        "id": "2",
+        "scene_art": true
+      }
+    ],
+    "slot": "95_september",
+    "requires": {
+      "club": "Ротор",
+      "position": "DEF"
+    },
+    "home": "Ротор",
+    "away": "Манчестер Юнайтед",
+    "month": 9,
+    "historical_score": "0:0",
+    "game_score": "0:0",
+    "source": "https://www.uefa.com/news-media/news/01a6-0f84675e25cd-552a1fbf147a-1000--rotor-in-a-tailspin/",
+    "season_95_fixture": true,
+    "type": "🏛",
+    "subtitle": "12 сентября · Ротор — Манчестер Юнайтед",
+    "european": true
+  },
+  {
+    "id": "S95_ROTOR_HOME_MID",
+    "title": "«Ротор» — «Манчестер Юнайтед»",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Ты получаешь мяч в центре. Впереди — два защитника. Ты видишь, как нападающий делает рывок. Время замедляется.",
+      "Протокол: 0:0. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Отдать пас",
+        "conclusion": {
+          "success": "Передача проходит между защитниками. Партнёр успевает первым и забивает.",
+          "fail": "Соперник читает передачу и подставляет ногу. Атаку приходится начинать заново."
+        },
+        "sketch": {
+          "success": [
+            "team_goal",
+            "y95_team_goal2"
+          ],
+          "fail": [
+            "y95_lost",
+            "y95_lost2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "media": 10,
+            "rep_teammates": 5
+          },
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "stress": 10,
+          "attrs": {
+            "rep_coach": -5
+          }
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Пробить",
+        "conclusion": {
+          "success": "Ты бьёшь в касание. Мяч натягивает сетку, и партнёр первым подбегает к тебе.",
+          "fail": "Мяч проходит снаружи стойки. Вратарь провожает его взглядом."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5
+          },
+          "goals": 1,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "stress": 15
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Сыграть назад",
+        "conclusion": {
+          "flat": "Ты возвращаешь мяч свободному партнёру, и команда сохраняет владение."
+        },
+        "sketch": {
+          "flat": [
+            "y95_build",
+            "y95_build2"
+          ]
+        },
+        "effects": {
+          "attrs": {
+            "professionalism": 5,
+            "rep_coach": 5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_september",
+    "requires": {
+      "club": "Ротор",
+      "position": "MID"
+    },
+    "home": "Ротор",
+    "away": "Манчестер Юнайтед",
+    "month": 9,
+    "historical_score": "0:0",
+    "game_score": "0:0",
+    "source": "https://www.uefa.com/news-media/news/01a6-0f84675e25cd-552a1fbf147a-1000--rotor-in-a-tailspin/",
+    "season_95_fixture": true,
+    "type": "🏛",
+    "subtitle": "12 сентября · Ротор — Манчестер Юнайтед",
+    "european": true
+  },
+  {
+    "id": "S95_ROTOR_HOME_FWD",
+    "title": "«Ротор» — «Манчестер Юнайтед»",
+    "bg": "field",
+    "art": [
+      "y95_pitch",
+      "y95_pitch2"
+    ],
+    "text": [
+      "Ты выходишь один на один. Вратарь смотрит на тебя. Время замедляется.",
+      "Протокол: 0:0. Действия героя могут изменить игровой результат."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Пробить",
+        "conclusion": {
+          "success": "Ты бьёшь в касание. Мяч натягивает сетку, и партнёр первым подбегает к тебе.",
+          "fail": "Мяч проходит снаружи стойки. Вратарь провожает его взглядом."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 60
+        },
+        "success": {
+          "attrs": {
+            "media": 10,
+            "rep_fans": 5
+          },
+          "goals": 1,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "stress": 15
+        },
+        "scene_art": true
+      },
+      {
+        "id": "B",
+        "text": "Обыграть вратаря",
+        "conclusion": {
+          "success": "Ты бьёшь в касание. Мяч натягивает сетку, и партнёр первым подбегает к тебе.",
+          "fail": "Мяч проходит снаружи стойки. Вратарь провожает его взглядом."
+        },
+        "sketch": {
+          "success": [
+            "y95_finish",
+            "y95_finish2"
+          ],
+          "fail": [
+            "y95_wide",
+            "y95_wide2"
+          ]
+        },
+        "check": {
+          "attr": "tec",
+          "threshold": 65
+        },
+        "success": {
+          "attrs": {
+            "media": 15
+          },
+          "goals": 1,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "stress": 20
+        },
+        "scene_art": true
+      },
+      {
+        "id": "C",
+        "text": "Отдать пас",
+        "conclusion": {
+          "success": "Передача проходит между защитниками. Партнёр успевает первым и забивает.",
+          "fail": "Соперник читает передачу и подставляет ногу. Атаку приходится начинать заново."
+        },
+        "sketch": {
+          "success": [
+            "team_goal",
+            "y95_team_goal2"
+          ],
+          "fail": [
+            "y95_lost",
+            "y95_lost2"
+          ]
+        },
+        "check": {
+          "attr": "vis",
+          "threshold": 55
+        },
+        "success": {
+          "attrs": {
+            "rep_teammates": 10
+          },
+          "score_change": {
+            "for": 1
+          }
+        },
+        "fail": {
+          "attrs": {
+            "rep_coach": -5
+          }
+        },
+        "scene_art": true
+      }
+    ],
+    "slot": "95_september",
+    "requires": {
+      "club": "Ротор",
+      "position": "FWD"
+    },
+    "home": "Ротор",
+    "away": "Манчестер Юнайтед",
+    "month": 9,
+    "historical_score": "0:0",
+    "game_score": "0:0",
+    "source": "https://www.uefa.com/news-media/news/01a6-0f84675e25cd-552a1fbf147a-1000--rotor-in-a-tailspin/",
+    "season_95_fixture": true,
+    "type": "🏛",
+    "subtitle": "12 сентября · Ротор — Манчестер Юнайтед",
+    "european": true
+  },
+  {
+    "id": "S95_PORTUGAL",
+    "title": "Первый год в Португалии",
+    "bg": "field",
+    "art": "review_lisbon_coach",
+    "text": [
+      "На лиссабонской базе полив выключают за минуту до тренировки. Ты пока узнаёшь свою фамилию быстрее, чем указания по расстановке.",
+      {
+        "speaker": "Тренер «Бенфики»",
+        "text": "Когда не понял задание, повтори за партнёром. После занятия подойди, разберём, где открываться."
+      }
+    ],
+    "choices": [
+      {
+        "text": "Остаться после тренировки",
+        "effects": {
+          "training": "vis",
+          "attrs": {
+            "rel_coach": 5
+          }
+        },
+        "conclusion": {
+          "flat": "Тренер остаётся у сетки. Он показывает движение рукой, а ты повторяешь португальское слово, пока не запоминаешь."
+        },
+        "sketch": {
+          "flat": "review_lisbon_coach"
+        },
+        "id": "1",
+        "scene_art": true
+      },
+      {
+        "text": "Попросить партнёра переводить",
+        "effects": {
+          "attrs": {
+            "rep_teammates": 7
+          },
+          "stress": -8
+        },
+        "conclusion": {
+          "flat": "Партнёр переводит фразу за фразой. К концу занятия ты впервые знаешь, куда открыться ещё до его подсказки."
+        },
+        "sketch": {
+          "flat": "review_lisbon_coach"
+        },
+        "id": "2",
+        "scene_art": true
+      }
+    ],
+    "requires": {
+      "league": "portugal"
+    }
+  },
+  {
+    "id": "S95_FIXING_CHOICE",
+    "title": "Обещанная ошибка",
+    "choices": [
+      {
+        "id": "D",
+        "text": "Сдержать договорённость и дать сопернику забить",
+        "conclusion": {
+          "flat": "Ты уступаешь сопернику пространство. Он пробивает в открытый угол, и мяч пересекает линию. Никто на поле не успевает исправить твою ошибку."
+        },
+        "sketch": {
+          "flat": [
+            "concede",
+            "y95_concede2"
+          ]
+        },
+        "scene_art": true,
+        "effects": {
+          "score_change": {
+            "against": 1
+          },
+          "stress": 10,
+          "attrs": {
+            "rep_coach": -10,
+            "professionalism": -8
+          },
+          "counters": {
+            "scandals_severe": 1
+          }
+        }
+      }
+    ]
+  }
+]

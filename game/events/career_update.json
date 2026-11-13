@@ -1,0 +1,4483 @@
+[
+  {
+    "id": "NEW_WAGE_DELAY",
+    "title": "Один конверт на двоих",
+    "bg": "office",
+    "text": [
+      "В окошке кассы вместо денег лежит школьная тетрадь. Рядом с твоей фамилией пустая клетка. Кассир трёт ластиком дату, пока бумага не начинает крошиться.",
+      {
+        "speaker": "Кассир",
+        "text": "Первый конверт зажали. Я записала сумму. Как только деньги будут, узнаешь."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Подождать выплаты",
+        "effects": {},
+        "conclusion": {
+          "flat": "Ты убираешь квиток во внутренний карман. Партнёры договариваются сверить записи через месяц."
+        },
+        "sketch": {
+          "flat": "study"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Уточнить срок у руководства",
+        "effects": {
+          "attrs": {
+            "rel_coach": -3
+          },
+          "flags": {
+            "wage_individual": true
+          }
+        },
+        "conclusion": {
+          "flat": "Директор называет день. По дороге назад ты повторяешь дату, чтобы не пришлось спрашивать второй раз."
+        },
+        "sketch": {
+          "flat": "contract"
+        }
+      },
+      {
+        "id": "C",
+        "text": "Обсудить выплату всей командой",
+        "effects": {
+          "attrs": {
+            "rep_teammates": 6
+          },
+          "flags": {
+            "wage_collective": true
+          }
+        },
+        "conclusion": {
+          "flat": "В раздевалке вы складываете квитки на одну скамейку. Старшие впервые спрашивают, сколько должен клуб лично тебе."
+        },
+        "sketch": {
+          "flat": "support"
+        }
+      }
+    ],
+    "type": "🎭",
+    "requires": {
+      "salary_debt": true
+    },
+    "subtitle": "Касса клуба"
+  },
+  {
+    "id": "NEW_WAGE_RETURN",
+    "title": "За задержанным окладом",
+    "bg": "office",
+    "text": [
+      "На сей раз у кассы пахнет свежей бумагой. Кассир достаёт конверт, перечёркивает пустую клетку и придвигает тебе тетрадь.",
+      {
+        "speaker": "Кассир",
+        "text": "Вот долг за тот месяц. Распишись здесь, рядом с суммой."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Получить задолженность",
+        "effects": {
+          "salary_debt": true
+        },
+        "conclusion": {
+          "flat": "Ты расписываешься и убираешь конверт. Теперь этот месяц закрыт."
+        },
+        "sketch": {
+          "flat": "money"
+        }
+      }
+    ],
+    "type": "🎭",
+    "requires": {
+      "salary_debt": true
+    },
+    "month": 6
+  },
+  {
+    "id": "NEW_MARKET",
+    "title": "Вещи с рынка",
+    "bg": "v7_street",
+    "text": [
+      "Продавец выкладывает на клетчатую клеёнку плеер и коробку с приставкой. Из соседнего ряда тянет дымом. На пробу он щёлкает кнопкой, и катушка начинает шуршать."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Купить плеер «Вега» · $85",
+        "effects": {
+          "attrs": {
+            "money": -85
+          },
+          "item": "player"
+        },
+        "conclusion": {
+          "flat": "Ты дослушиваешь кассету до конца дорожки и только потом достаёшь деньги. На выезде будет что слушать."
+        },
+        "sketch": {
+          "flat": "player"
+        },
+        "requires": {
+          "money": 85,
+          "new_item": "player"
+        }
+      },
+      {
+        "id": "C",
+        "text": "Купить Dendy · $110",
+        "effects": {
+          "attrs": {
+            "money": -110
+          },
+          "item": "dendy"
+        },
+        "conclusion": {
+          "flat": "Ты несёшь коробку под курткой. Внутри постукивают джойстики."
+        },
+        "sketch": {
+          "flat": "dendy"
+        },
+        "requires": {
+          "money": 110,
+          "new_item": "dendy"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Отложить решение",
+        "effects": {},
+        "conclusion": {
+          "flat": "Ты откладываешь покупку. Деньги пока останутся у тебя."
+        },
+        "sketch": {
+          "flat": "leave"
+        }
+      }
+    ],
+    "type": "🎭",
+    "subtitle": "Рынок",
+    "month": 12
+  },
+  {
+    "id": "NEW_PLAYER_TRIP",
+    "title": "Кассета в дороге",
+    "bg": "v7_cabin",
+    "text": [
+      "Свет в салоне гасят, и в проходе остаётся только полоска у пола. Сосед никак не может устроить локоть. Ты достаёшь плеер и проверяешь батарейки."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Послушать кассету",
+        "effects": {
+          "stress": -9
+        },
+        "conclusion": {
+          "flat": "За шорохом ленты пропадает гул салона. Когда объявляют посадку, ты замечаешь, что больше не сжимаешь подлокотник."
+        },
+        "sketch": {
+          "flat": "rest"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Одолжить плеер партнёру",
+        "effects": {
+          "attrs": {
+            "rep_teammates": 7
+          }
+        },
+        "conclusion": {
+          "flat": "Он возвращает плеер перед посадкой и передаёт тебе кассету, которую привёз из дома."
+        },
+        "sketch": {
+          "flat": "support"
+        }
+      }
+    ],
+    "type": "🎭",
+    "requires": {
+      "owns": "player"
+    },
+    "subtitle": "На выезде"
+  },
+  {
+    "id": "NEW_PROGRAMME",
+    "title": "Бумага с трибуны",
+    "bg": "field",
+    "text": [
+      "У входа на стадион мальчишка держит стопку программок. На верхней дождь уже размыл уголок. Он достаёт сухой экземпляр из-под куртки."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Купить программку · $8",
+        "effects": {
+          "attrs": {
+            "money": -8
+          },
+          "item": "programme"
+        },
+        "conclusion": {
+          "flat": "Ты складываешь программку пополам. На свободном поле вечером запишешь счёт и то, что запомнилось у ворот."
+        },
+        "sketch": {
+          "flat": "programme"
+        },
+        "requires": {
+          "money": 8,
+          "new_item": "programme"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Отложить решение",
+        "effects": {},
+        "conclusion": {
+          "flat": "Ты откладываешь покупку. Деньги пока останутся у тебя."
+        },
+        "sketch": {
+          "flat": "leave"
+        }
+      }
+    ],
+    "type": "🎭",
+    "subtitle": "Киоск у стадиона",
+    "requires": {
+      "new_item": "programme"
+    }
+  },
+  {
+    "id": "NEW_GEAR",
+    "title": "Снаряжение на базе",
+    "bg": "locker",
+    "text": [
+      "Кладовщик бросает на скамью пару бутс и достаёт из коробки перчатки. Запах новой кожи перебивает сырость из душевой."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Купить бутсы · $125",
+        "effects": {
+          "attrs": {
+            "money": -125
+          },
+          "item": "boots"
+        },
+        "conclusion": {
+          "flat": "Ты шнуруешь бутсы прямо на скамье. На завтра оставишь время обкатать их до двусторонки."
+        },
+        "sketch": {
+          "flat": "boots"
+        },
+        "requires": {
+          "money": 125,
+          "new_item": "boots"
+        }
+      },
+      {
+        "id": "C",
+        "text": "Купить перчатки · $90",
+        "effects": {
+          "attrs": {
+            "money": -90
+          },
+          "item": "gloves"
+        },
+        "conclusion": {
+          "flat": "Ты застёгиваешь ремешки и принимаешь пару ударов в стену. Ладони держат мяч увереннее."
+        },
+        "sketch": {
+          "flat": "gloves"
+        },
+        "requires": {
+          "money": 90,
+          "new_item": "gloves",
+          "position": "GK"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Отложить решение",
+        "effects": {},
+        "conclusion": {
+          "flat": "Ты откладываешь покупку. Деньги пока останутся у тебя."
+        },
+        "sketch": {
+          "flat": "leave"
+        }
+      }
+    ],
+    "type": "🎭",
+    "subtitle": "Клубная база"
+  },
+  {
+    "id": "NEW_HOME_GIFT",
+    "title": "Коробка из дорожной сумки",
+    "bg": "home",
+    "text": [
+      "Дома ты ставишь коробку у телевизора. Ребёнок из семьи соседа перестаёт раскачивать табуретку и спрашивает, можно ли остаться посмотреть."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Подарить приставку",
+        "effects": {
+          "gift_item": "dendy",
+          "attrs": {
+            "rel_family": 10
+          }
+        },
+        "conclusion": {
+          "flat": "Ты оставляешь коробку под телевизором. Перед отъездом тебя зовут с лестницы: первый уровень уже пройден."
+        },
+        "sketch": {
+          "flat": "support"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Оставить приставку дома",
+        "effects": {
+          "stress": -5
+        },
+        "conclusion": {
+          "flat": "Ты подключаешь её на вечер. Когда пора уезжать, кассета лежит рядом с семейными фотографиями."
+        },
+        "sketch": {
+          "flat": "rest"
+        }
+      }
+    ],
+    "type": "🎭",
+    "requires": {
+      "owns": "dendy"
+    },
+    "subtitle": "Дома"
+  },
+  {
+    "id": "NEW_CLIPPING",
+    "title": "Снимок в газете",
+    "bg": "press",
+    "text": [
+      "На столе лежит газета, раскрытая на спортивной полосе. На снимке знакомая кромка поля, а рядом — несколько строк о вашем матче."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Вырезать заметку",
+        "effects": {
+          "item": "clipping"
+        },
+        "conclusion": {
+          "flat": "Ты вырезаешь колонку и складываешь её в дорожный блокнот."
+        },
+        "sketch": {
+          "flat": "clipping"
+        },
+        "requires": {
+          "new_item": "clipping"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Оставить газету на столе",
+        "effects": {},
+        "conclusion": {
+          "flat": "Ты дочитываешь отчёт и передаёшь газету по столу."
+        },
+        "sketch": {
+          "flat": "study"
+        }
+      }
+    ],
+    "type": "🎭",
+    "requires": {
+      "media_min": 58,
+      "new_item": "clipping"
+    }
+  },
+  {
+    "id": "NEW_SHIRT",
+    "title": "Обмен у тоннеля",
+    "bg": "field",
+    "text": [
+      "После свистка соперник ждёт у входа в тоннель. Он снимает футболку и держит её на сгибе руки, пока вы пропускаете судью."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Обменяться футболками",
+        "effects": {
+          "item": "shirt"
+        },
+        "conclusion": {
+          "flat": "Ты протягиваешь ему свою. Его футболка ещё тёплая, когда ты убираешь её в сумку."
+        },
+        "sketch": {
+          "flat": "shirt"
+        },
+        "requires": {
+          "new_item": "shirt"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Пожать ему руку",
+        "effects": {},
+        "conclusion": {
+          "flat": "Вы пожимаете руки и расходитесь по раздевалкам."
+        },
+        "sketch": {
+          "flat": "support"
+        }
+      }
+    ],
+    "type": "🎭",
+    "requires": {
+      "rep_fans_min": 55,
+      "new_item": "shirt"
+    }
+  },
+  {
+    "id": "NEW_EXPENSES",
+    "title": "Свободные дни",
+    "bg": "office",
+    "text": [
+      "Тренер освобождает несколько дней в расписании. На столе рядом лежат квитанция из клиники, номер частного тренера и конверт из дома. До следующего выезда осталось два дня: сначала придётся выбрать одно."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Оплатить реабилитацию · $600",
+        "effects": {
+          "attrs": {
+            "money": -600
+          },
+          "recovery_months": 1,
+          "training_time": 1
+        },
+        "conclusion": {
+          "flat": "В клинике освобождается место на этой неделе. На контрольном осмотре врач разрешает начать работу с мячом раньше."
+        },
+        "sketch": {
+          "flat": "therapy"
+        },
+        "requires": {
+          "money": 600,
+          "flag": "rehab_needed"
+        }
+      },
+      {
+        "id": "C",
+        "text": "Оплатить занятие по амплуа · $320",
+        "effects": {
+          "attrs": {
+            "money": -320
+          },
+          "personal_training": true
+        },
+        "conclusion": {
+          "flat": "Тренер остаётся с тобой после сбора. Вы повторяете один эпизод до тех пор, пока перестаёшь искать глазами подсказку."
+        },
+        "sketch": {
+          "flat": "training"
+        },
+        "requires": {
+          "money": 320
+        }
+      },
+      {
+        "id": "D",
+        "text": "Помочь семье с отоплением · $180",
+        "effects": {
+          "attrs": {
+            "money": -180,
+            "rel_family": 12
+          },
+          "flags": {
+            "sent_home": true,
+            "family_heating": true
+          },
+          "family_support": 180
+        },
+        "conclusion": {
+          "flat": "На почте ты отправляешь перевод. Отец сможет закрыть счёт за отопление и не занимать у соседей."
+        },
+        "sketch": {
+          "flat": "money"
+        },
+        "requires": {
+          "money": 180
+        }
+      },
+      {
+        "id": "B",
+        "text": "Остаться на клубной программе",
+        "effects": {
+          "stress": -4
+        },
+        "conclusion": {
+          "flat": "Ты записываешься на обычную тренировку и оставляешь деньги в резерве. Врач клуба продолжит следить за восстановлением."
+        },
+        "sketch": {
+          "flat": "training"
+        }
+      }
+    ],
+    "type": "🎭"
+  },
+  {
+    "id": "NEW_FAMILY_THANKS",
+    "title": "Письмо из дома",
+    "bg": "home",
+    "text": [
+      "Конверт успел помяться в раздевалке. Дома написали, что твой перевод дошёл. Последнюю строчку приписали другим почерком: «Позвони, когда доберёшься»."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Позвонить домой",
+        "effects": {
+          "stress": -8
+        },
+        "conclusion": {
+          "flat": "Ты ждёшь соединения и слышишь знакомое «алло». После разговора сборы впервые кажутся короткими."
+        },
+        "sketch": {
+          "flat": "rest"
+        }
+      }
+    ],
+    "type": "🎭",
+    "requires": {
+      "flag": "sent_home"
+    }
+  },
+  {
+    "id": "NEW_MENTOR_RETURN",
+    "title": "Тот же угол поля",
+    "bg": "training",
+    "text": [
+      {
+        "speaker": "Семёнов",
+        "text": "Плечо защитника, помнишь? Покажи, где у него слепая зона."
+      },
+      "Он ставит мяч на мокрую линию и отходит в пару к защитнику."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Остаться после тренировки",
+        "effects": {
+          "attrs": {
+            "vis": 3,
+            "rep_teammates": 5
+          },
+          "flags": {
+            "mentor_payoff": true
+          }
+        },
+        "conclusion": {
+          "flat": "Семёнов гоняет передачу по мокрой траве, пока ты не начинаешь открываться раньше. На выходе он ждёт тебя у двери."
+        },
+        "sketch": {
+          "flat": "support"
+        }
+      }
+    ],
+    "type": "🎭",
+    "requires": {
+      "flag": "mentor_gauthier"
+    }
+  },
+  {
+    "id": "NEW_MENTOR_RIVAL",
+    "title": "Проверка Семёнова",
+    "bg": "locker",
+    "text": [
+      {
+        "speaker": "Семёнов",
+        "text": "В прошлом году ты сказал, что всё решает поле. После упражнения разберём каждый отбор."
+      },
+      "Он кладёт тебе манишку. Сегодня вы в разных командах."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Выйти первым",
+        "effects": {
+          "attrs": {
+            "rep_coach": 5,
+            "com": 2,
+            "vis": 1
+          },
+          "flags": {
+            "mentor_payoff": true
+          }
+        },
+        "conclusion": {
+          "flat": "Семёнов дважды закрывает тебе свободную зону. После свистка он показывает, куда ты мог уйти раньше. Ты остаёшься повторить."
+        },
+        "sketch": {
+          "flat": "training"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Попросить разобрать эпизод вместе",
+        "conclusion": {
+          "flat": "Ты показываешь Семёнову, где потерял из виду защитника. Он переставляет мяч и просит повторить с самого начала."
+        },
+        "sketch": {
+          "flat": "training"
+        },
+        "effects": {
+          "training": "vis",
+          "attrs": {
+            "rep_teammates": 5
+          },
+          "flags": {
+            "mentor_payoff": true
+          },
+          "stress": -5
+        }
+      }
+    ],
+    "type": "🎭",
+    "requires": {
+      "flag": "feud_gauthier"
+    },
+    "art": "review_semyonov"
+  },
+  {
+    "id": "NEW_CSKA_AFTER",
+    "title": "У шкафчика Бушманова",
+    "bg": "locker",
+    "text": [
+      {
+        "speaker": "Бушманов",
+        "text": "Помнишь, как тренер спрашивал после «Динамо»? Я слышал, что ты тогда сказал."
+      },
+      "Он держит дверцу открытой. В коридоре тренер зовёт вас обоих к себе."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Поговорить с ним до тренера",
+        "effects": {
+          "attrs": {
+            "rep_teammates": 10,
+            "rep_coach": -5
+          },
+          "flags": {
+            "cska_payoff": true
+          }
+        },
+        "conclusion": {
+          "flat": "Вы договариваетесь говорить только о том, что видели. Тренер недоволен, что вы пришли вместе, зато Бушманов остаётся после разговора рядом."
+        },
+        "sketch": {
+          "flat": "support"
+        }
+      }
+    ],
+    "type": "🎭",
+    "requires": {
+      "club": "ЦСКА",
+      "flag": "cska_silence"
+    }
+  },
+  {
+    "id": "NEW_CSKA_PRESS",
+    "title": "Слова за дверью",
+    "bg": "press",
+    "text": [
+      {
+        "speaker": "Журналист",
+        "text": "После «Динамо» ты назвал имя. Тренер просил держать разговор на базе. Скажешь теперь, откуда это взялось?"
+      },
+      "Диктофон пока лежит с закрытой крышкой. Ты узнаёшь голос человека, которого назвал, в коридоре за дверью."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Сказать, что слышал только слух",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6,
+            "rep_teammates": -4
+          },
+          "flags": {
+            "cska_payoff": true
+          }
+        },
+        "conclusion": {
+          "flat": "Журналист убирает диктофон. В раздевалке благодарности нет, зато тренер слышит, что ты уточнил слова."
+        },
+        "sketch": {
+          "flat": "press"
+        }
+      }
+    ],
+    "type": "🎭",
+    "requires": {
+      "club": "ЦСКА",
+      "flag": "cska_snitch"
+    }
+  },
+  {
+    "id": "NEW_KAMAZ_AFTER",
+    "title": "Протокол на базе",
+    "bg": "locker",
+    "text": [
+      "Из Камышина вы увезли счёт с табло. На базе администратор прикалывает новый протокол: техническое поражение 0:3.",
+      {
+        "speaker": "Партнёр",
+        "text": "На поле мы уже ничего не переиграем. На следующую игру кто пойдёт первым?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Позвать команду на занятие",
+        "effects": {
+          "attrs": {
+            "rep_teammates": 8,
+            "rep_coach": 5
+          },
+          "flags": {
+            "kamaz_payoff": true
+          }
+        },
+        "conclusion": {
+          "flat": "К началу занятия собирается вся команда. Тренер замечает, что ты пришёл раньше, и даёт тебе вести разминку."
+        },
+        "sketch": {
+          "flat": "support"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Сначала поговорить с тренером",
+        "effects": {
+          "attrs": {
+            "rep_coach": 8
+          },
+          "flags": {
+            "kamaz_payoff": true
+          }
+        },
+        "conclusion": {
+          "flat": "Он закрывает папку с протоколом. Вы разбираете, как доиграть следующий спорный эпизод всей командой."
+        },
+        "sketch": {
+          "flat": "talk"
+        }
+      }
+    ],
+    "type": "🎭",
+    "requires": {
+      "club": "КАМАЗ",
+      "flag": "kamaz_appeal"
+    }
+  },
+  {
+    "id": "NEW_CSKA_URAL_GK",
+    "title": "Уралмаш — ЦСКА",
+    "bg": "field",
+    "text": [
+      "Перед перерывом Сергей Передня уже успел вскрыть оборону. На тяжёлом газоне вторая передача уходит медленнее первой.",
+      "Крайний поднимает голову. Перед тобой два игрока, и оба ждут подачу."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Остаться на линии",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты остаёшься на линии и ловишь мяч в броске у ближней стойки. Прижимаешь его к груди, пока защитники возвращаются на позиции."
+        },
+        "sketch": {
+          "flat": "save"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "vis",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты выходишь из ворот и ловишь навес прежде, чем нападающий подставляет голову.",
+          "partial": "Ты отбиваешь мяч перед собой. Защитник выносит отскок в аут.",
+          "fail": "Ты опаздываешь на выход. Нападающий подставляет голову, мяч за твоей спиной."
+        },
+        "sketch": {
+          "success": "save",
+          "partial": "save_rebound",
+          "fail": "concede"
+        },
+        "equipment": "gloves"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты делаешь короткий шаг навстречу навесу и двумя руками переводишь мяч за линию."
+        },
+        "sketch": {
+          "flat": "save"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Уралмаш",
+    "away": "ЦСКА",
+    "historical_score": "2:0",
+    "month": 3,
+    "subtitle": "26 марта · Екатеринбург",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 2:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "ЦСКА",
+      "position": "GK"
+    }
+  },
+  {
+    "id": "NEW_CSKA_URAL_DEF",
+    "title": "Уралмаш — ЦСКА",
+    "bg": "field",
+    "text": [
+      "Перед перерывом Сергей Передня уже успел вскрыть оборону. На тяжёлом газоне вторая передача уходит медленнее первой.",
+      "Мяч у края штрафной. Капитан кричит, чтобы ты закрыл прострел."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Закрыть ближнюю зону",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты перекрываешь прострел. Соперник отдаёт мяч назад."
+        },
+        "sketch": {
+          "flat": "tackle"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "phy",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отбираешь мяч у бровки. Соперник уже занёс ногу для прострела.",
+          "partial": "Ты касаешься мяча носком. Нападающий успевает лишь выбить его в аут.",
+          "fail": "Ты идёшь в стык на шаг позже. Прострел проходит под ногой, и соперник забивает."
+        },
+        "sketch": {
+          "success": "tackle",
+          "partial": "tackle",
+          "fail": "concede"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты заставляешь соперника уйти к бровке и отбираешь мяч в момент разворота."
+        },
+        "sketch": {
+          "flat": "tackle"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Уралмаш",
+    "away": "ЦСКА",
+    "historical_score": "2:0",
+    "month": 3,
+    "subtitle": "26 марта · Екатеринбург",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 2:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "ЦСКА",
+      "position": "DEF"
+    }
+  },
+  {
+    "id": "NEW_CSKA_URAL_MID",
+    "title": "Уралмаш — ЦСКА",
+    "bg": "field",
+    "text": [
+      "Перед перерывом Сергей Передня уже успел вскрыть оборону. На тяжёлом газоне вторая передача уходит медленнее первой.",
+      "Мяч катится к тебе, пока крайний просит передачу в освободившийся коридор."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Удержать мяч",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты укрываешь мяч корпусом и переводишь атаку на другой край."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Разрезать линию передачей",
+        "check": {
+          "attr": "vis",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отдаёшь мяч в свободную зону. Партнёр принимает и бьёт в касание. Сетка вздрагивает.",
+          "partial": "Передача доходит до партнёра, но приходится принимать спиной к воротам. Вы сохраняете мяч.",
+          "fail": "Защитник читает передачу и выбивает мяч к бровке. Ты возвращаешься на свою половину."
+        },
+        "sketch": {
+          "success": "team_goal",
+          "partial": "pass",
+          "fail": "intercept"
+        }
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты открываешься под обратный пас и выводишь партнёра к штрафной."
+        },
+        "sketch": {
+          "flat": "pass"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Уралмаш",
+    "away": "ЦСКА",
+    "historical_score": "2:0",
+    "month": 3,
+    "subtitle": "26 марта · Екатеринбург",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 2:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "ЦСКА",
+      "position": "MID"
+    }
+  },
+  {
+    "id": "NEW_CSKA_URAL_FWD",
+    "title": "Уралмаш — ЦСКА",
+    "bg": "field",
+    "text": [
+      "Перед перерывом Сергей Передня уже успел вскрыть оборону. На тяжёлом газоне вторая передача уходит медленнее первой.",
+      "Партнёр катит мяч под удар. Вратарь шагает к ближней штанге."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Вернуть мяч под удар партнёру",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты откатываешь мяч партнёру. Его удар накрывают, но команда сохраняет давление."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Пробить в дальний угол",
+        "check": {
+          "attr": "tec",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          },
+          "goals": 1
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты бьёшь низом мимо вытянутой ноги вратаря. Мяч натягивает боковую сетку.",
+          "partial": "Вратарь переводит удар за стойку. Ты поднимаешь руку: ваш угловой.",
+          "fail": "Ты тянешься к мячу носком. Он проходит снаружи дальней штанги."
+        },
+        "sketch": {
+          "success": "goal",
+          "partial": "blocked",
+          "fail": "miss"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты обманываешь защитника первым движением и бьёшь в створ. Вратарь переводит мяч на угловой."
+        },
+        "sketch": {
+          "flat": "blocked"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Уралмаш",
+    "away": "ЦСКА",
+    "historical_score": "2:0",
+    "month": 3,
+    "subtitle": "26 марта · Екатеринбург",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 2:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "ЦСКА",
+      "position": "FWD"
+    }
+  },
+  {
+    "id": "NEW_CSKA_TYUMEN_GK",
+    "title": "ЦСКА — Динамо-Газовик",
+    "bg": "field",
+    "text": [
+      "Семак открыл счёт, но редкие зрители слышат каждый крик со скамейки. Гости ещё держат игроков впереди.",
+      "Крайний поднимает голову. Перед тобой два игрока, и оба ждут подачу."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Остаться на линии",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты остаёшься на линии и ловишь мяч в броске у ближней стойки. Прижимаешь его к груди, пока защитники возвращаются на позиции."
+        },
+        "sketch": {
+          "flat": "save"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "vis",
+          "threshold": 56
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты выходишь из ворот и ловишь навес прежде, чем нападающий подставляет голову.",
+          "partial": "Ты отбиваешь мяч перед собой. Защитник выносит отскок в аут.",
+          "fail": "Ты опаздываешь на выход. Нападающий подставляет голову, мяч за твоей спиной."
+        },
+        "sketch": {
+          "success": "save",
+          "partial": "save_rebound",
+          "fail": "concede"
+        },
+        "equipment": "gloves"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты делаешь короткий шаг навстречу навесу и двумя руками переводишь мяч за линию."
+        },
+        "sketch": {
+          "flat": "save"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "ЦСКА",
+    "away": "Динамо-Газовик",
+    "historical_score": "4:0",
+    "month": 11,
+    "subtitle": "6 ноября · Москва",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 4:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "ЦСКА",
+      "position": "GK"
+    }
+  },
+  {
+    "id": "NEW_CSKA_TYUMEN_DEF",
+    "title": "ЦСКА — Динамо-Газовик",
+    "bg": "field",
+    "text": [
+      "Семак открыл счёт, но редкие зрители слышат каждый крик со скамейки. Гости ещё держат игроков впереди.",
+      "Мяч у края штрафной. Капитан кричит, чтобы ты закрыл прострел."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Закрыть ближнюю зону",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты перекрываешь прострел. Соперник отдаёт мяч назад."
+        },
+        "sketch": {
+          "flat": "tackle"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "phy",
+          "threshold": 56
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отбираешь мяч у бровки. Соперник уже занёс ногу для прострела.",
+          "partial": "Ты касаешься мяча носком. Нападающий успевает лишь выбить его в аут.",
+          "fail": "Ты идёшь в стык на шаг позже. Прострел проходит под ногой, и соперник забивает."
+        },
+        "sketch": {
+          "success": "tackle",
+          "partial": "tackle",
+          "fail": "concede"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты заставляешь соперника уйти к бровке и отбираешь мяч в момент разворота."
+        },
+        "sketch": {
+          "flat": "tackle"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "ЦСКА",
+    "away": "Динамо-Газовик",
+    "historical_score": "4:0",
+    "month": 11,
+    "subtitle": "6 ноября · Москва",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 4:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "ЦСКА",
+      "position": "DEF"
+    }
+  },
+  {
+    "id": "NEW_CSKA_TYUMEN_MID",
+    "title": "ЦСКА — Динамо-Газовик",
+    "bg": "field",
+    "text": [
+      "Семак открыл счёт, но редкие зрители слышат каждый крик со скамейки. Гости ещё держат игроков впереди.",
+      "Мяч катится к тебе, пока крайний просит передачу в освободившийся коридор."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Удержать мяч",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты укрываешь мяч корпусом и переводишь атаку на другой край."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Разрезать линию передачей",
+        "check": {
+          "attr": "vis",
+          "threshold": 56
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отдаёшь мяч в свободную зону. Партнёр принимает и бьёт в касание. Сетка вздрагивает.",
+          "partial": "Передача доходит до партнёра, но приходится принимать спиной к воротам. Вы сохраняете мяч.",
+          "fail": "Защитник читает передачу и выбивает мяч к бровке. Ты возвращаешься на свою половину."
+        },
+        "sketch": {
+          "success": "team_goal",
+          "partial": "pass",
+          "fail": "intercept"
+        }
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты открываешься под обратный пас и выводишь партнёра к штрафной."
+        },
+        "sketch": {
+          "flat": "pass"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "ЦСКА",
+    "away": "Динамо-Газовик",
+    "historical_score": "4:0",
+    "month": 11,
+    "subtitle": "6 ноября · Москва",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 4:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "ЦСКА",
+      "position": "MID"
+    }
+  },
+  {
+    "id": "NEW_CSKA_TYUMEN_FWD",
+    "title": "ЦСКА — Динамо-Газовик",
+    "bg": "field",
+    "text": [
+      "Семак открыл счёт, но редкие зрители слышат каждый крик со скамейки. Гости ещё держат игроков впереди.",
+      "Партнёр катит мяч под удар. Вратарь шагает к ближней штанге."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Вернуть мяч под удар партнёру",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты откатываешь мяч партнёру. Его удар накрывают, но команда сохраняет давление."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Пробить в дальний угол",
+        "check": {
+          "attr": "tec",
+          "threshold": 56
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          },
+          "goals": 1
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты бьёшь низом мимо вытянутой ноги вратаря. Мяч натягивает боковую сетку.",
+          "partial": "Вратарь переводит удар за стойку. Ты поднимаешь руку: ваш угловой.",
+          "fail": "Ты тянешься к мячу носком. Он проходит снаружи дальней штанги."
+        },
+        "sketch": {
+          "success": "goal",
+          "partial": "blocked",
+          "fail": "miss"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты обманываешь защитника первым движением и бьёшь в створ. Вратарь переводит мяч на угловой."
+        },
+        "sketch": {
+          "flat": "blocked"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "ЦСКА",
+    "away": "Динамо-Газовик",
+    "historical_score": "4:0",
+    "month": 11,
+    "subtitle": "6 ноября · Москва",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 4:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "ЦСКА",
+      "position": "FWD"
+    }
+  },
+  {
+    "id": "NEW_DYNAMO_LOKO_GK",
+    "title": "Локомотив (М) — Динамо (М)",
+    "bg": "field",
+    "text": [
+      "Симутенков забил в первой же атаке. «Локомотив» поджимает к бровке и оставляет место между линиями.",
+      "Крайний поднимает голову. Перед тобой два игрока, и оба ждут подачу."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Остаться на линии",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты остаёшься на линии и ловишь мяч в броске у ближней стойки. Прижимаешь его к груди, пока защитники возвращаются на позиции."
+        },
+        "sketch": {
+          "flat": "save"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "vis",
+          "threshold": 56
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты выходишь из ворот и ловишь навес прежде, чем нападающий подставляет голову.",
+          "partial": "Ты отбиваешь мяч перед собой. Защитник выносит отскок в аут.",
+          "fail": "Ты опаздываешь на выход. Нападающий подставляет голову, мяч за твоей спиной."
+        },
+        "sketch": {
+          "success": "save",
+          "partial": "save_rebound",
+          "fail": "concede"
+        },
+        "equipment": "gloves"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты делаешь короткий шаг навстречу навесу и двумя руками переводишь мяч за линию."
+        },
+        "sketch": {
+          "flat": "save"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Локомотив (М)",
+    "away": "Динамо (М)",
+    "historical_score": "0:2",
+    "month": 3,
+    "subtitle": "15 марта · Москва",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 0:2. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "Динамо (М)",
+      "position": "GK"
+    }
+  },
+  {
+    "id": "NEW_DYNAMO_LOKO_DEF",
+    "title": "Локомотив (М) — Динамо (М)",
+    "bg": "field",
+    "text": [
+      "Симутенков забил в первой же атаке. «Локомотив» поджимает к бровке и оставляет место между линиями.",
+      "Мяч у края штрафной. Капитан кричит, чтобы ты закрыл прострел."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Закрыть ближнюю зону",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты перекрываешь прострел. Соперник отдаёт мяч назад."
+        },
+        "sketch": {
+          "flat": "tackle"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "phy",
+          "threshold": 56
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отбираешь мяч у бровки. Соперник уже занёс ногу для прострела.",
+          "partial": "Ты касаешься мяча носком. Нападающий успевает лишь выбить его в аут.",
+          "fail": "Ты идёшь в стык на шаг позже. Прострел проходит под ногой, и соперник забивает."
+        },
+        "sketch": {
+          "success": "tackle",
+          "partial": "tackle",
+          "fail": "concede"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты заставляешь соперника уйти к бровке и отбираешь мяч в момент разворота."
+        },
+        "sketch": {
+          "flat": "tackle"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Локомотив (М)",
+    "away": "Динамо (М)",
+    "historical_score": "0:2",
+    "month": 3,
+    "subtitle": "15 марта · Москва",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 0:2. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "Динамо (М)",
+      "position": "DEF"
+    }
+  },
+  {
+    "id": "NEW_DYNAMO_LOKO_MID",
+    "title": "Локомотив (М) — Динамо (М)",
+    "bg": "field",
+    "text": [
+      "Симутенков забил в первой же атаке. «Локомотив» поджимает к бровке и оставляет место между линиями.",
+      "Мяч катится к тебе, пока крайний просит передачу в освободившийся коридор."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Удержать мяч",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты укрываешь мяч корпусом и переводишь атаку на другой край."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Разрезать линию передачей",
+        "check": {
+          "attr": "vis",
+          "threshold": 56
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отдаёшь мяч в свободную зону. Партнёр принимает и бьёт в касание. Сетка вздрагивает.",
+          "partial": "Передача доходит до партнёра, но приходится принимать спиной к воротам. Вы сохраняете мяч.",
+          "fail": "Защитник читает передачу и выбивает мяч к бровке. Ты возвращаешься на свою половину."
+        },
+        "sketch": {
+          "success": "team_goal",
+          "partial": "pass",
+          "fail": "intercept"
+        }
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты открываешься под обратный пас и выводишь партнёра к штрафной."
+        },
+        "sketch": {
+          "flat": "pass"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Локомотив (М)",
+    "away": "Динамо (М)",
+    "historical_score": "0:2",
+    "month": 3,
+    "subtitle": "15 марта · Москва",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 0:2. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "Динамо (М)",
+      "position": "MID"
+    }
+  },
+  {
+    "id": "NEW_DYNAMO_LOKO_FWD",
+    "title": "Локомотив (М) — Динамо (М)",
+    "bg": "field",
+    "text": [
+      "Симутенков забил в первой же атаке. «Локомотив» поджимает к бровке и оставляет место между линиями.",
+      "Партнёр катит мяч под удар. Вратарь шагает к ближней штанге."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Вернуть мяч под удар партнёру",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты откатываешь мяч партнёру. Его удар накрывают, но команда сохраняет давление."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Пробить в дальний угол",
+        "check": {
+          "attr": "tec",
+          "threshold": 56
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          },
+          "goals": 1
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты бьёшь низом мимо вытянутой ноги вратаря. Мяч натягивает боковую сетку.",
+          "partial": "Вратарь переводит удар за стойку. Ты поднимаешь руку: ваш угловой.",
+          "fail": "Ты тянешься к мячу носком. Он проходит снаружи дальней штанги."
+        },
+        "sketch": {
+          "success": "goal",
+          "partial": "blocked",
+          "fail": "miss"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты обманываешь защитника первым движением и бьёшь в створ. Вратарь переводит мяч на угловой."
+        },
+        "sketch": {
+          "flat": "blocked"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Локомотив (М)",
+    "away": "Динамо (М)",
+    "historical_score": "0:2",
+    "month": 3,
+    "subtitle": "15 марта · Москва",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 0:2. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "Динамо (М)",
+      "position": "FWD"
+    }
+  },
+  {
+    "id": "NEW_DYNAMO_LADA_GK",
+    "title": "Лада (Тольятти) — Динамо (М)",
+    "bg": "field",
+    "text": [
+      "У хозяев был пенальти, у Черышёва уже есть гол. Каждая потеря в центре поднимает дальнюю трибуну.",
+      "Крайний поднимает голову. Перед тобой два игрока, и оба ждут подачу."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Остаться на линии",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты остаёшься на линии и ловишь мяч в броске у ближней стойки. Прижимаешь его к груди, пока защитники возвращаются на позиции."
+        },
+        "sketch": {
+          "flat": "save"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "vis",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты выходишь из ворот и ловишь навес прежде, чем нападающий подставляет голову.",
+          "partial": "Ты отбиваешь мяч перед собой. Защитник выносит отскок в аут.",
+          "fail": "Ты опаздываешь на выход. Нападающий подставляет голову, мяч за твоей спиной."
+        },
+        "sketch": {
+          "success": "save",
+          "partial": "save_rebound",
+          "fail": "concede"
+        },
+        "equipment": "gloves"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты делаешь короткий шаг навстречу навесу и двумя руками переводишь мяч за линию."
+        },
+        "sketch": {
+          "flat": "save"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Лада (Тольятти)",
+    "away": "Динамо (М)",
+    "historical_score": "2:3",
+    "month": 10,
+    "subtitle": "2 октября · Тольятти",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 2:3. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "Динамо (М)",
+      "position": "GK"
+    }
+  },
+  {
+    "id": "NEW_DYNAMO_LADA_DEF",
+    "title": "Лада (Тольятти) — Динамо (М)",
+    "bg": "field",
+    "text": [
+      "У хозяев был пенальти, у Черышёва уже есть гол. Каждая потеря в центре поднимает дальнюю трибуну.",
+      "Мяч у края штрафной. Капитан кричит, чтобы ты закрыл прострел."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Закрыть ближнюю зону",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты перекрываешь прострел. Соперник отдаёт мяч назад."
+        },
+        "sketch": {
+          "flat": "tackle"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "phy",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отбираешь мяч у бровки. Соперник уже занёс ногу для прострела.",
+          "partial": "Ты касаешься мяча носком. Нападающий успевает лишь выбить его в аут.",
+          "fail": "Ты идёшь в стык на шаг позже. Прострел проходит под ногой, и соперник забивает."
+        },
+        "sketch": {
+          "success": "tackle",
+          "partial": "tackle",
+          "fail": "concede"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты заставляешь соперника уйти к бровке и отбираешь мяч в момент разворота."
+        },
+        "sketch": {
+          "flat": "tackle"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Лада (Тольятти)",
+    "away": "Динамо (М)",
+    "historical_score": "2:3",
+    "month": 10,
+    "subtitle": "2 октября · Тольятти",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 2:3. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "Динамо (М)",
+      "position": "DEF"
+    }
+  },
+  {
+    "id": "NEW_DYNAMO_LADA_MID",
+    "title": "Лада (Тольятти) — Динамо (М)",
+    "bg": "field",
+    "text": [
+      "У хозяев был пенальти, у Черышёва уже есть гол. Каждая потеря в центре поднимает дальнюю трибуну.",
+      "Мяч катится к тебе, пока крайний просит передачу в освободившийся коридор."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Удержать мяч",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты укрываешь мяч корпусом и переводишь атаку на другой край."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Разрезать линию передачей",
+        "check": {
+          "attr": "vis",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отдаёшь мяч в свободную зону. Партнёр принимает и бьёт в касание. Сетка вздрагивает.",
+          "partial": "Передача доходит до партнёра, но приходится принимать спиной к воротам. Вы сохраняете мяч.",
+          "fail": "Защитник читает передачу и выбивает мяч к бровке. Ты возвращаешься на свою половину."
+        },
+        "sketch": {
+          "success": "team_goal",
+          "partial": "pass",
+          "fail": "intercept"
+        }
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты открываешься под обратный пас и выводишь партнёра к штрафной."
+        },
+        "sketch": {
+          "flat": "pass"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Лада (Тольятти)",
+    "away": "Динамо (М)",
+    "historical_score": "2:3",
+    "month": 10,
+    "subtitle": "2 октября · Тольятти",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 2:3. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "Динамо (М)",
+      "position": "MID"
+    }
+  },
+  {
+    "id": "NEW_DYNAMO_LADA_FWD",
+    "title": "Лада (Тольятти) — Динамо (М)",
+    "bg": "field",
+    "text": [
+      "У хозяев был пенальти, у Черышёва уже есть гол. Каждая потеря в центре поднимает дальнюю трибуну.",
+      "Партнёр катит мяч под удар. Вратарь шагает к ближней штанге."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Вернуть мяч под удар партнёру",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты откатываешь мяч партнёру. Его удар накрывают, но команда сохраняет давление."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Пробить в дальний угол",
+        "check": {
+          "attr": "tec",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          },
+          "goals": 1
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты бьёшь низом мимо вытянутой ноги вратаря. Мяч натягивает боковую сетку.",
+          "partial": "Вратарь переводит удар за стойку. Ты поднимаешь руку: ваш угловой.",
+          "fail": "Ты тянешься к мячу носком. Он проходит снаружи дальней штанги."
+        },
+        "sketch": {
+          "success": "goal",
+          "partial": "blocked",
+          "fail": "miss"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты обманываешь защитника первым движением и бьёшь в створ. Вратарь переводит мяч на угловой."
+        },
+        "sketch": {
+          "flat": "blocked"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Лада (Тольятти)",
+    "away": "Динамо (М)",
+    "historical_score": "2:3",
+    "month": 10,
+    "subtitle": "2 октября · Тольятти",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 2:3. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "Динамо (М)",
+      "position": "FWD"
+    }
+  },
+  {
+    "id": "NEW_KAMAZ_VL_GK",
+    "title": "КАМАЗ — Спартак (Вл)",
+    "bg": "field",
+    "text": [
+      "После двух ранних голов Панченко защитники гостей садятся глубже. В новой атаке штрафная сразу становится тесной.",
+      "Крайний поднимает голову. Перед тобой два игрока, и оба ждут подачу."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Остаться на линии",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты остаёшься на линии и ловишь мяч в броске у ближней стойки. Прижимаешь его к груди, пока защитники возвращаются на позиции."
+        },
+        "sketch": {
+          "flat": "save"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "vis",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты выходишь из ворот и ловишь навес прежде, чем нападающий подставляет голову.",
+          "partial": "Ты отбиваешь мяч перед собой. Защитник выносит отскок в аут.",
+          "fail": "Ты опаздываешь на выход. Нападающий подставляет голову, мяч за твоей спиной."
+        },
+        "sketch": {
+          "success": "save",
+          "partial": "save_rebound",
+          "fail": "concede"
+        },
+        "equipment": "gloves"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты делаешь короткий шаг навстречу навесу и двумя руками переводишь мяч за линию."
+        },
+        "sketch": {
+          "flat": "save"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "КАМАЗ",
+    "away": "Спартак (Вл)",
+    "historical_score": "6:0",
+    "month": 3,
+    "subtitle": "26 марта · Набережные Челны",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 6:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "КАМАЗ",
+      "position": "GK"
+    }
+  },
+  {
+    "id": "NEW_KAMAZ_VL_DEF",
+    "title": "КАМАЗ — Спартак (Вл)",
+    "bg": "field",
+    "text": [
+      "После двух ранних голов Панченко защитники гостей садятся глубже. В новой атаке штрафная сразу становится тесной.",
+      "Мяч у края штрафной. Капитан кричит, чтобы ты закрыл прострел."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Закрыть ближнюю зону",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты перекрываешь прострел. Соперник отдаёт мяч назад."
+        },
+        "sketch": {
+          "flat": "tackle"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "phy",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отбираешь мяч у бровки. Соперник уже занёс ногу для прострела.",
+          "partial": "Ты касаешься мяча носком. Нападающий успевает лишь выбить его в аут.",
+          "fail": "Ты идёшь в стык на шаг позже. Прострел проходит под ногой, и соперник забивает."
+        },
+        "sketch": {
+          "success": "tackle",
+          "partial": "tackle",
+          "fail": "concede"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты заставляешь соперника уйти к бровке и отбираешь мяч в момент разворота."
+        },
+        "sketch": {
+          "flat": "tackle"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "КАМАЗ",
+    "away": "Спартак (Вл)",
+    "historical_score": "6:0",
+    "month": 3,
+    "subtitle": "26 марта · Набережные Челны",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 6:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "КАМАЗ",
+      "position": "DEF"
+    }
+  },
+  {
+    "id": "NEW_KAMAZ_VL_MID",
+    "title": "КАМАЗ — Спартак (Вл)",
+    "bg": "field",
+    "text": [
+      "После двух ранних голов Панченко защитники гостей садятся глубже. В новой атаке штрафная сразу становится тесной.",
+      "Мяч катится к тебе, пока крайний просит передачу в освободившийся коридор."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Удержать мяч",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты укрываешь мяч корпусом и переводишь атаку на другой край."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Разрезать линию передачей",
+        "check": {
+          "attr": "vis",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отдаёшь мяч в свободную зону. Партнёр принимает и бьёт в касание. Сетка вздрагивает.",
+          "partial": "Передача доходит до партнёра, но приходится принимать спиной к воротам. Вы сохраняете мяч.",
+          "fail": "Защитник читает передачу и выбивает мяч к бровке. Ты возвращаешься на свою половину."
+        },
+        "sketch": {
+          "success": "team_goal",
+          "partial": "pass",
+          "fail": "intercept"
+        }
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты открываешься под обратный пас и выводишь партнёра к штрафной."
+        },
+        "sketch": {
+          "flat": "pass"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "КАМАЗ",
+    "away": "Спартак (Вл)",
+    "historical_score": "6:0",
+    "month": 3,
+    "subtitle": "26 марта · Набережные Челны",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 6:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "КАМАЗ",
+      "position": "MID"
+    }
+  },
+  {
+    "id": "NEW_KAMAZ_VL_FWD",
+    "title": "КАМАЗ — Спартак (Вл)",
+    "bg": "field",
+    "text": [
+      "После двух ранних голов Панченко защитники гостей садятся глубже. В новой атаке штрафная сразу становится тесной.",
+      "Партнёр катит мяч под удар. Вратарь шагает к ближней штанге."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Вернуть мяч под удар партнёру",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты откатываешь мяч партнёру. Его удар накрывают, но команда сохраняет давление."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Пробить в дальний угол",
+        "check": {
+          "attr": "tec",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          },
+          "goals": 1
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты бьёшь низом мимо вытянутой ноги вратаря. Мяч натягивает боковую сетку.",
+          "partial": "Вратарь переводит удар за стойку. Ты поднимаешь руку: ваш угловой.",
+          "fail": "Ты тянешься к мячу носком. Он проходит снаружи дальней штанги."
+        },
+        "sketch": {
+          "success": "goal",
+          "partial": "blocked",
+          "fail": "miss"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты обманываешь защитника первым движением и бьёшь в створ. Вратарь переводит мяч на угловой."
+        },
+        "sketch": {
+          "flat": "blocked"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "КАМАЗ",
+    "away": "Спартак (Вл)",
+    "historical_score": "6:0",
+    "month": 3,
+    "subtitle": "26 марта · Набережные Челны",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 6:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "КАМАЗ",
+      "position": "FWD"
+    }
+  },
+  {
+    "id": "NEW_KAMAZ_ROTOR_GK",
+    "title": "Ротор — КАМАЗ",
+    "bg": "field",
+    "text": [
+      "Нечаев забил в начале. На выезде всё чаще приходится отбирать мяч спиной к своим воротам.",
+      "Крайний поднимает голову. Перед тобой два игрока, и оба ждут подачу."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Остаться на линии",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты остаёшься на линии и ловишь мяч в броске у ближней стойки. Прижимаешь его к груди, пока защитники возвращаются на позиции."
+        },
+        "sketch": {
+          "flat": "save"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "vis",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты выходишь из ворот и ловишь навес прежде, чем нападающий подставляет голову.",
+          "partial": "Ты отбиваешь мяч перед собой. Защитник выносит отскок в аут.",
+          "fail": "Ты опаздываешь на выход. Нападающий подставляет голову, мяч за твоей спиной."
+        },
+        "sketch": {
+          "success": "save",
+          "partial": "save_rebound",
+          "fail": "concede"
+        },
+        "equipment": "gloves"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты делаешь короткий шаг навстречу навесу и двумя руками переводишь мяч за линию."
+        },
+        "sketch": {
+          "flat": "save"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Ротор",
+    "away": "КАМАЗ",
+    "historical_score": "4:0",
+    "month": 11,
+    "subtitle": "6 ноября · Волгоград",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 4:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "КАМАЗ",
+      "position": "GK"
+    }
+  },
+  {
+    "id": "NEW_KAMAZ_ROTOR_DEF",
+    "title": "Ротор — КАМАЗ",
+    "bg": "field",
+    "text": [
+      "Нечаев забил в начале. На выезде всё чаще приходится отбирать мяч спиной к своим воротам.",
+      "Мяч у края штрафной. Капитан кричит, чтобы ты закрыл прострел."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Закрыть ближнюю зону",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты перекрываешь прострел. Соперник отдаёт мяч назад."
+        },
+        "sketch": {
+          "flat": "tackle"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "phy",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отбираешь мяч у бровки. Соперник уже занёс ногу для прострела.",
+          "partial": "Ты касаешься мяча носком. Нападающий успевает лишь выбить его в аут.",
+          "fail": "Ты идёшь в стык на шаг позже. Прострел проходит под ногой, и соперник забивает."
+        },
+        "sketch": {
+          "success": "tackle",
+          "partial": "tackle",
+          "fail": "concede"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты заставляешь соперника уйти к бровке и отбираешь мяч в момент разворота."
+        },
+        "sketch": {
+          "flat": "tackle"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Ротор",
+    "away": "КАМАЗ",
+    "historical_score": "4:0",
+    "month": 11,
+    "subtitle": "6 ноября · Волгоград",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 4:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "КАМАЗ",
+      "position": "DEF"
+    }
+  },
+  {
+    "id": "NEW_KAMAZ_ROTOR_MID",
+    "title": "Ротор — КАМАЗ",
+    "bg": "field",
+    "text": [
+      "Нечаев забил в начале. На выезде всё чаще приходится отбирать мяч спиной к своим воротам.",
+      "Мяч катится к тебе, пока крайний просит передачу в освободившийся коридор."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Удержать мяч",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты укрываешь мяч корпусом и переводишь атаку на другой край."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Разрезать линию передачей",
+        "check": {
+          "attr": "vis",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отдаёшь мяч в свободную зону. Партнёр принимает и бьёт в касание. Сетка вздрагивает.",
+          "partial": "Передача доходит до партнёра, но приходится принимать спиной к воротам. Вы сохраняете мяч.",
+          "fail": "Защитник читает передачу и выбивает мяч к бровке. Ты возвращаешься на свою половину."
+        },
+        "sketch": {
+          "success": "team_goal",
+          "partial": "pass",
+          "fail": "intercept"
+        }
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты открываешься под обратный пас и выводишь партнёра к штрафной."
+        },
+        "sketch": {
+          "flat": "pass"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Ротор",
+    "away": "КАМАЗ",
+    "historical_score": "4:0",
+    "month": 11,
+    "subtitle": "6 ноября · Волгоград",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 4:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "КАМАЗ",
+      "position": "MID"
+    }
+  },
+  {
+    "id": "NEW_KAMAZ_ROTOR_FWD",
+    "title": "Ротор — КАМАЗ",
+    "bg": "field",
+    "text": [
+      "Нечаев забил в начале. На выезде всё чаще приходится отбирать мяч спиной к своим воротам.",
+      "Партнёр катит мяч под удар. Вратарь шагает к ближней штанге."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Вернуть мяч под удар партнёру",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты откатываешь мяч партнёру. Его удар накрывают, но команда сохраняет давление."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Пробить в дальний угол",
+        "check": {
+          "attr": "tec",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          },
+          "goals": 1
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты бьёшь низом мимо вытянутой ноги вратаря. Мяч натягивает боковую сетку.",
+          "partial": "Вратарь переводит удар за стойку. Ты поднимаешь руку: ваш угловой.",
+          "fail": "Ты тянешься к мячу носком. Он проходит снаружи дальней штанги."
+        },
+        "sketch": {
+          "success": "goal",
+          "partial": "blocked",
+          "fail": "miss"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты обманываешь защитника первым движением и бьёшь в створ. Вратарь переводит мяч на угловой."
+        },
+        "sketch": {
+          "flat": "blocked"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Ротор",
+    "away": "КАМАЗ",
+    "historical_score": "4:0",
+    "month": 11,
+    "subtitle": "6 ноября · Волгоград",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 4:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "first",
+    "requires": {
+      "club": "КАМАЗ",
+      "position": "FWD"
+    }
+  },
+  {
+    "id": "NEW_ZENIT_CHITA_GK",
+    "title": "Зенит — Локомотив (Чита)",
+    "bg": "field",
+    "text": [
+      "Мамонтов открыл счёт. После пенальти Кулика гости пытаются перевести игру на ваш фланг.",
+      "Крайний поднимает голову. Перед тобой два игрока, и оба ждут подачу."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Остаться на линии",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты остаёшься на линии и ловишь мяч в броске у ближней стойки. Прижимаешь его к груди, пока защитники возвращаются на позиции."
+        },
+        "sketch": {
+          "flat": "save"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "vis",
+          "threshold": 56
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты выходишь из ворот и ловишь навес прежде, чем нападающий подставляет голову.",
+          "partial": "Ты отбиваешь мяч перед собой. Защитник выносит отскок в аут.",
+          "fail": "Ты опаздываешь на выход. Нападающий подставляет голову, мяч за твоей спиной."
+        },
+        "sketch": {
+          "success": "save",
+          "partial": "save_rebound",
+          "fail": "concede"
+        },
+        "equipment": "gloves"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты делаешь короткий шаг навстречу навесу и двумя руками переводишь мяч за линию."
+        },
+        "sketch": {
+          "flat": "save"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Зенит",
+    "away": "Локомотив (Чита)",
+    "historical_score": "3:0",
+    "month": 4,
+    "subtitle": "23 апреля · Санкт-Петербург",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 3:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "second",
+    "requires": {
+      "club": "Зенит",
+      "position": "GK"
+    }
+  },
+  {
+    "id": "NEW_ZENIT_CHITA_DEF",
+    "title": "Зенит — Локомотив (Чита)",
+    "bg": "field",
+    "text": [
+      "Мамонтов открыл счёт. После пенальти Кулика гости пытаются перевести игру на ваш фланг.",
+      "Мяч у края штрафной. Капитан кричит, чтобы ты закрыл прострел."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Закрыть ближнюю зону",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты перекрываешь прострел. Соперник отдаёт мяч назад."
+        },
+        "sketch": {
+          "flat": "tackle"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "phy",
+          "threshold": 56
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отбираешь мяч у бровки. Соперник уже занёс ногу для прострела.",
+          "partial": "Ты касаешься мяча носком. Нападающий успевает лишь выбить его в аут.",
+          "fail": "Ты идёшь в стык на шаг позже. Прострел проходит под ногой, и соперник забивает."
+        },
+        "sketch": {
+          "success": "tackle",
+          "partial": "tackle",
+          "fail": "concede"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты заставляешь соперника уйти к бровке и отбираешь мяч в момент разворота."
+        },
+        "sketch": {
+          "flat": "tackle"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Зенит",
+    "away": "Локомотив (Чита)",
+    "historical_score": "3:0",
+    "month": 4,
+    "subtitle": "23 апреля · Санкт-Петербург",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 3:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "second",
+    "requires": {
+      "club": "Зенит",
+      "position": "DEF"
+    }
+  },
+  {
+    "id": "NEW_ZENIT_CHITA_MID",
+    "title": "Зенит — Локомотив (Чита)",
+    "bg": "field",
+    "text": [
+      "Мамонтов открыл счёт. После пенальти Кулика гости пытаются перевести игру на ваш фланг.",
+      "Мяч катится к тебе, пока крайний просит передачу в освободившийся коридор."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Удержать мяч",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты укрываешь мяч корпусом и переводишь атаку на другой край."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Разрезать линию передачей",
+        "check": {
+          "attr": "vis",
+          "threshold": 56
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отдаёшь мяч в свободную зону. Партнёр принимает и бьёт в касание. Сетка вздрагивает.",
+          "partial": "Передача доходит до партнёра, но приходится принимать спиной к воротам. Вы сохраняете мяч.",
+          "fail": "Защитник читает передачу и выбивает мяч к бровке. Ты возвращаешься на свою половину."
+        },
+        "sketch": {
+          "success": "team_goal",
+          "partial": "pass",
+          "fail": "intercept"
+        }
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты открываешься под обратный пас и выводишь партнёра к штрафной."
+        },
+        "sketch": {
+          "flat": "pass"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Зенит",
+    "away": "Локомотив (Чита)",
+    "historical_score": "3:0",
+    "month": 4,
+    "subtitle": "23 апреля · Санкт-Петербург",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 3:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "second",
+    "requires": {
+      "club": "Зенит",
+      "position": "MID"
+    }
+  },
+  {
+    "id": "NEW_ZENIT_CHITA_FWD",
+    "title": "Зенит — Локомотив (Чита)",
+    "bg": "field",
+    "text": [
+      "Мамонтов открыл счёт. После пенальти Кулика гости пытаются перевести игру на ваш фланг.",
+      "Партнёр катит мяч под удар. Вратарь шагает к ближней штанге."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Вернуть мяч под удар партнёру",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты откатываешь мяч партнёру. Его удар накрывают, но команда сохраняет давление."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Пробить в дальний угол",
+        "check": {
+          "attr": "tec",
+          "threshold": 56
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          },
+          "goals": 1
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты бьёшь низом мимо вытянутой ноги вратаря. Мяч натягивает боковую сетку.",
+          "partial": "Вратарь переводит удар за стойку. Ты поднимаешь руку: ваш угловой.",
+          "fail": "Ты тянешься к мячу носком. Он проходит снаружи дальней штанги."
+        },
+        "sketch": {
+          "success": "goal",
+          "partial": "blocked",
+          "fail": "miss"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты обманываешь защитника первым движением и бьёшь в створ. Вратарь переводит мяч на угловой."
+        },
+        "sketch": {
+          "flat": "blocked"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Зенит",
+    "away": "Локомотив (Чита)",
+    "historical_score": "3:0",
+    "month": 4,
+    "subtitle": "23 апреля · Санкт-Петербург",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 3:0. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "second",
+    "requires": {
+      "club": "Зенит",
+      "position": "FWD"
+    }
+  },
+  {
+    "id": "NEW_ZENIT_SHINNIK_GK",
+    "title": "Шинник — Зенит",
+    "bg": "field",
+    "text": [
+      "Кулик забил с точки. После двух быстрых голов Гревцева защитникам приходится просить полузащиту садиться глубже.",
+      "Крайний поднимает голову. Перед тобой два игрока, и оба ждут подачу."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Остаться на линии",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты остаёшься на линии и ловишь мяч в броске у ближней стойки. Прижимаешь его к груди, пока защитники возвращаются на позиции."
+        },
+        "sketch": {
+          "flat": "save"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "vis",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты выходишь из ворот и ловишь навес прежде, чем нападающий подставляет голову.",
+          "partial": "Ты отбиваешь мяч перед собой. Защитник выносит отскок в аут.",
+          "fail": "Ты опаздываешь на выход. Нападающий подставляет голову, мяч за твоей спиной."
+        },
+        "sketch": {
+          "success": "save",
+          "partial": "save_rebound",
+          "fail": "concede"
+        },
+        "equipment": "gloves"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты делаешь короткий шаг навстречу навесу и двумя руками переводишь мяч за линию."
+        },
+        "sketch": {
+          "flat": "save"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Шинник",
+    "away": "Зенит",
+    "historical_score": "3:1",
+    "month": 5,
+    "subtitle": "3 мая · Ярославль",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 3:1. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "second",
+    "requires": {
+      "club": "Зенит",
+      "position": "GK"
+    }
+  },
+  {
+    "id": "NEW_ZENIT_SHINNIK_DEF",
+    "title": "Шинник — Зенит",
+    "bg": "field",
+    "text": [
+      "Кулик забил с точки. После двух быстрых голов Гревцева защитникам приходится просить полузащиту садиться глубже.",
+      "Мяч у края штрафной. Капитан кричит, чтобы ты закрыл прострел."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Закрыть ближнюю зону",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты перекрываешь прострел. Соперник отдаёт мяч назад."
+        },
+        "sketch": {
+          "flat": "tackle"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "phy",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {}
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отбираешь мяч у бровки. Соперник уже занёс ногу для прострела.",
+          "partial": "Ты касаешься мяча носком. Нападающий успевает лишь выбить его в аут.",
+          "fail": "Ты идёшь в стык на шаг позже. Прострел проходит под ногой, и соперник забивает."
+        },
+        "sketch": {
+          "success": "tackle",
+          "partial": "tackle",
+          "fail": "concede"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты заставляешь соперника уйти к бровке и отбираешь мяч в момент разворота."
+        },
+        "sketch": {
+          "flat": "tackle"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Шинник",
+    "away": "Зенит",
+    "historical_score": "3:1",
+    "month": 5,
+    "subtitle": "3 мая · Ярославль",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 3:1. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "second",
+    "requires": {
+      "club": "Зенит",
+      "position": "DEF"
+    }
+  },
+  {
+    "id": "NEW_ZENIT_SHINNIK_MID",
+    "title": "Шинник — Зенит",
+    "bg": "field",
+    "text": [
+      "Кулик забил с точки. После двух быстрых голов Гревцева защитникам приходится просить полузащиту садиться глубже.",
+      "Мяч катится к тебе, пока крайний просит передачу в освободившийся коридор."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Удержать мяч",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты укрываешь мяч корпусом и переводишь атаку на другой край."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Разрезать линию передачей",
+        "check": {
+          "attr": "vis",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отдаёшь мяч в свободную зону. Партнёр принимает и бьёт в касание. Сетка вздрагивает.",
+          "partial": "Передача доходит до партнёра, но приходится принимать спиной к воротам. Вы сохраняете мяч.",
+          "fail": "Защитник читает передачу и выбивает мяч к бровке. Ты возвращаешься на свою половину."
+        },
+        "sketch": {
+          "success": "team_goal",
+          "partial": "pass",
+          "fail": "intercept"
+        }
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты открываешься под обратный пас и выводишь партнёра к штрафной."
+        },
+        "sketch": {
+          "flat": "pass"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Шинник",
+    "away": "Зенит",
+    "historical_score": "3:1",
+    "month": 5,
+    "subtitle": "3 мая · Ярославль",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 3:1. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "second",
+    "requires": {
+      "club": "Зенит",
+      "position": "MID"
+    }
+  },
+  {
+    "id": "NEW_ZENIT_SHINNIK_FWD",
+    "title": "Шинник — Зенит",
+    "bg": "field",
+    "text": [
+      "Кулик забил с точки. После двух быстрых голов Гревцева защитникам приходится просить полузащиту садиться глубже.",
+      "Партнёр катит мяч под удар. Вратарь шагает к ближней штанге."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Вернуть мяч под удар партнёру",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты откатываешь мяч партнёру. Его удар накрывают, но команда сохраняет давление."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Пробить в дальний угол",
+        "check": {
+          "attr": "tec",
+          "threshold": 59
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          },
+          "goals": 1
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты бьёшь низом мимо вытянутой ноги вратаря. Мяч натягивает боковую сетку.",
+          "partial": "Вратарь переводит удар за стойку. Ты поднимаешь руку: ваш угловой.",
+          "fail": "Ты тянешься к мячу носком. Он проходит снаружи дальней штанги."
+        },
+        "sketch": {
+          "success": "goal",
+          "partial": "blocked",
+          "fail": "miss"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты обманываешь защитника первым движением и бьёшь в створ. Вратарь переводит мяч на угловой."
+        },
+        "sketch": {
+          "flat": "blocked"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🏛",
+    "home": "Шинник",
+    "away": "Зенит",
+    "historical_score": "3:1",
+    "month": 5,
+    "subtitle": "3 мая · Ярославль",
+    "source": "https://rsssf.org/tablesr/rus94.html",
+    "historical_note": "Архивный счёт — 3:1. Участие героя и этот эпизод — игровая реконструкция.",
+    "important": true,
+    "league_fixture": true,
+    "fixture_league": "second",
+    "requires": {
+      "club": "Зенит",
+      "position": "FWD"
+    }
+  },
+  {
+    "id": "NEW_AWAY_GK",
+    "title": "Концовка матча",
+    "bg": "field",
+    "text": [
+      "На табло {live_score}. До свистка несколько минут. Дальняя трибуна поднимается, и гул перекрывает голос скамейки.",
+      "Крайний поднимает голову. Перед тобой два игрока, и оба ждут подачу."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Остаться на линии",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты остаёшься на линии и ловишь мяч в броске у ближней стойки. Прижимаешь его к груди, пока защитники возвращаются на позиции."
+        },
+        "sketch": {
+          "flat": "save"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "vis",
+          "threshold": 57
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "against": -1
+          }
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты выходишь из ворот и ловишь навес прежде, чем нападающий подставляет голову.",
+          "partial": "Ты отбиваешь мяч перед собой. Защитник выносит отскок в аут.",
+          "fail": "Ты опаздываешь на выход. Нападающий подставляет голову, мяч за твоей спиной."
+        },
+        "sketch": {
+          "success": "save",
+          "partial": "save_rebound",
+          "fail": "concede"
+        },
+        "equipment": "gloves"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты делаешь короткий шаг навстречу навесу и двумя руками переводишь мяч за линию."
+        },
+        "sketch": {
+          "flat": "save"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🎭",
+    "important": true
+  },
+  {
+    "id": "NEW_AWAY_DEF",
+    "title": "Концовка матча",
+    "bg": "field",
+    "text": [
+      "На табло {live_score}. До свистка несколько минут. Дальняя трибуна поднимается, и гул перекрывает голос скамейки.",
+      "Мяч у края штрафной. Капитан кричит, чтобы ты закрыл прострел."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Закрыть ближнюю зону",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты перекрываешь прострел. Соперник отдаёт мяч назад."
+        },
+        "sketch": {
+          "flat": "tackle"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Выйти на перехват",
+        "check": {
+          "attr": "phy",
+          "threshold": 57
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "against": -1
+          }
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {
+            "against": 1
+          },
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отбираешь мяч у бровки. Соперник уже занёс ногу для прострела.",
+          "partial": "Ты касаешься мяча носком. Нападающий успевает лишь выбить его в аут.",
+          "fail": "Ты идёшь в стык на шаг позже. Прострел проходит под ногой, и соперник забивает."
+        },
+        "sketch": {
+          "success": "tackle",
+          "partial": "tackle",
+          "fail": "concede"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты заставляешь соперника уйти к бровке и отбираешь мяч в момент разворота."
+        },
+        "sketch": {
+          "flat": "tackle"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🎭",
+    "important": true
+  },
+  {
+    "id": "NEW_AWAY_MID",
+    "title": "Концовка матча",
+    "bg": "field",
+    "text": [
+      "На табло {live_score}. До свистка несколько минут. Дальняя трибуна поднимается, и гул перекрывает голос скамейки.",
+      "Мяч катится к тебе, пока крайний просит передачу в освободившийся коридор."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Удержать мяч",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты укрываешь мяч корпусом и переводишь атаку на другой край."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Разрезать линию передачей",
+        "check": {
+          "attr": "vis",
+          "threshold": 57
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          }
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты отдаёшь мяч в свободную зону. Партнёр принимает и бьёт в касание. Сетка вздрагивает.",
+          "partial": "Передача доходит до партнёра, но приходится принимать спиной к воротам. Вы сохраняете мяч.",
+          "fail": "Защитник читает передачу и выбивает мяч к бровке. Ты возвращаешься на свою половину."
+        },
+        "sketch": {
+          "success": "team_goal",
+          "partial": "pass",
+          "fail": "intercept"
+        }
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты открываешься под обратный пас и выводишь партнёра к штрафной."
+        },
+        "sketch": {
+          "flat": "pass"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🎭",
+    "important": true
+  },
+  {
+    "id": "NEW_AWAY_FWD",
+    "title": "Концовка матча",
+    "bg": "field",
+    "text": [
+      "На табло {live_score}. До свистка несколько минут. Дальняя трибуна поднимается, и гул перекрывает голос скамейки.",
+      "Партнёр катит мяч под удар. Вратарь шагает к ближней штанге."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Вернуть мяч под удар партнёру",
+        "effects": {
+          "attrs": {
+            "rep_coach": 3
+          },
+          "team_modifier": 1
+        },
+        "conclusion": {
+          "flat": "Ты откатываешь мяч партнёру. Его удар накрывают, но команда сохраняет давление."
+        },
+        "sketch": {
+          "flat": "pass"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Пробить в дальний угол",
+        "check": {
+          "attr": "tec",
+          "threshold": 57
+        },
+        "success": {
+          "attrs": {
+            "rep_fans": 5,
+            "media": 4
+          },
+          "team_modifier": 2,
+          "score_change": {
+            "for": 1
+          },
+          "goals": 1
+        },
+        "partial": {
+          "team_modifier": 0,
+          "stress": 2,
+          "score_change": {}
+        },
+        "fail": {
+          "stress": 9,
+          "score_change": {},
+          "team_modifier": -1
+        },
+        "conclusion": {
+          "success": "Ты бьёшь низом мимо вытянутой ноги вратаря. Мяч натягивает боковую сетку.",
+          "partial": "Вратарь переводит удар за стойку. Ты поднимаешь руку: ваш угловой.",
+          "fail": "Ты тянешься к мячу носком. Он проходит снаружи дальней штанги."
+        },
+        "sketch": {
+          "success": "goal",
+          "partial": "blocked",
+          "fail": "miss"
+        },
+        "equipment": "boots"
+      },
+      {
+        "id": "C",
+        "text": "Применить отработанный приём",
+        "effects": {
+          "attrs": {
+            "rep_coach": 6
+          },
+          "team_modifier": 2
+        },
+        "conclusion": {
+          "flat": "Ты обманываешь защитника первым движением и бьёшь в створ. Вратарь переводит мяч на угловой."
+        },
+        "sketch": {
+          "flat": "blocked"
+        },
+        "requires": {
+          "personal_training": true
+        }
+      }
+    ],
+    "type": "🎭",
+    "important": true
+  },
+  {
+    "id": "NEW_FAKE_PAYOFF",
+    "title": "Клей на газоне",
+    "bg": "training",
+    "text": [
+      "На первом рывке носок цепляется за траву. Подошва раскрылась и набрала мокрой земли. Партнёр уже несёт запасную пару."
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Принять помощь и продолжить",
+        "effects": {
+          "attrs": {
+            "rep_teammates": 4
+          },
+          "flags": {
+            "fake_boots_tested": true
+          }
+        },
+        "conclusion": {
+          "flat": "Ты переобуваешься у сетки. Партнёр говорит, что заберёт свои бутсы после тренировки. Ты успеваешь к следующему упражнению."
+        },
+        "sketch": {
+          "flat": "support"
+        }
+      }
+    ],
+    "type": "🎭",
+    "requires": {
+      "owns": "fake_boots",
+      "flags": {
+        "fake_boots_tested": false
+      }
+    }
+  },
+  {
+    "id": "NEW_SPONSOR_BACKLASH",
+    "type": "🎭",
+    "title": "Та самая реклама",
+    "bg": "press",
+    "text": [
+      "У входа на базу стоит человек с газетой. Он складывает её по линии объявления, и твоё лицо оказывается прямо над заголовком.",
+      {
+        "speaker": "Болельщик",
+        "text": "Я поверил, когда ты сказал, что им можно доверять. Деньги теперь где?"
+      }
+    ],
+    "requires": {
+      "flag": "pyramid_promoted"
+    },
+    "choices": [
+      {
+        "id": "A",
+        "text": "Поговорить с ним",
+        "effects": {
+          "attrs": {
+            "rep_fans": -7,
+            "rep_press": -3
+          },
+          "stress": 8,
+          "rumor": -8
+        },
+        "conclusion": {
+          "flat": "Ты остаёшься у ворот и записываешь его фамилию. На завтра назначаете встречу у базы, хотя агент просил избегать разговоров."
+        },
+        "sketch": {
+          "flat": "press"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Пройти на базу",
+        "effects": {
+          "attrs": {
+            "rep_fans": -16,
+            "rep_press": -8
+          },
+          "stress": 11,
+          "rumor": -15
+        },
+        "conclusion": {
+          "flat": "Охранник закрывает за тобой ворота. Уже в раздевалке ты слышишь, как журналист спрашивает человека, сколько тот потерял."
+        },
+        "sketch": {
+          "flat": "leave"
+        }
+      }
+    ]
+  },
+  {
+    "id": "NEW_SQUAD_REVIEW",
+    "title": "Манишка для второго состава",
+    "type": "🎭",
+    "bg": "training",
+    "requires": {
+      "flag": "squad_exile",
+      "flags": {
+        "contract_terminated": false
+      }
+    },
+    "text": [
+      "К концу занятия у тренера остаётся одна манишка. Он складывает её вдвое и кладёт на мяч.",
+      {
+        "speaker": "Тренер",
+        "text": "Хочешь снова в заявку? Завтра начнёшь со вторым составом. Посмотрим, как отработаешь."
+      }
+    ],
+    "choices": [
+      {
+        "id": "A",
+        "text": "Согласиться на контрольную тренировку",
+        "effects": {
+          "restore_squad": true,
+          "attrs": {
+            "rep_coach": 5
+          },
+          "fatigue": 3
+        },
+        "conclusion": {
+          "flat": "Ты остаёшься с тренером после занятия. Он отмечает твою фамилию в блокноте: вернёшься в заявку, как только врач даст допуск."
+        },
+        "sketch": {
+          "flat": "training"
+        }
+      },
+      {
+        "id": "B",
+        "text": "Попросить агента поискать клуб",
+        "effects": {
+          "flags": {
+            "exile_transfer_pending": true
+          },
+          "stress": 4
+        },
+        "conclusion": {
+          "flat": "Ты возвращаешь манишку. У двери звонишь агенту и объясняешь, что хочешь играть хотя бы в ротации."
+        },
+        "sketch": {
+          "flat": "contract"
+        }
+      }
+    ]
+  }
+]
